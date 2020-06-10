@@ -1,0 +1,12 @@
+.input {
+    padding: 5px 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #3C3C3C;
+    border: none;
+    border-bottom: 1px solid #3C3C3C;
+    background-color: transparent;
+    &__search {
+        width: 250px;
+        font-size: 16px;
+    }
+}
