@@ -2,15 +2,14 @@ import React from 'react';
 
 import './App.scss';
 
-// import Input from '../../components/base/Input';
-// import Button from '../../components/base/Button';
+import Header from '../../components/Header';
 
 
 function App() {
   return (
-    <>
-      
-    </>
+    <div className="container">
+      <Header />
+    </div>
   );
 }
 
