@@ -1,0 +1,29 @@
+.header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  &__logo {
+    // width: 30%;
+    & h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+  
+  &__nav {
+    display: flex;
+  }
+
+  &__search {
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    background-color: #F7F2F3;
+  }
+}
