@@ -6,7 +6,6 @@ import Button from '../base/Button'
 
 export default function Card() {
   return (
-  <>
     <li className="card__item">
       <a href="/">
         <div className="card__item-image-group">
@@ -36,6 +35,5 @@ export default function Card() {
         </div>
       </a>
     </li>
-  </>
   )
 }
