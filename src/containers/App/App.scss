@@ -6,12 +6,13 @@ body {
   color: #3C3C3C;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
 
 a {
+  display: block;
   color: initial;
   list-style: none;
   text-decoration: none;
@@ -21,4 +22,9 @@ ul, li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
