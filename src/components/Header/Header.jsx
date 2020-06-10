@@ -7,7 +7,7 @@ import Input from '../base/Input'
 
 export default function (props) {
   return (
-    <header className="header">
+    <header className="container header">
       <nav className="header__nav">
         <div className="header__nav-align">
           <a href="/" className="header__logo">
