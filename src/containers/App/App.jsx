@@ -2,16 +2,13 @@ import React from 'react';
 
 import './App.scss';
 
-import CardList from '../../containers/CardsList';
-import Card from '../../components/Card';
+import Header from '../../components/Header';
 
 
 function App() {
   return (
     <>
-      <CardList>
-        <Card />
-      </CardList>
+      <Header />
     </>
   );
 }
