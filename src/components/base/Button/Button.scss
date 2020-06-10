@@ -1,5 +1,64 @@
 .btn {
-    &__show-infos {
-        background-color: red;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &__primary {
+        padding: 5px 20px;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: #D88A95;
+        border: 1px solid #D88A95;
+        border-radius: 8px;
+        &-buy {
+            font-size: 16px;
+        }
+        &-size {
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        &:hover {
+            background-color: lighten($color: #D88A95, $amount: 25)
+        }
+    }
+
+    &__secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #FCFCFC;
+        border-radius: 8px;
+        &--blue {
+            background-color: #425C8D;
+            &:hover {
+                background-color: lighten($color: #425C8D, $amount: 20)
+            }
+        }
+        &--green {
+            background-color: #54957A;
+            &:hover {
+                background-color: lighten($color: #54957A, $amount: 20)
+            }
+        }
+        & i {
+            margin-left: 5px;
+            font-size: 16px;
+        }
+    }
+
+    &__icon {
+        font-size: 20px;
+        color: #3C3C3C;
+        &--pink {
+            color: #D88A95;
+            &:hover {
+                color: lighten($color: #D88A95, $amount: 25)
+            }
+        }
+        &:hover {
+            color: lighten($color: #3C3C3C, $amount: 25)
+        }
     }
 }
