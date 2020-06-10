@@ -19,8 +19,12 @@ export default function Card() {
           <h4>Nome da roupa</h4>
           <div className="card__item-text-group-align">
             <div className="card__item-text-group-price">
-              <span>R$ 200</span>
-              <p>R$ 100</p>
+              <p>
+                De <span className="card__item-text-group-price--old">R$ 200</span>
+              </p>
+              <p>
+                Por <span className="card__item-text-group-price--new">R$ 100</span>
+              </p>
             </div>
             <Button 
               type="submit"

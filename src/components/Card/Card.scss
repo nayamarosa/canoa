@@ -30,7 +30,7 @@
       }
     }
     &-text-group {
-      padding: 10px 10px 15px;
+      padding: 10px 15px 15px;
       font-family: 'Oswald', sans-serif;
       font-size: 14px;
       & h4 {
@@ -43,10 +43,17 @@
         align-items: flex-end;
       }
       &-price {
-        & span {
+        margin-top: 10px;
+        & p {
           font-size: 10px;
           font-weight: 300;
+        }
+        &--old {
           text-decoration: line-through;
+        }
+        &--new {
+          font-weight: 400;
+          font-size: 14px;
         }
       }
     }
