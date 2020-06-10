@@ -1,29 +1,45 @@
 .header {
   height: 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &-align {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+  }
+
   &__logo {
-    // width: 30%;
     & h1 {
       font-family: 'Oswald', sans-serif;
       font-size: 24px;
       font-weight: 300;
     }
   }
-  
-  &__nav {
-    display: flex;
-  }
 
   &__search {
-    width: 90%;
-    height: 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    background-color: #F7F2F3;
+    &-click {
+      width: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: absolute;
+      overflow: hidden;
+      right: 0;
+      top: 0;
+      background-color: #F7F2F3;
+      transition: 0.3s all;
+
+      &--open {
+        width: 100%;
+      }
+    }
   }
 }
