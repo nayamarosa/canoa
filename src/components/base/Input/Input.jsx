@@ -3,7 +3,12 @@ import React from 'react';
 import './Input.scss';
 
 export default function Input(props) {
-  return <input type={props.type} placeholder={props.placeholder} className={`input ${props.className}`}></input>
+  return (
+    <div className="input__size-position">
+      <input className={props.classNameInput} type={props.type} id={props.id} name={props.name} value={props.value} placeholder={props.placeholder}></input>
+      <label htmlFor={props.id} className={props.classNameLabel}>{props.label}</label>
+    </div>
+  ) 
 }
 
 // Amostra de input

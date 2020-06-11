@@ -1,0 +1,15 @@
+.product-size {
+  width: 100%;
+  margin: 15px 0 50px;
+  & h5 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  &__group {
+    width: 100%;
+    display: flex;
+  }
+}

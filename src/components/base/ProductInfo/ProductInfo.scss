@@ -16,8 +16,9 @@
         align-items: flex-end;
       }
       &--bigger {
+        padding: 10px 0 15px;
         & h4 {
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           font-size: 22px;
           font-weight: 400;
         }
@@ -41,7 +42,7 @@
       }
       &--old {
         display: inline-block;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         text-decoration: line-through;
       }
       &--new {
