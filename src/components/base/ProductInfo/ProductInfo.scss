@@ -1,0 +1,16 @@
+.product-info {
+  &__price {
+    margin-top: 10px;
+    & p {
+      font-size: 10px;
+      font-weight: 300;
+    }
+    &--old {
+      text-decoration: line-through;
+    }
+    &--new {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+}
