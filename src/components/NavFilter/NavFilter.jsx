@@ -19,7 +19,7 @@ export default function NavFilter(props) {
         </li>
       </ul>
     </nav>
-    <h3 className="container nav-filter__name">Coleção nova</h3>
+    <h3 className="container nav-filter__name">{props.selectedFilterName}</h3>
     </>
   )
 }

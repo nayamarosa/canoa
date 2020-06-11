@@ -11,26 +11,24 @@ export default function Card() {
     <li className="card__item">
       <a href="/">
         <Banner
-          className="banner__product-card"
+          className="banner__product banner__product-card"
           src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
           alt="Nome da roupa"
-          classNameDiscount="banner__product-card--discount"
+          classNameDiscount="banner__product--discount"
           percent= "50%"
         />
-        <div className="card__item-text-group">
-          <h4>Nome da roupa</h4>
-          <div className="card__item-text-group-align">
-            <ProductInfo
-              oldPriceText="De"
-              oldPriceValue="R$ 200"
-              priceValue="R$ 100"
-            />
-            <Button 
-              type="submit"
-              className="btn__primary btn__primary-buy"
-              text="Comprar"
-            />
-          </div>
+        <ProductInfo
+          productName="Nome da Roupa"
+          oldPriceText="De"
+          oldPriceValue="R$ 200,00"
+          priceValue="R$ 100,00"
+        />
+        <div className="btn--center btn--card">
+          <Button 
+            type="submit"
+            classNameBtn="btn__primary btn__primary-buy"
+            text="Comprar"
+          />
         </div>
       </a>
     </li>

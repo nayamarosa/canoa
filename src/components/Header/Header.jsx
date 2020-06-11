@@ -16,7 +16,7 @@ export default function (props) {
           <div className="header__search">
             <Button 
               type="submit"
-              className="btn__icon btn__icon--pink"
+              classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
             />
           </div>
@@ -24,19 +24,19 @@ export default function (props) {
               <Input 
                 type="text"
                 placeholder="o que você procura?"
-                className="input__search"
+                classNameInput="input__search"
               />
               <Button 
                 id="serach-btn"
                 type="submit"
-                className="btn__icon btn__icon--pink"
+                classNameBtn="btn__icon btn__icon--pink"
                 icon="fas fa-times"
               />
             </div>
         </div>
           <Button 
             type="submit"
-            className="btn__icon"
+            classNameBtn="btn__icon"
             icon="fas fa-shopping-cart"
           />
       </nav>

@@ -15,7 +15,9 @@ export default function Home() {
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
         alt="Hero Banner"
       />
-      <NavFilter />
+      <NavFilter 
+        selectedFilterName="Coleção nova"
+      />
       <CardList>
         <Card />
         <Card />
