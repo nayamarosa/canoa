@@ -20,14 +20,16 @@ export default function Card() {
         <ProductInfo
           productName="Nome da Roupa"
           oldPriceText="De"
-          oldPriceValue="R$ 200"
-          priceValue="R$ 100"
-          
-          //Button
-          type="submit"
-          classNameBtn="btn__primary btn__primary-buy"
-          text="Comprar"
+          oldPriceValue="R$ 200,00"
+          priceValue="R$ 100,00"
         />
+        <div className="btn--center btn--card">
+          <Button 
+            type="submit"
+            classNameBtn="btn__primary btn__primary-buy"
+            text="Comprar"
+          />
+        </div>
       </a>
     </li>
   )
