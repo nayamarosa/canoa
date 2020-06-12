@@ -1,7 +1,6 @@
 .search {
   &__input {
-    // width: 0;
-    width: 100%;
+    width: 0;
     display: flex;
     position: absolute;
     overflow: hidden;
@@ -14,8 +13,10 @@
     }
   }
   &__list {
+    width: 0;
     padding-top: 20px;
     position: absolute;
+    overflow: hidden;
     top: 150px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -25,6 +26,9 @@
       letter-spacing: 0.5px;
       font-size: 12px;
       font-weight: 400;
+    }
+    &--open {
+      width: 100%;
     }
   }
   &__item {
