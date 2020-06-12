@@ -14,30 +14,41 @@
   }
   &__list {
     width: 0;
-    padding-top: 20px;
+    padding-top: 5px;
     position: absolute;
     overflow: hidden;
-    top: 150px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.3s all;
+    top: 60px;
+    right: 0;
+    transition: 0.5s all;
     background-color: #F7F2F3;
-    & p {
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.5px;
-      font-size: 12px;
-      font-weight: 400;
-    }
+    z-index: 1;
     &--open {
-      width: 90%;
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+  }
+  &__title {
+    width: 0;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+    font-weight: 400;
+    &--open {
+      width: 100%;
     }
   }
   &__item {
+    width: 0;
+    overflow: hidden;
     padding: 10px 0;
     border-bottom: 2px solid #D88A95;
     & a {
       display: flex;
       align-items: flex-end;
+    }
+    &--open {
+      width: 100%;
     }
   }
 }

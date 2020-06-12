@@ -11,22 +11,33 @@ import Search from '../Search';
 import SearchList from '../../containers/SearchList';
 
 const Header = (props) => {
-  const [openSearch, setOpenSearch] = useState(false);
+  const [openInputSearch, setOpenInputSearch] = useState(false);
+  const [inputSearch, setInputSearch] = useState('');
+  const [listSearch, setListSearch] = useState({});
 
-  const handleOpenSearch = (state) => {
+  const handleOpenInputSearch = (state) => {
     let showInput = document.querySelector('.search__input');
+    let showList = document.querySelector('.search__list');
     
     if (!state) {
       let inputSearch = document.querySelector('.input__search');
       showInput.classList.add('search__input--open');
+      showList.classList.add('search__list--open');
       inputSearch.focus();
-      console.log('adicionar');
-      console.log(openSearch);
     } else if (state){
       showInput.classList.remove('search__input--open');
-      console.log('remover');
-      console.log(openSearch);
+      showList.classList.remove('search__list--open');
     }
+  }
+  
+  const handleListSearch = (e) => {
+    let inputValue = e.target.value;
+    setInputSearch(inputValue)
+    
+    let filterInput = listSearch.filter(product =>  
+      product.name.toLowerCase().includes(inputValue.toLowerCase())
+    )
+    setListSearch(filterInput)
   }
 
   return (
@@ -41,7 +52,7 @@ const Header = (props) => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
-              click={() => handleOpenSearch(setOpenSearch(!openSearch))}
+              click={() => handleOpenInputSearch(setOpenInputSearch(!openInputSearch))}
             />
           </div>
           <div className="search__input">
@@ -50,13 +61,14 @@ const Header = (props) => {
               type="text"
               placeholder="o que você procura?"
               classNameInput="input__search"
+              change={(e) => handleListSearch(e)}
             />
             <Button 
               id="search-btn"
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-times"
-              click={() => handleOpenSearch(!setOpenSearch(openSearch))}
+              click={() => handleOpenInputSearch(!setOpenInputSearch(openInputSearch))}
             />
           </div>
         </div>
