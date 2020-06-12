@@ -1,9 +1,12 @@
 import React from 'react';
 
 import './Header.scss';
+import '../Search/Search.scss';
 
 import Button from '../base/Button';
 import Input from '../base/Input'
+
+import Search from '../Search';
 
 export default function (props) {
   return (
@@ -20,25 +23,39 @@ export default function (props) {
               icon="fas fa-search"
             />
           </div>
-            <div id="search-class" className="header__search-click">
-              <Input 
-                type="text"
-                placeholder="o que você procura?"
-                classNameInput="input__search"
-              />
-              <Button 
-                id="serach-btn"
-                type="submit"
-                classNameBtn="btn__icon btn__icon--pink"
-                icon="fas fa-times"
-              />
-            </div>
+          <div className="search__input">
+            <Input 
+              classNameInputGroup="input__search-position"
+              type="text"
+              placeholder="o que você procura?"
+              classNameInput="input__search"
+            />
+            <Button 
+              id="serach-btn"
+              type="submit"
+              classNameBtn="btn__icon btn__icon--pink"
+              icon="fas fa-times"
+            />
+          </div>
         </div>
-          <Button 
-            type="submit"
-            classNameBtn="btn__icon"
-            icon="fas fa-shopping-cart"
-          />
+        <Button 
+          type="submit"
+          classNameBtn="btn__icon"
+          icon="fas fa-shopping-cart"
+        />
+        <Search 
+          classNameBanner="banner__product banner__product--search"
+          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
+          alt="Nome da roupa"
+          classNameDiscount="banner__product--search-discount"
+          percent= "50%"
+
+          classNamePriceGroup="product-info__price-group--search"
+          productName="Nome da Roupa"
+          oldPriceText="De"
+          oldPriceValue="R$ 200,00"
+          priceValue="R$ 100,00"
+        />
       </nav>
     </header>
     )

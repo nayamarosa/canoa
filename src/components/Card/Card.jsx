@@ -4,14 +4,15 @@ import './Card.scss';
 
 import Button from '../base/Button';
 import Banner from '../base/Banner';
-import ProductInfo from '../base/ProductInfo';
+
+import ProductInfo from '../ProductInfo';
 
 export default function Card() {
   return (
     <li className="card__item">
       <a href="/">
         <Banner
-          className="banner__product banner__product-card"
+          classNameBanner="banner__product banner__product--card"
           src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
           alt="Nome da roupa"
           classNameDiscount="banner__product--discount"

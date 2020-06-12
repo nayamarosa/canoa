@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Banner 
-        className="banner__hero"
+        classNameBanner="banner__hero"
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
         alt="Hero Banner"
       />
