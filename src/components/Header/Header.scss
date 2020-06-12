@@ -23,23 +23,4 @@
       font-weight: 300;
     }
   }
-
-  &__search {
-    &-click {
-      width: 0;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      position: absolute;
-      overflow: hidden;
-      right: 0;
-      top: 0;
-      background-color: #F7F2F3;
-      transition: 0.3s all;
-
-      &--open {
-        width: 100%;
-      }
-    }
-  }
 }

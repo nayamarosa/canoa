@@ -2,9 +2,9 @@ import React from 'react';
 
 import Button from '../../components/base/Button';
 import Banner from '../../components/base/Banner';
-import ProductInfo from '../../components/base/ProductInfo';
 
 import NavFilter from '../../components/NavFilter';
+import ProductInfo from '../../components/ProductInfo';
 import ProductSize from '../../components/ProductSize';
 
 import Product from '../ProductGroup';
@@ -15,7 +15,7 @@ function App() {
     <NavFilter />
     <Product>
       <Banner
-        className="banner__product"
+        classNameBanner="banner__product"
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
         alt="Nome da roupa"
         classNameDiscount="banner__product--discount banner__product--discount-bigger"

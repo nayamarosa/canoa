@@ -40,6 +40,7 @@ export default function ProductSize(props) {
           value="M"
         />
         <Input 
+          classNameInputGroup="input__size-position"
           classNameLabel="input__size-label"
           label="G"
 

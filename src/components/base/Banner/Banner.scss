@@ -33,8 +33,29 @@
         }
       }
     }
-    &-card {
+    &--card {
       width: 100%;
+    }
+    &--search {
+      width: 30%;
+      border-bottom: 0;
+      &-discount {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: -70px;
+        width: 60px;
+        height: 30px;
+        background-color: #3C3C3C;
+        & span {
+          margin: 0 2px;
+          font-size: 10px;
+          font-weight: 500;
+          color: #FCFCFC;
+        }
+      }
     }
   }
 }
