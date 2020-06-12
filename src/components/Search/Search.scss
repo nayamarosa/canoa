@@ -7,7 +7,7 @@
     right: 0;
     bottom: 0;
     background-color: #F7F2F3;
-    transition: 0.3s all;
+    transition: 0.5s all;
     &--open {
       width: 100%;
     }
@@ -20,6 +20,7 @@
     top: 150px;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.3s all;
     background-color: #F7F2F3;
     & p {
       font-family: 'Oswald', sans-serif;
@@ -28,7 +29,7 @@
       font-weight: 400;
     }
     &--open {
-      width: 100%;
+      width: 90%;
     }
   }
   &__item {
