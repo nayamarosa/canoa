@@ -7,13 +7,13 @@ import ProductInfo from '../../components/base/ProductInfo';
 import NavFilter from '../../components/NavFilter';
 import ProductSize from '../../components/ProductSize';
 
-import Product from '../ProductGroup';
+import ProductGroup from '../../containers/ProductGroup';
 
 function App() {
   return (
     <>
     <NavFilter />
-    <Product>
+    <ProductGroup>
       <Banner
         className="banner__product"
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
@@ -37,7 +37,7 @@ function App() {
         classNameInput="input__size"
         type="radio"
       />
-    </Product>
+    </ProductGroup>
     <Button 
       type="submit"
       classNameBtn="btn__secondary"
