@@ -12,55 +12,5 @@
     background-color: #FFFFFF;
     overflow: hidden;
     box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
-    &-image-group {
-      width: 100%;
-      position: relative;
-      border-bottom: 2px solid #D88A95;
-      &--discount {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        background-color: #3C3C3C;
-        & span {
-          font-size: 12px;
-          font-weight: 600;
-          color: #FCFCFC;
-        }
-      }
-    }
-    &-text-group {
-      padding: 10px 10px 15px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 14px;
-      & h4 {
-        font-size: 14px;
-        font-weight: 400;
-      }
-      &-align {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-      }
-      &-price {
-        margin-top: 10px;
-        & p {
-          font-size: 10px;
-          font-weight: 300;
-        }
-        &--old {
-          text-decoration: line-through;
-        }
-        &--new {
-          font-weight: 400;
-          font-size: 14px;
-        }
-      }
-    }
   }
 }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 
 import Header from '../../components/Header';
+
 // import Card from '../../components/Card';
 import HeroBanner from '../../components/base/HeroBanner';
 import CardList from '../CardsList';
@@ -30,7 +31,8 @@ function App() {
         <Card /> */}
       </CardList>
     </>
-  );
-}
-
-export default App;
+    );
+  }
+  
+  export default App;
+  
