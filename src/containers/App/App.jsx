@@ -7,7 +7,7 @@ import NavFilter from '../../components/NavFilter';
 
 
 // import Card from '../../components/Card';
-import HeroBanner from '../../components/base/HeroBanner';
+import Banner from '../../components/base/Banner';
 import CardList from '../CardsList';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Header />
-      <HeroBanner 
+      <Banner 
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
         alt="Hero Banner"
       />
