@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './Card.scss';
 
@@ -7,9 +7,40 @@ import Banner from '../base/Banner';
 
 import ProductInfo from '../ProductInfo';
 
-export default function Card() {
+export default function Card({product}) {
   return (
-    <li className="card__item">
+  <>
+  <li className="card__item">
+      <a href="/">
+        <div className="card__item-image-group">
+          <img src={product.image} alt={product.name}/>
+          <div className="card__item-image-group--discount">
+          <span>{product.discount_percentage}</span>
+          <span>OFF</span>
+          </div>
+        </div>
+        <div className="card__item-text-group">
+          <h4>{product.name}</h4>
+          <div className="card__item-text-group-align">
+            <div className="card__item-text-group-price">
+              <p>
+                De <span className="card__item-text-group-price--old">{product.regular_price}</span>
+              </p>
+              <p>
+                Por <span className="card__item-text-group-price--new">{product.actual_price}</span>
+              </p>
+            </div>
+            <Button 
+              type="submit"
+              className="btn__primary btn__primary-buy"
+              text="Comprar"
+            />
+          </div>
+        </div>
+      </a>
+    </li>
+  
+    {/* <li className="card__item">
       <a href="/">
         <Banner
           classNameBanner="banner__product banner__product--card"
@@ -32,6 +63,7 @@ export default function Card() {
           />
         </div>
       </a>
-    </li>
+    </li> */}
+  </>
   )
 }
