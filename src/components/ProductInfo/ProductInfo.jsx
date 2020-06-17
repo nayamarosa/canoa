@@ -2,7 +2,7 @@ import React from 'react';
 
 import './ProductInfo.scss';
 
-export default function ProductInfo(props) {
+const ProductInfo = (props) => {
   return (
     <>
     <div className={`product-info__price-group ${props.classNamePriceGroup}`}>
@@ -22,3 +22,5 @@ export default function ProductInfo(props) {
     </>
     )
   }
+
+  export default ProductInfo

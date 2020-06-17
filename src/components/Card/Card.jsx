@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './Card.scss';
 
@@ -7,53 +7,31 @@ import Banner from '../base/Banner';
 
 import ProductInfo from '../ProductInfo';
 
-export default function Card({product}) {
+const Card = ({product}) => {
+  // const hideSamePrice = (regularPrice, actualPrice) => {
+  //   if(regularPrice === actualPrice) {
+  //     console.log('same');
+  //     let teste = document.querySelector('.product-info__price');
+  //     teste.style.display = "none";
+  //     console.log(teste);
+  //   }
+  // }
+
   return (
-  <>
-  <li className="card__item">
-      <a href="/">
-        <div className="card__item-image-group">
-          <img src={product.image} alt={product.name}/>
-          <div className="card__item-image-group--discount">
-          <span>{product.discount_percentage}</span>
-          <span>OFF</span>
-          </div>
-        </div>
-        <div className="card__item-text-group">
-          <h4>{product.name}</h4>
-          <div className="card__item-text-group-align">
-            <div className="card__item-text-group-price">
-              <p>
-                De <span className="card__item-text-group-price--old">{product.regular_price}</span>
-              </p>
-              <p>
-                Por <span className="card__item-text-group-price--new">{product.actual_price}</span>
-              </p>
-            </div>
-            <Button 
-              type="submit"
-              className="btn__primary btn__primary-buy"
-              text="Comprar"
-            />
-          </div>
-        </div>
-      </a>
-    </li>
-  
-    {/* <li className="card__item">
-      <a href="/">
+  <>  
+    <li className="card__item">
         <Banner
           classNameBanner="banner__product banner__product--card"
-          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
-          alt="Nome da roupa"
+          src={product.image}
+          alt={product.name}
           classNameDiscount="banner__product--discount"
-          percent= "50%"
+          percent={product.discount_percentage}
         />
         <ProductInfo
-          productName="Nome da Roupa"
+          productName={product.name}
           oldPriceText="De"
-          oldPriceValue="R$ 200,00"
-          priceValue="R$ 100,00"
+          oldPriceValue={product.regular_price}
+          priceValue={product.actual_price}
         />
         <div className="btn--center btn--card">
           <Button 
@@ -62,8 +40,9 @@ export default function Card({product}) {
             text="Comprar"
           />
         </div>
-      </a>
-    </li> */}
+    </li>
   </>
   )
 }
+
+export default Card;
