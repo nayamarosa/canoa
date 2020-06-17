@@ -13,15 +13,18 @@
       justify-content: center;
       align-items: center;
       position: absolute;
-      bottom: 0;
-      left: 0;
+      top: 0;
+      right: 0;
       width: 40px;
       height: 40px;
-      background-color: #3C3C3C;
+      background-color: #425C8D;
       & span {
         font-size: 12px;
         font-weight: 600;
         color: #FCFCFC;
+        &:last-child {
+          font-size: 10px;
+        }
       }
       &-bigger {
         width: 60px;
@@ -30,6 +33,9 @@
           font-size: 16px;
           font-weight: 600;
           color: #FCFCFC;
+          &:last-child {
+            font-size: 12px;
+          }
         }
       }
     }
