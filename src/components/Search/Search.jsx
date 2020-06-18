@@ -5,29 +5,29 @@ import './Search.scss';
 import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
-export default function Search(props) {
+const Search = ({product}) => {
   return (
     <>
-    <p className="search__title">Resultados da busca</p>
-
     <li className="search__item">
       <a href="/">
         <Banner 
           classNameBanner="banner__product banner__product--search"
-          src={props.src}
-          alt={props.alt}
+          src={product.image}
+          alt={product.name}
           classNameDiscount="banner__product--search-discount"
-          percent={props.percent}
+          percent={product.discount_percentage}
         />
         <ProductInfo 
           classNamePriceGroup="product-info__price-group--search"
-          productName={props.productName}
-          oldPriceText={props.oldPriceText}
-          oldPriceValue={props.oldPriceValue}
-          priceValue={props.priceValue}
+          productName={product.name}
+          oldPriceText="De"
+          oldPriceValue={product.regular_price}
+          priceValue={product.actual_price}
         />
       </a>
     </li>
     </>
   )
 }
+
+export default Search;
