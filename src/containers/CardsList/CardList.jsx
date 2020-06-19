@@ -7,10 +7,9 @@ import Card from '../../components/Card';
 const CardList = ({products}) => {
   return (
     <ul className="container card__list">
-      {products.map(product => <Card product={product} key={product.style} />)} 
+      {products.map(product => <Card product={product} key={product.code_color} />)} 
     </ul>
     )
   }
   
   export default CardList
-  

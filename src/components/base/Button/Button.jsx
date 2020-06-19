@@ -3,7 +3,11 @@ import React from 'react';
 import './Button.scss';
 
 export default function Button(props) {
-  return <button id={props.id} type={props.type} className={`btn ${props.classNameBtn}`} onClick={props.click}>
+  return <button 
+            id={props.id} 
+            type={props.type} 
+            className={`btn ${props.classNameBtn}`} 
+            onClick={props.click}>
             {props.text}
             <i className={props.icon}></i>
           </button>
