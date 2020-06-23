@@ -8,7 +8,7 @@ import './App.scss';
 const App = () => (
   <>
     <BrowserRouter>
-      {/* <Header /> */}
+      <Header />
       <Routes />
     </BrowserRouter>
   </>
