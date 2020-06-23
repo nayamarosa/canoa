@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../components/base/Button';
 import Banner from '../../components/base/Banner';
 
-import NavFilter from '../../components/NavFilter';
 import ProductInfo from '../../components/ProductInfo';
 import ProductSize from '../../components/ProductSize';
 
@@ -12,7 +11,6 @@ import ProductGroup from '../../containers/ProductGroup';
 function Product() {
   return (
     <>
-    <NavFilter />
     <ProductGroup>
       <Banner
         classNameBanner="banner__product"
