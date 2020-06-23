@@ -11,6 +11,9 @@ import Input from '../base/Input'
 import SearchList from '../../containers/SearchList';
 
 const Header = () => {
+  const [openInputSearch, setOpenInputSearch] = useState(false);
+  const [inputSearch, setInputSearch] = useState('');
+  const [listSearch, setListSearch] = useState([]);
 
   useEffect(() => {
     fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
