@@ -5,7 +5,7 @@
     position: absolute;
     overflow: hidden;
     right: 0;
-    bottom: 0;
+    // bottom: 0;
     background-color: #F7F2F3;
     transition: 0.5s all;
     &--open {
@@ -13,33 +13,34 @@
     }
   }
   &__list {
-    width: 0;
+    width: 100%;
+    height: calc(100% - 60px);
     padding-top: 5px;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
-    top: 60px;
-    right: 0;
+    top: 55px;
+    left: 100%;
     transition: 0.5s all;
-    background-color: #F7F2F3;
+    background-color: rgba(247, 242, 243, 0.9);
     z-index: 1;
-    &--open {
-      width: 100%;
-      height: calc(100vh - 60px);
+    &-title {
+      margin-left: 20px;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.5px;
+      font-size: 12px;
+      font-weight: 400;
     }
-  }
-  &__title {
-    width: 0;
-    overflow: hidden;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 0.5px;
-    font-size: 12px;
-    font-weight: 400;
     &--open {
-      width: 100%;
+      left: 0;
+      overflow-y: scroll;
+    }
+    &--body-hidden {
+      position: fixed;
     }
   }
   &__item {
-    width: 0;
+    width: 90%;
+    margin: 0 auto;
     overflow: hidden;
     padding: 10px 0;
     border-bottom: 2px solid #D88A95;
@@ -47,9 +48,10 @@
       display: flex;
       align-items: flex-end;
     }
-    &--open {
-      width: 100%;
-      overflow: visible;
-    }
+
+//    &--open {
+//      width: 100%;
+//      overflow: visible;
+//    }
   }
 }

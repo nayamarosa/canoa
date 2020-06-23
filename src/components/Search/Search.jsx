@@ -6,10 +6,9 @@ import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
 export default function Search({product}) {
+//const Search = ({product}) => {
   return (
     <>
-    <p className="search__title">Resultados da busca</p>
-
     <li className="search__item">
       <a href="/">
         <Banner 
@@ -31,3 +30,5 @@ export default function Search({product}) {
     </>
   )
 }
+
+//export default Search;

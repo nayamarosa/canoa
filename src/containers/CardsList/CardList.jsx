@@ -11,5 +11,5 @@ const CardList = ({products}) => {
     </ul>
     )
   }
-  
-  export default CardList
+
+export default CardList
