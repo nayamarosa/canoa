@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from '../../components/Header';
 
+import Routes from '../../routes';
 import './App.scss';
 
-import Header from '../../components/Header';
-import NavFilter from '../../components/NavFilter';
+const App = () => (
+  <>
+    <BrowserRouter>
+      <Header />
+      <Routes />
+    </BrowserRouter>
+  </>
+);
 
-import Banner from '../../components/base/Banner';
-import CardList from '../CardsList';
+export default App;
 
-function App() {
+<!-- function App() {
   const [products, setProducts] = useState([]);
   const [productsFilter, setProductsFilter] = useState([]);
 
@@ -36,5 +44,4 @@ function App() {
     );
   }
   
-  export default App;
-  
+  export default App; -->

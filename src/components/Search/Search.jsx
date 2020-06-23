@@ -5,7 +5,8 @@ import './Search.scss';
 import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
-const Search = ({product}) => {
+export default function Search({product}) {
+//const Search = ({product}) => {
   return (
     <>
     <li className="search__item">
@@ -30,4 +31,4 @@ const Search = ({product}) => {
   )
 }
 
-export default Search;
+//export default Search;

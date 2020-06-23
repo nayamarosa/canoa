@@ -5,7 +5,14 @@ import './Input.scss';
 export default function Input(props) {
   return (
     <div className={props.classNameInputGroup}>
-      <input className={props.classNameInput} type={props.type} id={props.id} name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.change}/>
+      <input 
+        className={props.classNameInput} 
+        type={props.type} 
+        id={props.id} 
+        name={props.name} 
+        value={props.value} 
+        placeholder={props.placeholder} 
+        onChange={props.handleChange}/>
       <label htmlFor={props.id} className={props.classNameLabel}>{props.label}</label>
     </div>
   ) 

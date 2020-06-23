@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -7,13 +8,20 @@ import '../Search/Search.scss';
 import Button from '../base/Button';
 import Input from '../base/Input'
 
-// import Search from '../Search';
 import SearchList from '../../containers/SearchList';
 
-const Header = ({products}) => {
-  const [openInputSearch, setOpenInputSearch] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [listSearch, setListSearch] = useState([]);
+const Header = () => {
+
+  useEffect(() => {
+    fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
+      .then((res) => res.json())
+      .then(data => setListSearch(data));
+  }, []);
+
+//const Header = ({products}) => {
+//  const [openInputSearch, setOpenInputSearch] = useState(false);
+//  const [inputValue, setInputValue] = useState('');
+//  const [listSearch, setListSearch] = useState([]);
   
   const handleOpenInputSearch = (state) => {
     let showInput = document.querySelector('.search__input');
@@ -36,24 +44,30 @@ const Header = ({products}) => {
 
   
   const handleListSearch = (e) => {
-    let inputTargetValue = e.target.value; 
-    setInputValue(inputTargetValue)   
+    let inputValue = e.target.value;
+    setInputSearch(inputValue)
+    
+    let filterInput = listSearch.filter(product =>  
+      product.name.toLowerCase()
+      .includes(inputSearch.toLowerCase())
+    )
+    setListSearch(filterInput) 
   }
 
-  useEffect(() => {    
-    let filterInput = products.filter((product) => 
-    product.name.toLowerCase().includes(inputValue.toLowerCase())
-    )
-    setListSearch(filterInput);
-  }, [inputValue, products])
+ // useEffect(() => {    
+ //   let filterInput = products.filter((product) => 
+ //   product.name.toLowerCase().includes(inputValue.toLowerCase())
+ //   )
+ //   setListSearch(filterInput);
+ // }, [inputValue, products])
 
   return (
     <header className="container header">
       <nav className="header__nav">
         <div className="header__nav-align">
-          <a href="/" className="header__logo">
-            <h1>Projeto Loja</h1>
-          </a>
+          <Link to="/" className="header__logo">
+              <h1>Projeto Loja</h1>
+          </Link>
           <div className="header__search">
             <Button 
               type="submit"
@@ -68,7 +82,7 @@ const Header = ({products}) => {
               type="text"
               placeholder="o que você procura?"
               classNameInput="input__search"
-              change={(e) => handleListSearch(e)}
+              handleChange={(e) => handleListSearch(e)}
             />
             <Button 
               id="search-btn"
@@ -84,7 +98,8 @@ const Header = ({products}) => {
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
         />
-        <SearchList products={listSearch}>
+        <SearchList listSearch={listSearch}>
+        {/* <SearchList products={listSearch}> */}
         </SearchList>
       </nav>
     </header>
