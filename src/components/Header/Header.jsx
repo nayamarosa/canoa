@@ -13,24 +13,26 @@ import SearchList from '../../containers/SearchList';
 const Header = () => {
   const [openInputSearch, setOpenInputSearch] = useState(false);
   const [inputSearch, setInputSearch] = useState('');
+  const [products, setProducts] = useState([]);
   const [listSearch, setListSearch] = useState([]);
 
   useEffect(() => {
-    fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
-      .then((res) => res.json())
-      .then(data => setListSearch(data));
+    async function fetchData() {
+      try {
+        await fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
+          .then((res) => res.json())
+          .then(data => setProducts(data));
+      } catch (e) {
+          console.error(e);
+      }
+  };
+  fetchData();
   }, []);
-
-//const Header = ({products}) => {
-//  const [openInputSearch, setOpenInputSearch] = useState(false);
-//  const [inputValue, setInputValue] = useState('');
-//  const [listSearch, setListSearch] = useState([]);
   
   const handleOpenInputSearch = (state) => {
     let showInput = document.querySelector('.search__input');
     let showList = document.querySelector('.search__list');
     let blockBody = document.querySelector('body');
-    
     
     if (!state) {
       let inputSearch = document.querySelector('.input__search');
@@ -44,25 +46,23 @@ const Header = () => {
       blockBody.classList.remove('search__list--body-hidden');
     }
   }
-
   
   const handleListSearch = (e) => {
     let inputValue = e.target.value;
     setInputSearch(inputValue)
     
-    let filterInput = listSearch.filter(product =>  
+    let filterInput = products.filter(product =>  
       product.name.toLowerCase()
       .includes(inputSearch.toLowerCase())
     )
     setListSearch(filterInput) 
   }
 
- // useEffect(() => {    
- //   let filterInput = products.filter((product) => 
- //   product.name.toLowerCase().includes(inputValue.toLowerCase())
- //   )
- //   setListSearch(filterInput);
- // }, [inputValue, products])
+ useEffect(() => { 
+  if (openInputSearch == true && inputSearch) {
+    setListSearch(listSearch)    
+  }
+ }, [inputSearch, listSearch])
 
   return (
     <header className="container header">
@@ -100,10 +100,8 @@ const Header = () => {
           type="submit"
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
-        />
-        <SearchList listSearch={listSearch}>
-        {/* <SearchList products={listSearch}> */}
-        </SearchList>
+        />        
+        <SearchList listSearch={listSearch} />
       </nav>
     </header>
     )
