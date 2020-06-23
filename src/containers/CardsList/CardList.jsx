@@ -12,5 +12,4 @@ const CardList = ({products}) => {
     )
   }
   
-  export default CardList
-  
+  export default CardList;
