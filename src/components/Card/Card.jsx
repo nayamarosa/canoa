@@ -8,15 +8,6 @@ import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
 const Card = ({product}) => {
-  // const hideSamePrice = (regularPrice, actualPrice) => {
-  //   if(regularPrice === actualPrice) {
-  //     console.log('same');
-  //     let teste = document.querySelector('.product-info__price');
-  //     teste.style.display = "none";
-  //     console.log(teste);
-  //   }
-  // }
-
   return (
   <>  
     <li className="card__item">

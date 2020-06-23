@@ -69,7 +69,7 @@ const Header = () => {
       <nav className="header__nav">
         <div className="header__nav-align">
           <Link to="/" className="header__logo">
-              <h1>Projeto Loja</h1>
+              <h1>CANOÁ</h1>
           </Link>
           <div className="header__search">
             <Button 

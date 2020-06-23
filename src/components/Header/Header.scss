@@ -19,9 +19,11 @@
 
   &__logo {
     & h1 {
-      font-family: 'Oswald', sans-serif;
-      font-size: 24px;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 30px;
       font-weight: 300;
+      letter-spacing: 5px;
+      color: #3C3C3C;
     }
   }
 }
