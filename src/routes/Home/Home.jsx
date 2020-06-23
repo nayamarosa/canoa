@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 import CardList from '../../containers/CardsList';
-// import Header from '../../components/Header';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -16,7 +15,6 @@ export default function Home() {
 
   return (
     <>
-     {/* <Header /> */}
       <Banner 
         classNameBanner="banner__hero"
         src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
