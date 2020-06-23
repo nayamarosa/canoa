@@ -6,7 +6,6 @@ import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
 export default function Search({product}) {
-//const Search = ({product}) => {
   return (
     <>
     <li className="search__item">

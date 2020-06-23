@@ -9,6 +9,7 @@ export default function Banner(props) {
       ? <img src={props.src} alt={props.alt}/> 
       : <img src='/placeholder_image.jpg' alt="imagem indisponível"/>
       }
+
       { props.percent === ""
       ? ''
       : <div className={props.classNameDiscount}>
