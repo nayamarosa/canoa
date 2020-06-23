@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -7,46 +8,66 @@ import '../Search/Search.scss';
 import Button from '../base/Button';
 import Input from '../base/Input'
 
-import Search from '../Search';
 import SearchList from '../../containers/SearchList';
 
-const Header = (props) => {
-  const [openInputSearch, setOpenInputSearch] = useState(false);
-  const [inputSearch, setInputSearch] = useState('');
-  const [listSearch, setListSearch] = useState({});
+const Header = () => {
 
+  useEffect(() => {
+    fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
+      .then((res) => res.json())
+      .then(data => setListSearch(data));
+  }, []);
+
+//const Header = ({products}) => {
+//  const [openInputSearch, setOpenInputSearch] = useState(false);
+//  const [inputValue, setInputValue] = useState('');
+//  const [listSearch, setListSearch] = useState([]);
+  
   const handleOpenInputSearch = (state) => {
     let showInput = document.querySelector('.search__input');
     let showList = document.querySelector('.search__list');
+    let blockBody = document.querySelector('body');
+    
     
     if (!state) {
       let inputSearch = document.querySelector('.input__search');
       showInput.classList.add('search__input--open');
       showList.classList.add('search__list--open');
+      blockBody.classList.add('search__list--body-hidden');
       inputSearch.focus();
     } else if (state){
       showInput.classList.remove('search__input--open');
       showList.classList.remove('search__list--open');
+      blockBody.classList.remove('search__list--body-hidden');
     }
   }
+
   
   const handleListSearch = (e) => {
     let inputValue = e.target.value;
     setInputSearch(inputValue)
     
     let filterInput = listSearch.filter(product =>  
-      product.name.toLowerCase().includes(inputValue.toLowerCase())
+      product.name.toLowerCase()
+      .includes(inputSearch.toLowerCase())
     )
-    setListSearch(filterInput)
+    setListSearch(filterInput) 
   }
+
+ // useEffect(() => {    
+ //   let filterInput = products.filter((product) => 
+ //   product.name.toLowerCase().includes(inputValue.toLowerCase())
+ //   )
+ //   setListSearch(filterInput);
+ // }, [inputValue, products])
 
   return (
     <header className="container header">
       <nav className="header__nav">
         <div className="header__nav-align">
-          <a href="/" className="header__logo">
-            <h1>Projeto Loja</h1>
-          </a>
+          <Link to="/" className="header__logo">
+              <h1>Projeto Loja</h1>
+          </Link>
           <div className="header__search">
             <Button 
               type="submit"
@@ -61,7 +82,7 @@ const Header = (props) => {
               type="text"
               placeholder="o que você procura?"
               classNameInput="input__search"
-              change={(e) => handleListSearch(e)}
+              handleChange={(e) => handleListSearch(e)}
             />
             <Button 
               id="search-btn"
@@ -77,17 +98,8 @@ const Header = (props) => {
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
         />
-        <SearchList>
-          <Search 
-            src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
-            alt="Nome da roupa"
-            percent= "50%"
-  
-            productName="Nome da Roupa"
-            oldPriceText="De"
-            oldPriceValue="R$ 200,00"
-            priceValue="R$ 100,00"
-          />
+        <SearchList listSearch={listSearch}>
+        {/* <SearchList products={listSearch}> */}
         </SearchList>
       </nav>
     </header>

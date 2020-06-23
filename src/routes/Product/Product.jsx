@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Button from '../../components/base/Button';
 import Banner from '../../components/base/Banner';
@@ -7,7 +7,7 @@ import NavFilter from '../../components/NavFilter';
 import ProductInfo from '../../components/ProductInfo';
 import ProductSize from '../../components/ProductSize';
 
-import Product from '../ProductGroup';
+import Product from '../../containers/ProductGroup';
 
 function App() {
   return (
