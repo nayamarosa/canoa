@@ -12,7 +12,6 @@ export default function ProductSize(props) {
         <Input 
           classNameLabel="input__size-label"
           label="PP"
-
           classNameInput={props.classNameInput}
           type={props.type}
           id="PP"

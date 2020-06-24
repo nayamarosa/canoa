@@ -59,7 +59,7 @@ const Header = () => {
   }
 
  useEffect(() => { 
-  if (openInputSearch == true && inputSearch) {
+  if (openInputSearch === true && inputSearch) {
     setListSearch(listSearch)    
   }
  }, [inputSearch, listSearch])
