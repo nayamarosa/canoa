@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import '../../components/Card/Card.scss';
-
 import Card from '../../components/Card';
 
 const CardList = ({products}) => {

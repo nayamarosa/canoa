@@ -21,8 +21,7 @@ export default function Home() {
         alt="Hero Banner"
       />
       <NavFilter />
-      <CardList products={products}>
-      </CardList>
+      <CardList products={products} />
     </>
   );
 }
