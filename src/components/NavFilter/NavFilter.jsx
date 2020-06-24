@@ -22,9 +22,10 @@ const NavFilter = ({products}) => {
     let filterText = document.querySelector('.nav-filter__name');
     filterText.innerHTML = activeFilterText
 
+    
     activeFilter.classList.add("nav-filter__item--active");
     setActive(e.target);
-
+    
     if (active !== e.target) {
       setActive(e.target);
     }
@@ -39,7 +40,7 @@ const NavFilter = ({products}) => {
       <ul className="nav-filter__list">
         <li className="nav-filter__item">
           <a href="/" onClick={(e) => handleActiveFilter(e)}>
-            <h2 className="nav-filter__item--active">Coleção nova</h2>
+            <h2>Coleção nova</h2>
           </a>
         </li>
         <li className="nav-filter__item">

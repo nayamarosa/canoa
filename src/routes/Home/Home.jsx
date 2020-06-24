@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
-import CardList from '../../containers/CardsList';
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -21,7 +20,6 @@ export default function Home() {
         alt="Hero Banner"
       />
       <NavFilter products={products} />
-      {/* <CardList products={products} /> */}
     </>
   );
 }

@@ -19,6 +19,7 @@
     &--active {
       position: relative;
       color: #D88A95;
+      pointer-events: none;
       &:after {
         content: '';
         width: 110px;
