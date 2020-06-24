@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './NavFilter.scss';
 
-const NavFilter = (props) => {
+import CardList from '../../containers/CardsList'
+
+const NavFilter = ({products}) => {
   const [active, setActive] = useState(null);
+  const [productSaleList, setproductSaleList] = useState([]);
+
+  useEffect(() => {
+    let saleList = products.filter(product =>  
+      product.on_sale
+    )
+    setproductSaleList(saleList)
+  }, [products])
 
   const handleActiveFilter = (e) => {
     e.preventDefault();
@@ -29,7 +39,7 @@ const NavFilter = (props) => {
       <ul className="nav-filter__list">
         <li className="nav-filter__item">
           <a href="/" onClick={(e) => handleActiveFilter(e)}>
-            <h2>Coleção nova</h2>
+            <h2 className="nav-filter__item--active">Coleção nova</h2>
           </a>
         </li>
         <li className="nav-filter__item">
@@ -39,7 +49,12 @@ const NavFilter = (props) => {
         </li>
       </ul>
     </nav>
-    <h3 className="container nav-filter__name">&ensp;</h3>
+    <h3 className="container nav-filter__name">Coleção nova</h3>
+    { 
+    active !== null && active.textContent === "Promoções"
+    ? <CardList products={productSaleList}/> 
+    : <CardList products={products}/>
+    }
     </>
   )
 }
