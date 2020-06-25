@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../../components/Header';
-
 import Routes from '../../routes';
+import { ProductsProvider } from '../context';
 import './App.scss';
 
 const App = () => (
   <>
-    <BrowserRouter>
-      <Header />
-      <Routes />
-    </BrowserRouter>
+    <ProductsProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
+    </ProductsProvider>
   </>
 );
 

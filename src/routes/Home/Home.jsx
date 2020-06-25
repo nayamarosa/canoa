@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
+
+import { ProductsContext } from '../../containers/context'
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 import CardList from '../../containers/CardsList';
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
-      .then((res) => res.json())
-      .then(data => setProducts(data));
-  }, []);
+  const products = useContext(ProductsContext)
 
   return (
     <>
