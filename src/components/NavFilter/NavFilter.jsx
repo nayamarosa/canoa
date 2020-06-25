@@ -5,7 +5,7 @@ import './NavFilter.scss';
 import CardList from '../../containers/CardsList'
 
 const NavFilter = ({products}) => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState('');
   const [productSaleList, setproductSaleList] = useState([]);
 
   useEffect(() => {
@@ -21,17 +21,10 @@ const NavFilter = ({products}) => {
     let activeFilterText = activeFilter.textContent;
     let filterText = document.querySelector('.nav-filter__name');
     filterText.innerHTML = activeFilterText
-
     
-    activeFilter.classList.add("nav-filter__item--active");
-    setActive(e.target);
-    
-    if (active !== e.target) {
-      setActive(e.target);
-    }
-    if (active) {
-      active.classList.remove("nav-filter__item--active");
-    }
+    console.log(activeFilterText)
+    setActive(activeFilterText);
+    return active;
   }
 
   return (
@@ -40,19 +33,19 @@ const NavFilter = ({products}) => {
       <ul className="nav-filter__list">
         <li className="nav-filter__item">
           <a href="/" onClick={(e) => handleActiveFilter(e)}>
-            <h2>Coleção nova</h2>
+            <h2 className={'nav-filter__item--active' && active === 'Promoções' ? '' : 'nav-filter__item--active'}>Coleção nova</h2>
           </a>
         </li>
         <li className="nav-filter__item">
           <a href="/" onClick={(e) => handleActiveFilter(e)}>
-            <h2>Promoções</h2>
+            <h2 className={active === 'Promoções' ? 'nav-filter__item--active' : ''}>Promoções</h2>
           </a>
         </li>
       </ul>
     </nav>
     <h3 className="container nav-filter__name">Coleção nova</h3>
     { 
-    active !== null && active.textContent === "Promoções"
+    active !== '' && active === 'Promoções'
     ? <CardList products={productSaleList}/> 
     : <CardList products={products}/>
     }
