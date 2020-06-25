@@ -43,7 +43,7 @@
       width: 100%;
     }
     &--search {
-      width: 30%;
+      width: 25%;
       border-bottom: 0;
       &-discount {
         display: flex;
@@ -54,12 +54,15 @@
         right: -70px;
         width: 60px;
         height: 30px;
-        background-color: #3C3C3C;
+        background-color: #425C8D;
         & span {
           margin: 0 2px;
-          font-size: 10px;
-          font-weight: 500;
+          font-size: 14px;
+          font-weight: 400;
           color: #FCFCFC;
+          &:last-child {
+            font-size: 10px;
+          }
         }
       }
     }

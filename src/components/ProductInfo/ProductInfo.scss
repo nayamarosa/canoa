@@ -9,7 +9,9 @@
       padding: 10px 10px 15px;
       font-size: 14px;
       & h4 {
-        min-height: 34px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         font-size: 14px;
         font-weight: 500;
       }
@@ -26,7 +28,10 @@
         }
       }
       &--search {
-        padding: 10px 10px 0;
+        padding: 20px 10px 0;
+        & div {
+          min-height: auto;
+        }
       }
     }
     & p {

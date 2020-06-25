@@ -1,7 +1,11 @@
 .input {
   &__search {
+    font-family: 'Barlow Semi Condensed', sans-serif;
     &-position {
       width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
     }
     padding: 5px 10px;
     color: #3C3C3C;
