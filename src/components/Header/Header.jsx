@@ -58,11 +58,11 @@ const Header = () => {
     setListSearch(filterInput) 
   }
 
- useEffect(() => { 
-  if (openInputSearch === true && inputSearch) {
-    setListSearch(listSearch)    
-  }
- }, [inputSearch, listSearch])
+  useEffect(() => { 
+    if (openInputSearch === true && inputSearch) {
+      setListSearch(listSearch)    
+    }
+  }, [inputSearch, listSearch])
 
   return (
     <header className="container header">
