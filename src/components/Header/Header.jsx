@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 
+import { ProductsContext } from '../../containers/context'
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -11,58 +12,41 @@ import Input from '../base/Input'
 import SearchList from '../../containers/SearchList';
 
 const Header = () => {
-  const [openInputSearch, setOpenInputSearch] = useState(false);
-  const [inputSearch, setInputSearch] = useState('');
-  const [products, setProducts] = useState([]);
-  const [listSearch, setListSearch] = useState([]);
+  const products = useContext(ProductsContext)
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        await fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog')
-          .then((res) => res.json())
-          .then(data => setProducts(data));
-      } catch (e) {
-          console.error(e);
-      }
-  };
-  fetchData();
-  }, []);
-  
+  const [openInputSearch, setOpenInputSearch] = useState(false)
+  const [inputValue, setInputValue] = useState('')
+  const [listSearch, setListSearch] = useState([])
+
   const handleOpenInputSearch = (state) => {
-    let showInput = document.querySelector('.search__input');
-    let showList = document.querySelector('.search__list');
-    let blockBody = document.querySelector('body');
-    
+    const showInput = document.querySelector('.search__input')
+    const showList = document.querySelector('.search__list')
+    const blockBody = document.querySelector('body')
+
     if (!state) {
-      let inputSearch = document.querySelector('.input__search');
-      showInput.classList.add('search__input--open');
-      showList.classList.add('search__list--open');
-      blockBody.classList.add('search__list--body-hidden');
-      inputSearch.focus();
-    } else if (state){
-      showInput.classList.remove('search__input--open');
-      showList.classList.remove('search__list--open');
-      blockBody.classList.remove('search__list--body-hidden');
+      const inputSearch = document.querySelector('.input__search')
+      showInput.classList.add('search__input--open')
+      showList.classList.add('search__list--open')
+      blockBody.classList.add('search__list--body-hidden')
+      inputSearch.focus()
+    } else if (state) {
+      showInput.classList.remove('search__input--open')
+      showList.classList.remove('search__list--open')
+      blockBody.classList.remove('search__list--body-hidden')
     }
   }
-  
+
   const handleListSearch = (e) => {
-    let inputValue = e.target.value;
-    setInputSearch(inputValue)
-    
-    let filterInput = products.filter(product =>  
-      product.name.toLowerCase()
-      .includes(inputSearch.toLowerCase())
-    )
-    setListSearch(filterInput) 
+    const inputTargetValue = e.target.value
+    setInputValue(inputTargetValue)
   }
 
- useEffect(() => { 
-  if (openInputSearch === true && inputSearch) {
-    setListSearch(listSearch)    
-  }
- }, [inputSearch, listSearch])
+  useEffect(() => {
+    const filterInput = products.filter((product) =>
+      product.name.toLowerCase().includes(inputValue.toLowerCase())
+    )
+    setListSearch(filterInput)
+  }, [inputValue, products])
 
   return (
     <header className="container header">
