@@ -22,9 +22,7 @@ const NavFilter = ({products}) => {
     let filterText = document.querySelector('.nav-filter__name');
     filterText.innerHTML = activeFilterText
     
-    console.log(activeFilterText)
     setActive(activeFilterText);
-    return active;
   }
 
   return (

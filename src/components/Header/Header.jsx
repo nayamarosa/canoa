@@ -84,8 +84,8 @@ const Header = () => {
           type="submit"
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
-        />        
-        <SearchList listSearch={listSearch} />
+        />       
+        <SearchList inputValue={inputValue} listSearch={listSearch} />
       </nav>
     </header>
     )
