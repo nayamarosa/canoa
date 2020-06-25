@@ -26,7 +26,13 @@
         }
       }
       &--search {
-        padding: 10px 10px 0;
+        padding: 20px 10px 0;
+        & h4 {
+          min-height: auto;
+        }
+        & div {
+          min-height: auto;
+        }
       }
     }
     & p {
