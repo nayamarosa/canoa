@@ -23,8 +23,8 @@ const Header = () => {
     const showList = document.querySelector('.search__list')
     const blockBody = document.querySelector('body')
 
+    const inputSearch = document.querySelector('.input__search')
     if (!state) {
-      const inputSearch = document.querySelector('.input__search')
       showInput.classList.add('search__input--open')
       showList.classList.add('search__list--open')
       blockBody.classList.add('search__list--body-hidden')
@@ -33,6 +33,8 @@ const Header = () => {
       showInput.classList.remove('search__input--open')
       showList.classList.remove('search__list--open')
       blockBody.classList.remove('search__list--body-hidden')
+      inputSearch.value = '';
+      setListSearch([])
     }
   }
 
