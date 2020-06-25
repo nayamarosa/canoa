@@ -24,9 +24,12 @@
     background-color: rgba(247, 242, 243, 0.9);
     z-index: 1;
     &-title {
-      margin-bottom: 5px;
+      padding-bottom: 5px;
       font-size: 12px;
       font-weight: 400;
+    }
+    &-not-found {
+      font-weight: 700;
     }
     &--open {
       left: 0;

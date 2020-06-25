@@ -10,7 +10,7 @@ export default function SearchList({inputValue, listSearch}) {
         <p className="container search__list-title">Resultados da busca</p>
         {
         inputValue === '' || (inputValue !== '' && listSearch.length === 0)
-        ? <p>Digite o que você procura</p>
+        ? <p className="container search__list-not-found">Digite o que você procura</p>
         : listSearch.map(product => <Search product={product} key={product.code_color} />)
         }
       </ul>
