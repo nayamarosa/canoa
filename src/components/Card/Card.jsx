@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import './Card.scss';
 
 import Button from '../base/Button';
@@ -7,13 +7,7 @@ import Banner from '../base/Banner';
 
 import ProductInfo from '../ProductInfo';
 
-const Card = ({product}) => {
-  let history = useHistory();
-
-const handleClickBuy = (e) => {
-  history.push('/produto');
-}
-
+const Card = ({product, onClick}) => {
   return (
   <>  
     <li className="card__item">
@@ -35,7 +29,7 @@ const handleClickBuy = (e) => {
             type="button"
             classNameBtn="btn__primary btn__primary-buy"
             text="Comprar"
-            onClick={(e) => handleClickBuy(e)}
+            onClick={onClick}
           />
         </div>
     </li>
