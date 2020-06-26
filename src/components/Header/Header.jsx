@@ -62,7 +62,7 @@ const Header = () => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
-              click={() => handleOpenInputSearch(setOpenInputSearch(!openInputSearch))}
+              onClick={() => handleOpenInputSearch(setOpenInputSearch(!openInputSearch))}
             />
           </div>
           <div className="search__input">
@@ -78,7 +78,7 @@ const Header = () => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-times"
-              click={() => handleOpenInputSearch(!setOpenInputSearch(openInputSearch))}
+              onClick={() => handleOpenInputSearch(!setOpenInputSearch(openInputSearch))}
             />
           </div>
         </div>

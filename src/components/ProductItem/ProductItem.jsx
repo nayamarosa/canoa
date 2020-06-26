@@ -1,11 +1,17 @@
 import React from 'react';
-
+import { useHistory } from "react-router-dom";
 import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 import ProductSize from '../ProductSize';
 import Button from '../base/Button';
 
 export default function ProductItem({product}){
+  let history = useHistory();
+
+  const handleClickAddCart = (e) => {
+    history.push('/');
+  }
+
   return (
     <>
       <Banner
@@ -30,12 +36,14 @@ export default function ProductItem({product}){
       <ProductSize 
         classNameInput="input__size"
         type="radio"
+        productSizes={product.sizes}
       />
       <Button 
       type="submit"
       classNameBtn="btn__secondary"
       text="Adicionar ao carrinho"
       icon="fas fa-shopping-cart"
+      onClick={(e)=> handleClickAddCart(e)}
     />
     </>
   )
