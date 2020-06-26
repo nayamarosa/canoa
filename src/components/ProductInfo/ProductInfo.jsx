@@ -2,15 +2,18 @@ import React from 'react';
 
 import './ProductInfo.scss';
 
-export default function ProductInfo(props) {
+const ProductInfo = (props) => {
   return (
     <>
     <div className={`product-info__price-group ${props.classNamePriceGroup}`}>
       <h4>{props.productName}</h4>
         <div className={`product-info__price ${props.classNamePrice}`}>
-          <p>
+        { props.oldPriceValue === props.priceValue
+        ? ''
+        : <p>
             {props.oldPriceText} <span className={`product-info__price--old ${props.classNameOldPrice}`}>{props.oldPriceValue}</span>
           </p>
+        }
           <p>
             Por <span className={`product-info__price--new ${props.classNameNewPrice}`}>{props.priceValue}</span>
           </p>
@@ -22,3 +25,5 @@ export default function ProductInfo(props) {
     </>
     )
   }
+
+  export default ProductInfo

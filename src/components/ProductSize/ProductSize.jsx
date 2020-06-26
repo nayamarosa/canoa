@@ -9,57 +9,16 @@ export default function ProductSize(props) {
     <div className="product-size">
       <h5>Escolha o tamanho</h5>
       <form className="product-size__group">
-        <Input 
-          classNameLabel="input__size-label"
-          label="PP"
-
+        {props.productSizes.map(sizeInfo => <Input info={sizeInfo} key={sizeInfo.sku}
+          classNameInputGroup="input__size-position"
+          classNameLabel={sizeInfo.available === false ? "input__size-label-notAvailable" : "input__size-label"}          
+          label={sizeInfo.size}
           classNameInput={props.classNameInput}
           type={props.type}
-          id="PP"
+          id={sizeInfo.size}
           name="size"
-          value="PP"
-        />
-        <Input 
-          classNameLabel="input__size-label"
-          label="P"
-
-          classNameInput={props.classNameInput}
-          type={props.type}
-          id="P"
-          name="size"
-          value="P"
-        />
-        <Input
-          classNameLabel="input__size-label"
-          label="M"
-
-          classNameInput={props.classNameInput}
-          type={props.type}
-          id="M"
-          name="size"
-          value="M"
-        />
-        <Input 
-          classNameLabel="input__size-label"
-          label="G"
-
-          classNameInput={props.classNameInput}
-          type={props.type}
-          id="G"
-          name="size"
-          value="G"
-        />
-
-        <Input 
-          classNameLabel="input__size-label"
-          label="GG"
-
-          classNameInput={props.classNameInput}
-          type={props.type}
-          id="GG"
-          name="size"
-          value="GG"
-        />
+          value={sizeInfo.size}
+        />)}
       </form>
     </div>
   )

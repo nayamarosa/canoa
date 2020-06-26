@@ -1,14 +1,19 @@
 .product-info {
   &__price {
+    min-height: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     margin-top: 10px;
     &-group {
       padding: 10px 10px 15px;
-      font-family: 'Oswald', sans-serif;
-      letter-spacing: 0.5px;
       font-size: 14px;
       & h4 {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 500;
       }
       &-align {
         display: flex;
@@ -22,17 +27,23 @@
           font-weight: 400;
         }
       }
+      &--search {
+        padding: 20px 10px 0;
+        & div {
+          min-height: auto;
+        }
+      }
     }
     & p {
       font-size: 12px;
-      font-weight: 300;
+      font-weight: 400;
     }
     &--old {
       text-decoration: line-through;
     }
     &--new {
-      font-weight: 400;
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: 500;
     }
     &--bigger {
       & p {

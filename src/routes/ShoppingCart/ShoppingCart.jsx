@@ -2,14 +2,15 @@ import React, { useContext } from 'react';
 
 import { ProductsContext } from '../../containers/context';
 
-import ProductGroup from '../../containers/ProductGroup';
+// import ProductGroup from '../../containers/ProductGroup';
 
-export default function Product() {
+export default function ShoppingCart() {
   const products = useContext(ProductsContext);
 
   return (
     <>
-    <ProductGroup products={products} /> 
+    <div>Aqui vai o carrinho</div>
+    {/* <ProductGroup products={products} />  */}
     </>
     );
   }  

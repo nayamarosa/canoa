@@ -1,26 +1,19 @@
 import React from 'react';
-
+import { BrowserRouter } from 'react-router-dom';
+import Header from '../../components/Header';
+import Routes from '../../routes';
+import { ProductsProvider } from '../context';
 import './App.scss';
 
-import Header from '../../components/Header';
-// import CardsList from '../CardsList';
-// import Card from '../../components/Card'
+const App = () => (
+  <>
+    <ProductsProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
+    </ProductsProvider>
+  </>
+);
 
-import Product from '../../routes/Product';
-
-function App() {
-  return (
-    <>
-    <Header />
-
-    <Product/>
-    
-    {/* <CardsList>
-      <Card />
-    </CardsList> */}
-    </>
-    );
-  }
-  
-  export default App;
-  
+export default App;

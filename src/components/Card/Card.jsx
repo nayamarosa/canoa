@@ -1,36 +1,46 @@
 import React from 'react';
-
+import { useHistory } from "react-router-dom";
 import './Card.scss';
 
 import Button from '../base/Button';
 import Banner from '../base/Banner';
-import ProductInfo from '../base/ProductInfo';
 
-export default function Card() {
+import ProductInfo from '../ProductInfo';
+
+const Card = ({product}) => {
+  let history = useHistory();
+
+const handleClickBuy = (e) => {
+  history.push('/produto');
+}
+
   return (
+  <>  
     <li className="card__item">
-      <a href="/">
         <Banner
-          className="banner__product banner__product-card"
-          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
-          alt="Nome da roupa"
+          classNameBanner="banner__product banner__product--card"
+          src={product.image}
+          alt={product.name}
           classNameDiscount="banner__product--discount"
-          percent= "50%"
+          percent={product.discount_percentage}
         />
         <ProductInfo
-          productName="Nome da Roupa"
+          productName={product.name}
           oldPriceText="De"
-          oldPriceValue="R$ 200,00"
-          priceValue="R$ 100,00"
+          oldPriceValue={product.regular_price}
+          priceValue={product.actual_price}
         />
         <div className="btn--center btn--card">
           <Button 
-            type="submit"
+            type="button"
             classNameBtn="btn__primary btn__primary-buy"
             text="Comprar"
+            onClick={(e) => handleClickBuy(e)}
           />
         </div>
-      </a>
     </li>
+  </>
   )
 }
+
+export default Card;
