@@ -7,7 +7,7 @@ export default function Button(props) {
             id={props.id} 
             type={props.type} 
             className={`btn ${props.classNameBtn}`} 
-            onClick={props.click}>
+            onClick={props.onClick}>
             {props.text}
             <i className={props.icon}></i>
           </button>

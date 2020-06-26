@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { ProductsContext } from '../../containers/context'
+import { ProductsContext } from '../../containers/context';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
