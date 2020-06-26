@@ -1,8 +1,9 @@
 .banner {
   &__hero {
     width: 100%;
-    height: 160px;
-    overflow: hidden;
+    & span {
+      display: none;
+    }
   }
   &__product {
     position: relative;
