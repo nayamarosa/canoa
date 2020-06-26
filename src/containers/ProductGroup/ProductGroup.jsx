@@ -23,16 +23,16 @@ export default function ProductItem({productSelected}){
     <>
     {
       productDetail !== undefined
-      ? <section className="container">
+      ? <>
       <Banner
-        classNameBanner="banner__product"
+        classNameBanner="container banner__product"
         src={productDetail.image}
         alt={productDetail.name}
         classNameDiscount="banner__product--discount banner__product--discount-bigger"
         percent={productDetail.discount_percentage}
       />
       <ProductInfo
-        classNamePriceGroup="product-info__price-group--bigger"
+        classNamePriceGroup="container product-info__price-group--bigger"
         classNamePrice="product-info__price--bigger"
         classNameOldPrice="product-info__price--bigger--old"
         classNameNewPrice="product-info__price--bigger--new"
@@ -55,7 +55,7 @@ export default function ProductItem({productSelected}){
       icon="fas fa-shopping-cart"
       onClick={(e)=> handleClickAddCart(e)}
     />
-      </section>
+      </>
       : false
     }
     </>
