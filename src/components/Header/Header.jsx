@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { ProductsContext } from '../../containers/context'
 
@@ -11,7 +11,8 @@ import Input from '../base/Input'
 
 import SearchList from '../../containers/SearchList';
 
-const Header = () => {
+const Header = () => {  
+  let history = useHistory();
   const products = useContext(ProductsContext)
 
   const [openInputSearch, setOpenInputSearch] = useState(false)
@@ -50,6 +51,11 @@ const Header = () => {
     setListSearch(filterInput)
   }, [inputValue, products])
 
+  const handleClickToCart = (e) => {
+    history.push('/carrinho-de-compras');
+  }
+  
+
   return (
     <header className="container header">
       <nav className="header__nav">
@@ -86,6 +92,7 @@ const Header = () => {
           type="submit"
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
+          onClick={(e)=> handleClickToCart(e)}
         />       
         <SearchList inputValue={inputValue} listSearch={listSearch} />
       </nav>

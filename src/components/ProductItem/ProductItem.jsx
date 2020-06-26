@@ -9,7 +9,7 @@ export default function ProductItem({product}){
   let history = useHistory();
 
   const handleClickAddCart = (e) => {
-    history.push('/');
+    history.push('/carrinho-de-compras');
   }
 
   return (
