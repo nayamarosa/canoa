@@ -8,10 +8,11 @@ import Button from '../../components/base/Button';
 
 export default function ProductItem({productSelected}){
   const [productDetail, setProductDetail] = useState({})
-  let history = useHistory();
 
-  const handleClickAddCart = (e) => {
-    history.push('/carrinho-de-compras');
+  let history = useHistory();
+  const handleProductCode = (e, code) => {
+    e.preventDefault()
+    history.push(`/carrinho-de-compras/${code}`);
   }
 
   useEffect(() => {
@@ -53,7 +54,7 @@ export default function ProductItem({productSelected}){
       classNameBtn="btn__secondary"
       text="Adicionar ao carrinho"
       icon="fas fa-shopping-cart"
-      onClick={(e)=> handleClickAddCart(e)}
+      onClick={(e) => handleProductCode(e, productDetail.code_color)}
     />
       </>
       : false

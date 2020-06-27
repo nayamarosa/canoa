@@ -15,7 +15,7 @@ const Routes = () => (
       <Product />
     </Route>
 
-    <Route exact path="/carrinho-de-compras">
+    <Route path="/carrinho-de-compras/:productcode">
       <ShoppingCart />
     </Route>
   </Switch>
