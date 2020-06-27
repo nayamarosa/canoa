@@ -11,7 +11,7 @@ export default function ProductSize({props}) {
       <h5>Escolha o tamanho</h5>
       <form className="product-size__group">
         {
-        props !== undefined
+        props.productDetail !== undefined
         ? props.map(sizeInfo => <Input info={sizeInfo} key={sizeInfo.sku}
           classNameInputGroup="input__size-position"
           classNameLabel={sizeInfo.available === false ? "input__size-label-notAvailable" : "input__size-label"}          

@@ -16,12 +16,9 @@ export default function ProductItem({productSelected}){
 
   useEffect(() => {
     let productDetail = productSelected[0];
-    if(productDetail !== undefined) {
-      setProductDetail(productDetail)
-      // console.log(productDetail.sizes)
-    }
+    setProductDetail(productDetail)
   }, [productSelected])
-// console.log(productDetail.sizes)
+
   return (    
     <>
     {
