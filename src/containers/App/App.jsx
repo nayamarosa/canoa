@@ -2,17 +2,20 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Header from '../../components/Header';
 import Routes from '../../routes';
-import { ProductsProvider } from '../context';
 import './App.scss';
+
+
+import store from '../../store';
+import { Provider } from 'react-redux';
 
 const App = () => (
   <>
-    <ProductsProvider>
+    <Provider store={store}>
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <Routes />
       </BrowserRouter>
-    </ProductsProvider>
+    </Provider>
   </>
 );
 
