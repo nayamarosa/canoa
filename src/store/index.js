@@ -1,14 +1,19 @@
-// import { createStore, applyMiddleware } from 'redux';
-// import thunkMiddleware from 'redux-thunk';
-// import { createLogger } from 'redux-logger';
-// import rootReducer from './reducers';
+import { applyMiddleware, createStore, compose } from 'redux';
+import thunk from 'redux-thunk';
 
-// const loggerMiddleware = createLogger();
+import {fetchProducts} from '../actions/catalog'
 
-// export default function configureStore(preloadedState) {
-//   return createStore(
-//     rootReducer,
-//     preloadedState,
-//     applyMiddleware(thunkMiddleware, loggerMiddleware)
-//   )
-// }
+import rootReducer from '../reducers';
+const initialState = {};
+
+const middleware = [thunk];
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middleware)));
+
+console.log(store.getState())
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
+console.log(store.dispatch())
+unsubscribe()
+export default store;

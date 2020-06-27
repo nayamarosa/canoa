@@ -10,14 +10,14 @@ export default function Product() {
   const [filteredProductSelected, setFilteredProductSelected] = useState([]);
 
   let location = useLocation();
-
+  let pathname = location.pathname;
+  let productCode = pathname.split("/")[2]
   useEffect(() => {
-    let pathname = location.pathname;
-    let productCode = pathname.split("/")[2]
-
-    const filter = products.filter((product) => product.code_color.includes(productCode))
-    setFilteredProductSelected(filter)
+    const filter = products.filter((product) => product.code_color.includes(productCode));
+  
+    setFilteredProductSelected(filter)     
   }, [location.pathname, products])
+
 
   return (
     <ProductGroup productSelected={filteredProductSelected} /> 

@@ -2,10 +2,13 @@ import React, { useContext } from 'react';
 
 import { ProductsContext } from '../../containers/context';
 
+import { fetchProducts } from '../../actions/catalog';
+
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 
 export default function Home() {
+  console.log(fetchProducts)
   const products = useContext(ProductsContext)
 
   return (

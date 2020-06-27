@@ -16,10 +16,13 @@ export default function ProductItem({productSelected}){
 
   useEffect(() => {
     let productDetail = productSelected[0];
-    setProductDetail(productDetail)
+    if(productDetail !== undefined) {
+      setProductDetail(productDetail)
+      // console.log(productDetail.sizes)
+    }
   }, [productSelected])
-
-  return (
+// console.log(productDetail.sizes)
+  return (    
     <>
     {
       productDetail !== undefined
@@ -43,11 +46,20 @@ export default function ProductItem({productSelected}){
         installmentsText="Em até"
         installments={productDetail.installments}
       />
-      {/* <ProductSize 
+      {/* {
+        productDetail.sizes !== undefined
+        ?  <ProductSize 
         classNameInput="input__size"
         type="radio"
         productSizes={productDetail.sizes}
-      /> */}
+      />
+        :false 
+      } */}
+      <ProductSize 
+        classNameInput="input__size"
+        type="radio"
+        productSizes={productDetail.sizes}
+      />
       <Button 
       type="submit"
       classNameBtn="btn__secondary"
