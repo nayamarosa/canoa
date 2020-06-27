@@ -1,16 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import { ProductsContext } from '../../containers/context';
+import { fetchProducts } from '../../actions/catalog';
 
-// import ProductGroup from '../../containers/ProductGroup';
+import CartList from '../../containers/CartList';
 
 export default function ShoppingCart() {
-  // const products = useContext(ProductsContext);
+  const products = useSelector(store => store.catalog.products);
+
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProducts())
+}, [dispatch])
 
   return (
     <>
     <div>Aqui vai o carrinho</div>
-    {/* <ProductGroup products={products} />  */}
+    <CartList products={products}/> 
     </>
     );
   }  
