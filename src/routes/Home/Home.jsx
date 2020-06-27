@@ -17,11 +17,19 @@ export default function Home() {
 
   return (
     <>
-      <Banner 
-        classNameBanner="banner__hero"
-        src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
-        alt="Hero Banner"
+    {
+      window.screen.width < 800 
+      ? <Banner 
+      classNameBanner="banner__hero"
+      src="/main_banner-mobile.jpg"
+      alt="Hero Banner"
       />
+      : <Banner 
+      classNameBanner="banner__hero"
+      src="/main_banner-desktop.jpg"
+      alt="Hero Banner"
+      />
+    }
       <NavFilter products={products} />
     </>
   );

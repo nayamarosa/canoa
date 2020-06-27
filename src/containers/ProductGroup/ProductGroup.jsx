@@ -43,15 +43,6 @@ export default function ProductItem({productSelected}){
         installmentsText="Em até"
         installments={productDetail.installments}
       />
-      {/* {
-        productDetail.sizes !== undefined
-        ?  <ProductSize 
-        classNameInput="input__size"
-        type="radio"
-        productSizes={productDetail.sizes}
-      />
-        :false 
-      } */}
       <ProductSize 
         classNameInput="input__size"
         type="radio"
