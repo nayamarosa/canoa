@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { ProductsContext } from '../../containers/context';
 
@@ -6,10 +7,16 @@ import { fetchProducts } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
+import { useEffect } from 'react';
 
 export default function Home() {
-  console.log(fetchProducts)
+  const dispatch = useDispatch()
+  // console.log(fetchProducts.payload)
   const products = useContext(ProductsContext)
+
+  useEffect(() => {
+    console.log(dispatch(fetchProducts()))
+  })
 
   return (
     <>
