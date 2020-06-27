@@ -19,7 +19,7 @@ export default function ProductItem({productSelected}){
     setProductDetail(productDetail)
   }, [productSelected])
 
-  return (
+  return (    
     <>
     {
       productDetail !== undefined
@@ -43,11 +43,11 @@ export default function ProductItem({productSelected}){
         installmentsText="Em até"
         installments={productDetail.installments}
       />
-      {/* <ProductSize 
+      <ProductSize 
         classNameInput="input__size"
         type="radio"
         productSizes={productDetail.sizes}
-      /> */}
+      />
       <Button 
       type="submit"
       classNameBtn="btn__secondary"

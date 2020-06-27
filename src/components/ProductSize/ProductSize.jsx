@@ -5,11 +5,14 @@ import './ProductSize.scss';
 import Input from '../base/Input';
 
 export default function ProductSize(props) {
+  // console.log(props)
   return (
     <div className="product-size">
       <h5>Escolha o tamanho</h5>
       <form className="product-size__group">
-        {props.productSizes.map(sizeInfo => <Input info={sizeInfo} key={sizeInfo.sku}
+      {
+       props.productSizes !== undefined 
+       ? props.productSizes.map(sizeInfo => <Input info={sizeInfo} key={sizeInfo.sku}
           classNameInputGroup="input__size-position"
           classNameLabel={sizeInfo.available === false ? "input__size-label-notAvailable" : "input__size-label"}          
           label={sizeInfo.size}
@@ -18,7 +21,9 @@ export default function ProductSize(props) {
           id={sizeInfo.size}
           name="size"
           value={sizeInfo.size}
-        />)}
+        />)
+      : false
+      }
       </form>
     </div>
   )

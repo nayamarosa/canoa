@@ -1,7 +1,6 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom';
-
-import { ProductsContext } from '../../containers/context'
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -13,7 +12,7 @@ import SearchList from '../../containers/SearchList';
 
 const Header = () => {  
   let history = useHistory();
-  const products = useContext(ProductsContext)
+  const products = useSelector(store => store.catalog.products);
 
   const [openInputSearch, setOpenInputSearch] = useState(false)
   const [inputValue, setInputValue] = useState('')

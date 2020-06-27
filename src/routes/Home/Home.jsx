@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { ProductsContext } from '../../containers/context'
+import { fetchProducts } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 
 export default function Home() {
-  const products = useContext(ProductsContext)
+  
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [dispatch])
+
+  const products = useSelector(store => store.catalog.products);
 
   return (
     <>
