@@ -1,6 +1,7 @@
 export const OPEN_SEARCH = 'OPEN_SEARCH';
 export const CLOSE_SEARCH = 'CLOSE_SEARCH';
-export const DO_SEARCH = 'DO_SEARCH';
+export const INPUT_SEARCH = 'INPUT_SEARCH';
+export const LIST_SEARCH = 'LIST_SEARCH';
 
 export const openSearch = (opened) => dispatch => {
   const open = () => {
@@ -24,7 +25,7 @@ export const openSearch = (opened) => dispatch => {
   })
 };
 
-export const closeSearch = (closed) => dispatch => {
+export const closeSearch = (closed) => (dispatch) => {  
   const close = () => {
     const showInput = document.querySelector('.search__input')
     const showList = document.querySelector('.search__list')
@@ -41,7 +42,23 @@ export const closeSearch = (closed) => dispatch => {
   return dispatch({
     type: CLOSE_SEARCH,
     payload: {
-      closed: closed === true ? close() : false
+      closed: closed === true ? close() : false,
+      filteredList: []
+    }
+  })
+};
+
+export const inputSearch = (e, inputValue) => (dispatch, getState) => {
+  const products = getState().catalog.products;
+  const filterInput = products.filter((product) =>
+    product.name.toLowerCase().includes(inputValue.toLowerCase())
+  )
+  
+  return dispatch({
+    type: INPUT_SEARCH,
+    payload: {
+      inputValue: inputValue,
+      filteredList: inputValue !== '' ? filterInput : ''
     }
   })
 };

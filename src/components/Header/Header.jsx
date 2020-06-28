@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom';
 
-import { openSearch, closeSearch } from '../../actions/search';
+import { openSearch, closeSearch, inputSearch } from '../../actions/search';
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -14,23 +14,8 @@ import SearchList from '../../containers/SearchList';
 
 const Header = () => {  
   let history = useHistory();
-  const products = useSelector(store => store.catalog.products);
+  const productsFiltered = useSelector(store => store.search.filtered);
   const dispatch = useDispatch()
-
-  const [inputValue, setInputValue] = useState('')
-  const [listSearch, setListSearch] = useState([])
-
-  const handleListSearch = (e) => {
-    const inputTargetValue = e.target.value
-    setInputValue(inputTargetValue)
-  }
-
-  useEffect(() => {
-    const filterInput = products.filter((product) =>
-      product.name.toLowerCase().includes(inputValue.toLowerCase())
-    )
-    setListSearch(filterInput)
-  }, [inputValue, products])
 
   const handleClickToCart = (e) => {
     history.push('/carrinho-de-compras');
@@ -57,7 +42,7 @@ const Header = () => {
               type="text"
               placeholder="o que você procura?"
               classNameInput="input__search"
-              handleChange={(e) => handleListSearch(e)}
+              handleChange={(e) => dispatch(inputSearch(e, e.target.value))}
             />
             <Button 
               id="search-btn"
@@ -65,7 +50,6 @@ const Header = () => {
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-times"
               onClick={() => dispatch(closeSearch(true))}
-
             />
           </div>
         </div>
@@ -75,7 +59,7 @@ const Header = () => {
           icon="fas fa-shopping-cart"
           onClick={(e)=> handleClickToCart(e)}
         />       
-        <SearchList inputValue={inputValue} listSearch={listSearch} />
+        <SearchList listSearch={productsFiltered} />
       </nav>
     </header>
     )
