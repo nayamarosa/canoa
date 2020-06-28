@@ -1,7 +1,7 @@
 export const GET_CATALOG = 'GET_CATALOG';
 export const GET_CATALOG_ERROR = 'GET_CATALOG_ERROR';
 
-// export const ADD_PRODUCT_TO_CART = 'GET_CATALOG';
+export const ADD_PRODUCT_TO_CART = 'GET_CATALOG';
 // export const ADD_ITEMS = 'GET_CATALOG_ERROR';
 // export const SUBTRACT_ITEMS = 'GET_CATALOG';
 // export const REMOVE_PRODUCT_FROM_CART = 'GET_CATALOG_ERROR';
@@ -20,16 +20,16 @@ export const fetchCatalog = () => dispatch => {
   );
 };
 
-// export const addProductToCart = (product, size) => (dispatch) => {
-//   return dispatch({
-//     type: ADD_PRODUCT_TO_CART,
-//     payload: {
-//       product: product,
-//       size: size,
-//       quantity: 1
-//     }
-//   })
-// };
+export const addProductToCart = (product, size) => (dispatch) => {
+  return dispatch({
+    type: ADD_PRODUCT_TO_CART,
+    payload: {
+      product: product,
+      size: size,
+      quantity: 1
+    }
+  })
+};
 
 // export const addQuantity = (id) => (dispatch) => {
 //   return dispatch({

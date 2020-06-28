@@ -54,7 +54,6 @@ const Header = () => {
     history.push('/carrinho-de-compras');
   }
   
-
   return (
     <header className="container header">
       <nav className="header__nav">

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, connect } from 'react-redux';
 
 import { fetchCatalog } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 
-export default function Home() {
+const Home = () => {
   
   const dispatch = useDispatch()
   useEffect(() => {
@@ -34,3 +34,13 @@ export default function Home() {
     </>
   );
 }
+
+const mapStateToProps = (state)=>{
+  return {
+      products: state.products
+        }
+  }
+
+
+
+export default connect(mapStateToProps)(Home)
