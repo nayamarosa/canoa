@@ -5,11 +5,11 @@ import './Search.scss';
 import Banner from '../base/Banner';
 import ProductInfo from '../ProductInfo';
 
-export default function Search({product}) {
+export default function Search({product, onClick}) {
   return (
     <>
     <li className="search__item">
-      <a href="/">
+      <a href='/' onClick={onClick}>
         <Banner 
           classNameBanner="banner__product banner__product--search"
           src={product.image}

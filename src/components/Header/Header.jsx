@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom';
+
+import { openSearch, closeSearch } from '../../actions/search';
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -13,30 +15,10 @@ import SearchList from '../../containers/SearchList';
 const Header = () => {  
   let history = useHistory();
   const products = useSelector(store => store.catalog.products);
+  const dispatch = useDispatch()
 
-  const [openInputSearch, setOpenInputSearch] = useState(false)
   const [inputValue, setInputValue] = useState('')
   const [listSearch, setListSearch] = useState([])
-
-  const handleOpenInputSearch = (state) => {
-    const showInput = document.querySelector('.search__input')
-    const showList = document.querySelector('.search__list')
-    const blockBody = document.querySelector('body')
-
-    const inputSearch = document.querySelector('.input__search')
-    if (!state) {
-      showInput.classList.add('search__input--open')
-      showList.classList.add('search__list--open')
-      blockBody.classList.add('search__list--body-hidden')
-      inputSearch.focus()
-    } else if (state) {
-      showInput.classList.remove('search__input--open')
-      showList.classList.remove('search__list--open')
-      blockBody.classList.remove('search__list--body-hidden')
-      inputSearch.value = '';
-      setListSearch([])
-    }
-  }
 
   const handleListSearch = (e) => {
     const inputTargetValue = e.target.value
@@ -54,7 +36,6 @@ const Header = () => {
     history.push('/carrinho-de-compras');
   }
   
-
   return (
     <header className="container header">
       <nav className="header__nav">
@@ -67,7 +48,7 @@ const Header = () => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
-              onClick={() => handleOpenInputSearch(setOpenInputSearch(!openInputSearch))}
+              onClick={() => dispatch(openSearch(true))}
             />
           </div>
           <div className="search__input">
@@ -83,7 +64,8 @@ const Header = () => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-times"
-              onClick={() => handleOpenInputSearch(!setOpenInputSearch(openInputSearch))}
+              onClick={() => dispatch(closeSearch(true))}
+
             />
           </div>
         </div>
