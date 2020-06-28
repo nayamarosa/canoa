@@ -67,5 +67,12 @@
         }
       }
     }
+    &--cart {
+      position: relative;
+      width: 35%;
+      & span {
+        display: none;
+      }
+    }
   }
 }
