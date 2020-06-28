@@ -9,38 +9,44 @@ import ProductInfo from '../ProductInfo';
 const CartItem = ({product, onClick}) => {
   return (
   <>  
-    <li>
-      <a href="/" className="cart__item">
+    <li className="cart__item">
+      <a href="/">
         <Banner 
           classNameBanner="banner__product--cart"
           src={product.image}
           alt={product.name}
-          classNameDiscount="banner__product--search-discount"
-          percent={product.discount_percentage}
         />
-        <div>
-          <ProductInfo 
-            classNamePriceGroup="product-info__price-group--search"
-            productName={product.name}
-            oldPriceText="De"
-            oldPriceValue={product.regular_price}
-            priceValue={product.actual_price}
+        <div className="cart__item-align">
+          <section className="cart__item-text-group">
+            <ProductInfo 
+              classNamePriceGroup="product-info__price-group--cart"
+              productName={product.name}
+              classNamePrice="product-info__price--cart"
+              oldPriceText="De"
+              oldPriceValue={product.regular_price}
+              priceValue={product.actual_price}
+            />
+            <p className="cart__item-size">Tamanho: <span>G</span></p>
+            <div className="cart__item-quantity">
+              <p>Quantidade:</p>
+              <Button 
+              type="button"
+              classNameBtn="btn__icon btn__icon--quantity"
+              icon="fas fa-minus"
+              />
+              <span>1</span>
+              <Button 
+              type="button"
+              classNameBtn="btn__icon btn__icon--quantity"
+              icon="fas fa-plus"
+              />
+            </div>
+          </section>
+          <Button 
+            type="button"
+            classNameBtn="btn__icon btn__icon--remove"
+            icon="fas fa-trash-alt"
           />
-          <p>Tamanho: <span>G</span></p>
-          <div>
-            <p>Quantidade:</p>
-            <Button 
-            type="button"
-            classNameBtn="btn__icon"
-            icon="fas fa-minus"
-            />
-            <span>1</span>
-            <Button 
-            type="button"
-            classNameBtn="btn__icon"
-            icon="fas fa-plus"
-            />
-          </div>
         </div>
       </a>
     </li>

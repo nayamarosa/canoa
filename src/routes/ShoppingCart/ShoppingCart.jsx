@@ -15,7 +15,6 @@ export default function ShoppingCart() {
 
   return (
     <>
-    <div>Aqui vai o carrinho</div>
     <CartList products={products}/> 
     </>
     );
