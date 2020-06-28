@@ -11,6 +11,8 @@ export default function Input(props) {
         id={props.id} 
         name={props.name} 
         value={props.value} 
+        required={props.required}
+        disabled={props.disabled}
         placeholder={props.placeholder} 
         onChange={props.handleChange}/>
       <label htmlFor={props.id} className={props.classNameLabel}>{props.label}</label>

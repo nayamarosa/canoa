@@ -44,23 +44,16 @@
       &:hover {
         background-color: lighten($color: #D88A95, $amount: 25)
       }
-      &-notAvailable {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        letter-spacing: 1px;
-        font-weight: 300;
-        color: #555353;
-        background-color: #e7e4e5;
-        border: 1px solid #575455;
-        border-radius: 8px;
-        font-size: 18px;
-        line-height: 18px;
+      &--not-available {
+        color: #A0A0A0;
+        border: 1px solid #C1BEBE;
+        &:after {
+          content: '';
+          width: 65px;
+          position:absolute;
+          transform: rotate(-45deg);
+          border-top: 1px solid #C1BEBE;
+        }
       }
     }
   }
