@@ -1,25 +1,20 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
-// import '../../components/Search/Search.scss';
 import Search from '../../components/Search';
+
+import { closeSearch } from '../../actions/search';
+
 
 export default function SearchList({inputValue, listSearch}) {
   let history = useHistory();
+  const dispatch = useDispatch()
 
   const handleProductCode = (e, code) => {
     e.preventDefault()
     history.push('/produto/' + code);
-
-    const showInput = document.querySelector('.search__input')
-    const showList = document.querySelector('.search__list')
-    const blockBody = document.querySelector('body')
-
-    const inputSearch = document.querySelector('.input__search')
-    showInput.classList.remove('search__input--open')
-      showList.classList.remove('search__list--open')
-      blockBody.classList.remove('search__list--body-hidden')
-      inputSearch.value = '';
+    dispatch(closeSearch(true))
   }
 
   return (

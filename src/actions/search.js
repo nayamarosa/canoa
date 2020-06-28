@@ -2,6 +2,7 @@ export const OPEN_SEARCH = 'OPEN_SEARCH';
 export const CLOSE_SEARCH = 'CLOSE_SEARCH';
 export const INPUT_SEARCH = 'INPUT_SEARCH';
 export const LIST_SEARCH = 'LIST_SEARCH';
+export const REDIRECT_SEARCH = 'REDIRECT_SEARCH';
 
 export const openSearch = (opened) => dispatch => {
   const open = () => {
