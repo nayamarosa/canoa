@@ -19,10 +19,10 @@
   &__item {
     padding: 10px 0;
     border-bottom: 1px dashed #D88A95;
-    & a {
-      display: flex;
-      align-items: flex-start;
-    }
+    display: flex;
+    align-items: flex-start;
+    // & a {
+    // }
     &-text-group {
       width: 85%;
       padding-top: 5px;

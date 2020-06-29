@@ -10,7 +10,6 @@ const CartItem = ({product, onClick}) => {
   return (
   <>  
     <li className="cart__item">
-      <a href="/">
         <Banner 
           classNameBanner="banner__product--cart"
           src={product.image}
@@ -48,7 +47,6 @@ const CartItem = ({product, onClick}) => {
             icon="fas fa-trash-alt"
           />
         </div>
-      </a>
     </li>
   </>
   )
