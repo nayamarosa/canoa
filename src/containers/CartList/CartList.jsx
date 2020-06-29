@@ -6,15 +6,12 @@ import CartItem from '../../components/CartItem';
 import Button from '../../components/base/Button';
 
 const CartList = ({products}) => {
-  let priceDot = products.map(product => product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.'))
-  console.log(priceDot);
-  let price = products.map(product => parseFloat(product.actual_price.replace(/[^0-9,-]+/g,"")))
-  console.log(price);
+  let price = products.map(product => parseFloat(product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.')))
   let sum = price.reduce((accumulator, currentValue) => {
     return currentValue + accumulator;
-}, 0);
-console.log(sum);
-  let installments = sum / 3;
+  }, 0).toFixed(2);
+  let installmentsQuantity = 3
+  let installments = (sum / installmentsQuantity).toFixed(2);
 
   return (
     <>
@@ -28,8 +25,8 @@ console.log(sum);
     </ul>
     <div className="container cart__list-total">
       <p>Valor total</p>
-      <h5>R$ {sum}</h5>
-      <span>Em até 3x de R$ {installments}</span>
+      <h5>R$ {sum.replace('.', ',')}</h5>
+      <span>Em até 3x de R$ {installments.replace('.', ',')}</span>
     </div>
     <Button 
       type="submit"
