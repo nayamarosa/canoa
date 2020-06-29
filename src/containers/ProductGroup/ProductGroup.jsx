@@ -49,12 +49,12 @@ export default function ProductItem({productSelected}){
         productSizes={productDetail.sizes}
       />
       <Button 
-      type="submit"
-      classNameBtn="btn__secondary"
-      text="Adicionar ao carrinho"
-      icon="fas fa-shopping-cart"
-      onClick={(e)=> handleClickAddCart(e)}
-    />
+        type="submit"
+        classNameBtn="btn__secondary"
+        text="Adicionar ao carrinho"
+        icon="fas fa-shopping-cart"
+        onClick={(e)=> handleClickAddCart(e)}
+      />
       </>
       : false
     }

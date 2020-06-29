@@ -3,6 +3,8 @@ import React from 'react';
 import '../../components/CartItem/CartItem.scss';
 import CartItem from '../../components/CartItem';
 
+import Button from '../../components/base/Button';
+
 const CartList = ({products}) => {
   let priceDot = products.map(product => product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.'))
   console.log(priceDot);
@@ -29,6 +31,16 @@ console.log(sum);
       <h5>R$ {sum}</h5>
       <span>Em até 3x de R$ {installments}</span>
     </div>
+    <Button 
+      type="submit"
+      classNameBtn="container btn__primary btn__primary--bigger"
+      text="Continuar comprando"
+    />
+    <Button 
+      type="submit"
+      classNameBtn="btn__secondary btn__secondary--green"
+      text="Finalizar compra"
+    />
     </>
   )
 }

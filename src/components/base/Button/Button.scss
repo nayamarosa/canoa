@@ -24,13 +24,18 @@
     &:hover {
       background-color: lighten($color: #D88A95, $amount: 25)
     }
+    &--bigger {
+      padding: 15px 20px;
+      display: block;
+      font-size: 18px;
+    }
   }
   
   &__secondary {
     width: 100%;
     height: 55px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     color: #FCFCFC;
     background-color: darken($color: #D88A95, $amount: 15);
@@ -40,6 +45,13 @@
     & i {
       margin-left: 10px;
       font-size: 22px;
+    }
+    &--green {
+      margin-top: 30px;
+      background-color: darken($color: #54957A, $amount: 15);
+      &:hover {
+        background-color: #54957A;
+      }
     }
   }
   
@@ -58,7 +70,7 @@
     &--quantity {
       font-size: 14px;
       & i {
-      font-size: 10px;
+        font-size: 10px;
       }
     }
     &--remove {
