@@ -8,6 +8,10 @@
   &__product {
     position: relative;
     border-bottom: 2px solid #D88A95;
+    @media (min-width: 1280px){
+      width: 300px;
+      border-bottom: none;
+    }
     &--discount {
       display: flex;
       flex-direction: column;

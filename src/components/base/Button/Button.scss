@@ -37,6 +37,12 @@
     font-weight: 400;
     color: #FCFCFC;
     background-color: darken($color: #D88A95, $amount: 15);
+    @media (min-width: 1280px){
+      width: 250px;
+      padding: 5px;
+      font-size: 18px;
+      border-radius: 8px;
+    }
     &:hover {
       background-color: #D88A95
     }

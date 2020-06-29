@@ -7,7 +7,7 @@ import Input from '../base/Input';
 export default function ProductSize(props) {
   // console.log(props)
   return (
-    <div className="container product-size">
+    <div className="product-size">
     <h5>Escolha o tamanho</h5>
     <form className="product-size__group">
     {
