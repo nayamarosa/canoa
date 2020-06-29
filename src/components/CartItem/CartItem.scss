@@ -1,5 +1,12 @@
 .cart {
+  @media (min-width: 1024px){
+    padding-top: 15px;
+  }
   &__list {
+    @media (min-width: 1024px){
+      width: 600px;
+      margin: 0 auto;
+    }
     &-title {
       padding-bottom: 5px;
       font-size: 12px;
@@ -7,23 +14,6 @@
     }
     &-empty {
       font-weight: 700;
-    }
-    &-total {
-      padding: 30px 0;
-      & p {
-        font-size: 16px;
-        font-weight: 500;
-      }
-      & h5 {
-        margin: 5px 0 10px;
-        font-size: 22px;
-        font-weight: 600;
-      }
-      & span {
-        color: #D88A95;
-        font-size: 14px;
-        font-weight: 600;
-      }
     }
   }
   &__item {
@@ -67,6 +57,38 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      @media (min-width: 1024px){
+        width: 85%;
+      }
+    }
+  }
+  &-total {
+    padding: 30px 0;
+    @media (min-width: 1024px){
+      width: 600px;
+      margin: 0 auto;
+    }
+    & p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    & h5 {
+      margin: 5px 0 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    & span {
+      color: #D88A95;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  &-btn {
+    @media (min-width: 1024px){
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      margin: 0 auto 30px;
     }
   }
 }

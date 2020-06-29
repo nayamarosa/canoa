@@ -77,6 +77,9 @@
     &--cart {
       position: relative;
       width: 35%;
+      @media (min-width: 1280px){
+        width: 100px;
+      }
       & span {
         display: none;
       }
