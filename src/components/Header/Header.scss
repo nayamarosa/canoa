@@ -16,6 +16,9 @@
       @media (min-width: 1024px){
         width: 945px;
       }
+      @media (min-width: 1280px){
+        width: 1150px;
+      }
     }
   }
   &__logo {
@@ -25,7 +28,7 @@
       font-weight: 300;
       letter-spacing: 5px;
       color: #3C3C3C;
-      @media (min-width: 1024px){
+      @media (min-width: 1280px){
         font-size: 40px;
       }
     }
