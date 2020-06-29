@@ -9,7 +9,7 @@
     transition: 0.5s all;
     &--open {
       width: 100%;
-      @media (min-width: 1280px){
+      @media (min-width: 1024px){
         width: 400px;
       }
     }
@@ -27,14 +27,13 @@
     z-index: 1;
     @media (min-width: 1024px){
       padding: 0 10px;
-      width: 570px;
       & .container {
-        width: 320px;
+        width: 100%;
         margin: 0;
       }
     }
-    @media (min-width: 1280px){
-      width: 470px;
+    @media (min-width: 1024px){
+      width: 390px;
     }
     &-title {
       padding-bottom: 5px;
@@ -48,8 +47,7 @@
       left: 0;
       overflow-y: scroll;
       @media (min-width: 1024px){
-        right: 0;
-        left: unset;
+        left: 780px;
       }
     }
     &--body-hidden {

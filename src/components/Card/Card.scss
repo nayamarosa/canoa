@@ -4,8 +4,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media (min-width: 1280px){
-      
+    @media (min-width: 1024px){
+      display: grid;
+      grid-template-columns: 24% 24% 24% 24%;
+      grid-gap: 16px;
     }
   }
   &__item {
@@ -16,8 +18,8 @@
     overflow: hidden;
     box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
     @media (min-width: 1280px){
-      margin: 0 0 15px;
-      width: 24%;
+      margin: 0 0 8px;
+      width: 100%;
     }
   }
 }
