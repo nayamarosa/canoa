@@ -5,11 +5,13 @@
     position: absolute;
     overflow: hidden;
     right: 0;
-    // bottom: 0;
     background-color: #F7F2F3;
     transition: 0.5s all;
     &--open {
       width: 100%;
+      @media (min-width: 1024px){
+        width: 400px;
+      }
     }
   }
   &__list {
@@ -18,11 +20,19 @@
     padding-top: 5px;
     position: fixed;
     overflow: hidden;
-    top: 55px;
+    top: 60px;
     left: 100%;
     transition: 0.5s all;
     background-color: rgba(247, 242, 243, 0.9);
     z-index: 1;
+    @media (min-width: 1024px){
+      padding: 0 10px;
+      width: 570px;
+      & .container {
+        width: 320px;
+        margin: 0;
+      }
+    }
     &-title {
       padding-bottom: 5px;
       font-size: 12px;
@@ -34,14 +44,16 @@
     &--open {
       left: 0;
       overflow-y: scroll;
+      @media (min-width: 1024px){
+        right: 0;
+        left: unset;
+      }
     }
     &--body-hidden {
       position: fixed;
     }
   }
   &__item {
-    width: 90%;
-    margin: 0 auto;
     overflow: hidden;
     padding: 10px 0;
     border-bottom: 2px solid #D88A95;

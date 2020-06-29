@@ -9,7 +9,7 @@ import ProductInfo from '../ProductInfo';
 export default function Search({product, onClick}) {
   return (
     <>
-    <li className="search__item">
+    <li className="container search__item">
       <Link to='/' onClick={onClick}>
         <Banner 
           classNameBanner="banner__product banner__product--search"

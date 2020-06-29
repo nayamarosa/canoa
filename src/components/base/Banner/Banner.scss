@@ -46,6 +46,9 @@
     &--search {
       width: 25%;
       border-bottom: 0;
+      @media (min-width: 1024px){
+        width: 80px;
+      }
       &-discount {
         display: flex;
         justify-content: center;
