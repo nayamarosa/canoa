@@ -8,6 +8,10 @@
   &__product {
     position: relative;
     border-bottom: 2px solid #D88A95;
+    @media (min-width: 1280px){
+      width: 300px;
+      border-bottom: none;
+    }
     &--discount {
       display: flex;
       flex-direction: column;
@@ -46,6 +50,9 @@
     &--search {
       width: 25%;
       border-bottom: 0;
+      @media (min-width: 1280px){
+        width: 80px;
+      }
       &-discount {
         display: flex;
         justify-content: center;
@@ -70,6 +77,9 @@
     &--cart {
       position: relative;
       width: 35%;
+      @media (min-width: 1280px){
+        width: 100px;
+      }
       & span {
         display: none;
       }
