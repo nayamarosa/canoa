@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   box-sizing: border-box;
   font-family: 'Barlow Semi Condensed', sans-serif;
   color: #3C3C3C;
@@ -33,4 +34,10 @@ img {
 .container {
   width: 90%;
   margin: 0 auto;
+  @media (min-width: 1024px){
+    width: 1000px;
+  }
+  @media (min-width: 1280px){
+    width: 1200px;
+  }
 }
