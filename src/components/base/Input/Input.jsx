@@ -14,15 +14,13 @@ export default function Input(props) {
         required={props.required}
         disabled={props.disabled}
         placeholder={props.placeholder} 
-        onChange={props.handleChange}/>
-      <label htmlFor={props.id} className={props.classNameLabel}>{props.label}</label>
+        onChange={props.handleChange}
+        onClick={props.onClick}
+        />
+      <label 
+        htmlFor={props.id} 
+        className={props.classNameLabel}>{props.label}
+      </label>
     </div>
   ) 
 }
-
-// Amostra de input
-//   <Input 
-//     type="text"
-//     placeholder="o que você procura?"
-//     className="input__search"
-//   />

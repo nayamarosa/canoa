@@ -28,7 +28,10 @@ const CartList = ({products}) => {
       <p className="cart__list-title">Seu carrinho</p>
       {
         productsCart.length > 0
-        ? productsCart.map(product => <CartItem productInfoCart={product} product={product[1].product} key={product[0]}/>)
+        ? productsCart.map(([code, value]) => <CartItem 
+        productCode={[code]} 
+        value={value} 
+        key={[code]}/>)
         : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
         }
     </ul>

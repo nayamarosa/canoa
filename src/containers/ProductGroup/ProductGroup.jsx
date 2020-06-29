@@ -9,14 +9,24 @@ import ProductSize from '../../components/ProductSize';
 import Button from '../../components/base/Button';
 
 export default function ProductItem({productSelected}){
-  const [productDetail, setProductDetail] = useState({})
+  const [productDetail, setProductDetail] = useState({});
+  const [chosenSize, setChosenSize] = useState('');
   let history = useHistory();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   
   const handleProductCode = (e, code) => {
     e.preventDefault()
-    history.push('/carrinho-de-compras')
-    dispatch(addProductToCart(productDetail, code));
+    if (chosenSize !== '') {
+      history.push('/carrinho-de-compras')
+      dispatch(addProductToCart(productDetail, chosenSize));
+    } else {
+      alert("escolha um tamanho")
+    }
+  }
+
+  const handleProductSize = (e) => {
+    e.preventDefault()
+    setChosenSize(e.target.value)
   }
 
   useEffect(() => {
@@ -52,13 +62,14 @@ export default function ProductItem({productSelected}){
         classNameInput="input__size"
         type="radio"
         productSizes={productDetail.sizes}
+        onClick={(e) => handleProductSize(e)}
       />
       <Button 
       type="submit"
       classNameBtn="btn__secondary"
       text="Adicionar ao carrinho"
       icon="fas fa-shopping-cart"
-      onClick={(e) => handleProductCode(e, productDetail.code_color)}
+      onClick={(e) => handleProductCode(e)}
     />
       </>
       : false

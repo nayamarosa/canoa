@@ -10,7 +10,6 @@ import {
   }  
   
   export const shoppingCart = (state = initialState, action) => {
-    console.log(action.type)
     switch (action.type) {
       case ADD_PRODUCT_TO_CART: {
         return {

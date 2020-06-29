@@ -7,10 +7,9 @@ export const addProductToCart = (product, size) => (dispatch) => {
   return dispatch({
     type: ADD_PRODUCT_TO_CART,
     payload: {
-      // code: code,
       product: product,
       size: size,
-      quantity: 1
+      quantity: 1,
     }
   })
 };
