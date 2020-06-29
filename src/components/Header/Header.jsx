@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+
+import { openSearch, closeSearch, inputSearch } from '../../actions/search';
 
 import './Header.scss';
 import '../Search/Search.scss';
@@ -12,46 +14,11 @@ import SearchList from '../../containers/SearchList';
 
 const Header = () => {  
   let history = useHistory();
-  const products = useSelector(store => store.catalog.products);
+  const productsFiltered = useSelector(store => store.search.filtered);
+  const dispatch = useDispatch()
 
-  const [openInputSearch, setOpenInputSearch] = useState(false)
-  const [inputValue, setInputValue] = useState('')
-  const [listSearch, setListSearch] = useState([])
-
-  const handleOpenInputSearch = (state) => {
-    const showInput = document.querySelector('.search__input')
-    const showList = document.querySelector('.search__list')
-    const blockBody = document.querySelector('body')
-
-    const inputSearch = document.querySelector('.input__search')
-    if (!state) {
-      showInput.classList.add('search__input--open')
-      showList.classList.add('search__list--open')
-      blockBody.classList.add('search__list--body-hidden')
-      inputSearch.focus()
-    } else if (state) {
-      showInput.classList.remove('search__input--open')
-      showList.classList.remove('search__list--open')
-      blockBody.classList.remove('search__list--body-hidden')
-      inputSearch.value = '';
-      setListSearch([])
-    }
-  }
-
-  const handleListSearch = (e) => {
-    const inputTargetValue = e.target.value
-    setInputValue(inputTargetValue)
-  }
-
-  useEffect(() => {
-    const filterInput = products.filter((product) =>
-      product.name.toLowerCase().includes(inputValue.toLowerCase())
-    )
-    setListSearch(filterInput)
-  }, [inputValue, products])
-
-  const handleClickToCart = (e) => {
-    history.push('/carrinho-de-compras');
+  const handleClickToCart = (e, code) => {
+    history.push(`/carrinho-de-compras/`);
   }
   
   return (
@@ -66,7 +33,7 @@ const Header = () => {
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
-              onClick={() => handleOpenInputSearch(setOpenInputSearch(!openInputSearch))}
+              onClick={() => dispatch(openSearch(true))}
             />
           </div>
           <div className="search__input">
@@ -75,14 +42,14 @@ const Header = () => {
               type="text"
               placeholder="o que você procura?"
               classNameInput="input__search"
-              handleChange={(e) => handleListSearch(e)}
+              handleChange={(e) => dispatch(inputSearch(e, e.target.value))}
             />
             <Button 
               id="search-btn"
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-times"
-              onClick={() => handleOpenInputSearch(!setOpenInputSearch(openInputSearch))}
+              onClick={() => dispatch(closeSearch(true))}
             />
           </div>
         </div>
@@ -90,9 +57,9 @@ const Header = () => {
           type="submit"
           classNameBtn="btn__icon"
           icon="fas fa-shopping-cart"
-          onClick={(e)=> handleClickToCart(e)}
+          onClick={(e, code)=> handleClickToCart(e, code)}
         />       
-        <SearchList inputValue={inputValue} listSearch={listSearch} />
+        <SearchList listSearch={productsFiltered} />
       </nav>
     </header>
     )

@@ -33,6 +33,9 @@
           min-height: auto;
         }
       }
+      &--cart {
+        padding: 0 10px;
+      }
     }
     & p {
       font-size: 12px;
@@ -62,6 +65,17 @@
       }
       &--installments{
         color: #D88A95;
+        font-weight: 600;
+      }
+    }
+    &--cart {
+      margin-top: 5px;
+      & p {
+        font-size: 12px;
+        font-weight: 400;
+      }
+      & .product-info__price--new {
+        font-size: 13px;
         font-weight: 600;
       }
     }

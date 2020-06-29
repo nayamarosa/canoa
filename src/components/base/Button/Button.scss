@@ -55,6 +55,23 @@
     &:hover {
       color: lighten($color: #3C3C3C, $amount: 25)
     }
+    &--quantity {
+      font-size: 14px;
+      & i {
+      font-size: 10px;
+      }
+    }
+    &--remove {
+      display: flex;
+      padding-top: 5px;
+      color: #D96060;
+      &:hover {
+        color: lighten($color: #D96060, $amount: 25)
+      }
+      & i {
+        font-size: 16px;
+      }
+    }
   }
   &--left{
     display: flex;

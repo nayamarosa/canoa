@@ -1,34 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation} from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-import { fetchCatalog } from '../../actions/catalog';
-
-import ProductGroup from '../../containers/ProductGroup';
+import CartList from '../../containers/CartList';
 
 export default function ShoppingCart() {
-  const products = useSelector(store => store.catalog.products);
-  const [ProductSelectedInCart, setProductSelectedInCart] = useState([]);
+  const productsInShoppingCart = useSelector(store => store.shoppingCart.cart);
 
-  let location = useLocation();
-  useEffect(() => {
-    let pathname = location.pathname;
-    let productCode = pathname.split("/")[2]
-    const filter = products.filter((product) =>product.code_color.includes(productCode));
-    const objFiltered = filter[0];
- 
-    setProductSelectedInCart(filter)
-    // setProductSelectedInCart(objFiltered)
-         
-  }, [location.pathname, products])
-
-  const dispatch = useDispatch()
-    useEffect(() => {
-      dispatch(fetchCatalog())
-  }, [dispatch])
-
-   return (
-    <ProductGroup productSelected={ProductSelectedInCart} /> 
-    // <div>Oi</div>
+  return (
+    <>
+    <CartList products={productsInShoppingCart}/>
+    </>
     );
   }  

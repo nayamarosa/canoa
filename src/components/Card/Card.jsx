@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './Card.scss';
 import Button from '../base/Button';
 import Banner from '../base/Banner';
@@ -8,6 +9,7 @@ const Card = ({product, onClick}) => {
   return (
   <>  
     <li className="card__item">
+      <Link to="/" onClick={onClick}>
         <Banner
           classNameBanner="banner__product banner__product--card"
           src={product.image}
@@ -26,9 +28,9 @@ const Card = ({product, onClick}) => {
             type="button"
             classNameBtn="btn__primary btn__primary-buy"
             text="Comprar"
-            onClick={onClick}
           />
         </div>
+      </Link>
     </li>
   </>
   )

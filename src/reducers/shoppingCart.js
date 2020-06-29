@@ -1,39 +1,40 @@
 import {
     ADD_PRODUCT_TO_CART,
-    ADD_ITEMS,
-    SUBTRACT_ITEMS,
+    // ADD_ITEMS,
+    // SUBTRACT_ITEMS,
     REMOVE_PRODUCT_FROM_CART
-  } from '../actions/catalog';
+  } from '../actions/shoppingCart';
   
   const initialState = {
-    shoppingCart: {}
-  }
+    cart: {}
+  }  
   
   export const shoppingCart = (state = initialState, action) => {
+    console.log(action.type)
     switch (action.type) {
       case ADD_PRODUCT_TO_CART: {
         return {
           ...state,
-          shoppingCart: {...state.shoppingCart, [action.payload.product.id]: action.payload}
+          cart: {...state.cart, [action.payload.product.code_color]: action.payload }
         }
       }
-      case ADD_ITEMS: {
-        return {
-          ...state,
-          shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity +1}}
-        }
-      }
-      case SUBTRACT_ITEMS: {
-        return {
-          ...state,
-          shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity -1}}
-        }
-      }
+      // case ADD_ITEMS: {
+      //   return {
+      //     ...state,
+      //     shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity +1}}
+      //   }
+      // }
+      // case SUBTRACT_ITEMS: {
+      //   return {
+      //     ...state,
+      //     shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity -1}}
+      //   }
+      // }
       case REMOVE_PRODUCT_FROM_CART: {
-        const {[action.payload.product.id]: deleted, ...shoppingCart} = state.shoppingCart;
+        const {[action.payload.product.code_color]: deleted, ...cart} = state.cart;
         return {
           ...state,
-          shoppingCart: shoppingCart
+          cart: cart
         }
       }
       default:

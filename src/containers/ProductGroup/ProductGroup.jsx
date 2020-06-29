@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addProductToCart } from '../../actions/shoppingCart';
 
 import Banner from '../../components/base/Banner';
 import ProductInfo from '../../components/ProductInfo';
@@ -8,11 +10,13 @@ import Button from '../../components/base/Button';
 
 export default function ProductItem({productSelected}){
   const [productDetail, setProductDetail] = useState({})
-
   let history = useHistory();
+  const dispatch = useDispatch()
+  
   const handleProductCode = (e, code) => {
     e.preventDefault()
-    history.push(`/carrinho-de-compras/${code}`);
+    history.push('/carrinho-de-compras')
+    dispatch(addProductToCart(productDetail, code));
   }
 
   useEffect(() => {

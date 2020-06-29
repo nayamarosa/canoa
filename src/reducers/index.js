@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
 import catalog from './catalog';
-// import shoppingCart from './shoppingCart';
+import search from './search';
+import shoppingCart from './shoppingCart';
 
 const rootReducer = combineReducers({
   catalog,
-  // shoppingCart,
+  search,
+  shoppingCart,  
 });
 
 export default rootReducer;
