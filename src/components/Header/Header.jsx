@@ -18,7 +18,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const handleClickToCart = (e, code) => {
-    history.push(`/carrinho-de-compras/`);
+    history.push('/carrinho-de-compras');
   }
   
   return (

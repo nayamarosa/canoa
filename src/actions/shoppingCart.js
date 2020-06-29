@@ -1,6 +1,6 @@
 export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
-// export const ADD_ITEMS = 'ADD_ITEMS';
-// export const SUBTRACT_ITEMS = 'SUBTRACT_ITEMS';
+export const ADD_ITEMS = 'ADD_ITEMS';
+export const SUBTRACT_ITEMS = 'SUBTRACT_ITEMS';
 export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 
 export const addProductToCart = (product, size) => (dispatch) => {
@@ -24,17 +24,17 @@ export const removeProductFromCart = (product) => (dispatch) => {
   })
 };
 
-// export const addQuantity = (id) => (dispatch) => {
-//   return dispatch({
-//     type: ADD_ITEMS,
-//     payload: id
-//   })
-// };
+export const addItem = (code) => (dispatch) => {
+  return dispatch({
+    type: ADD_ITEMS,
+    payload: code
+  })
+};
 
-// export const subtractQuantity = (id) => (dispatch) => {
-//   return dispatch({
-//     type: SUBTRACT_ITEMS,
-//     payload: id
-//   })
-// };
+export const subtractItem = (code) => (dispatch) => {
+  return dispatch({
+    type: SUBTRACT_ITEMS,
+    payload: code
+  })
+};
 

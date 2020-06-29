@@ -1,18 +1,30 @@
 import React from 'react';
 import './CartItem.scss';
 import { useDispatch } from 'react-redux';
-import { removeProductFromCart } from '../../actions/shoppingCart';
+import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 import Button from '../base/Button';
 import Banner from '../base/Banner';
 
 import ProductInfo from '../ProductInfo';
 
-const CartItem = ({product, onClick}) => {
+const CartItem = ({product, productInfoCart, onClick}) => {
   const dispatch = useDispatch()
-  
+
+  console.log(productInfoCart)
+
   const handleRemoveProductInCart = (e, code) => {
     e.preventDefault()
     dispatch(removeProductFromCart(product, code));
+  }
+
+  const handleAddItem = (e, code) => {
+    e.preventDefault()
+    dispatch(addItem(product, code));
+  }
+
+  const handleSubtractItem = (e, code) => {
+    e.preventDefault()
+    dispatch(subtractItem(product, code));
   }
 
   return (
@@ -41,12 +53,14 @@ const CartItem = ({product, onClick}) => {
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-minus"
+              onClick={(e) => handleAddItem(e, productInfoCart[1])}
               />
               <span>1</span>
               <Button 
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-plus"
+              onClick={(e) => handleSubtractItem(e, productInfoCart[1])}
               />
             </div>
           </section>

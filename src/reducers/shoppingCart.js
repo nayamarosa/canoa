@@ -1,7 +1,7 @@
 import {
     ADD_PRODUCT_TO_CART,
-    // ADD_ITEMS,
-    // SUBTRACT_ITEMS,
+    ADD_ITEMS,
+    SUBTRACT_ITEMS,
     REMOVE_PRODUCT_FROM_CART
   } from '../actions/shoppingCart';
   
@@ -18,18 +18,18 @@ import {
           cart: {...state.cart, [action.payload.product.code_color]: action.payload }
         }
       }
-      // case ADD_ITEMS: {
-      //   return {
-      //     ...state,
-      //     shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity +1}}
-      //   }
-      // }
-      // case SUBTRACT_ITEMS: {
-      //   return {
-      //     ...state,
-      //     shoppingCart: {...state.shoppingCart, [action.payload]: {...state.shoppingCart[action.payload], quantity: state.shoppingCart[action.payload].quantity -1}}
-      //   }
-      // }
+      case ADD_ITEMS: {
+        return {
+          ...state,
+          cart: {...state.cart, [action.payload]: {...state.cart[action.payload], quantity: state.cart[action.payload].quantity +1}}
+        }
+      }
+      case SUBTRACT_ITEMS: {
+        return {
+          ...state,
+          cart: {...state.cart, [action.payload]: {...state.cart[action.payload], quantity: state.cart[action.payload].quantity -1}}
+        }
+      }
       case REMOVE_PRODUCT_FROM_CART: {
         const {[action.payload.product.code_color]: deleted, ...cart} = state.cart;
         return {
