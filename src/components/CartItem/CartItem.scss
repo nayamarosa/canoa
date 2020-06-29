@@ -8,6 +8,23 @@
     &-empty {
       font-weight: 700;
     }
+    &-total {
+      padding-top: 30px;
+      & p {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      & h5 {
+        margin: 5px 0 10px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+      & span {
+        color: #D88A95;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
   }
   &__item {
     padding: 10px 0;

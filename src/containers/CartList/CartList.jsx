@@ -4,7 +4,18 @@ import '../../components/CartItem/CartItem.scss';
 import CartItem from '../../components/CartItem';
 
 const CartList = ({products}) => {
+  let priceDot = products.map(product => product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.'))
+  console.log(priceDot);
+  let price = products.map(product => parseFloat(product.actual_price.replace(/[^0-9,-]+/g,"")))
+  console.log(price);
+  let sum = price.reduce((accumulator, currentValue) => {
+    return currentValue + accumulator;
+}, 0);
+console.log(sum);
+  let installments = sum / 3;
+
   return (
+    <>
     <ul className="container cart__list">
       <p className="cart__list-title">Seu carrinho</p>
       {
@@ -13,6 +24,12 @@ const CartList = ({products}) => {
         : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
         }
     </ul>
+    <div className="container cart__list-total">
+      <p>Valor total</p>
+      <h5>R$ {sum}</h5>
+      <span>Em até 3x de R$ {installments}</span>
+    </div>
+    </>
   )
 }
 
