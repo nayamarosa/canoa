@@ -5,8 +5,10 @@ import Input from '../base/Input';
 const ProductSize = (props) => {
   return (
     <div className="product-size">
-      <h5>Escolha o tamanho</h5>
-      {/* <p className="product-size-needed">* Por favor selecione um tamanho</p> */}
+      <div className="product-size-needed">
+        <h5>Escolha o tamanho</h5>
+        <p className="product-size-needed-msg">* Por favor selecione um tamanho</p>
+      </div>
       <form className="product-size__group">
       {
         props.productSizes !== undefined 

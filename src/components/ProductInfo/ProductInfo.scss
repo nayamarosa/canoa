@@ -33,8 +33,7 @@
         &--bigger {
           padding: 10px 0 15px;
           & h4 {
-            font-size: 22px;
-            font-weight: 400;
+            @include font (22px, 400, 22px);
           }
         }
         &--search {

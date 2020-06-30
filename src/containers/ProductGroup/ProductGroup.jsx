@@ -20,7 +20,7 @@ const ProductGroup = ({productSelected}) => {
       history.push('/carrinho-de-compras')
       dispatch(addProductToCart(productDetail, chosenSize));
     } else {
-      document.querySelector('.product-size-needed').classList.add('product-size-needed--active')
+      document.querySelector('.product-size-needed-msg').classList.add('product-size-needed-msg--active')
     }
   }
 
