@@ -2,8 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import '../../components/CartItem/CartItem.scss';
-import CartItem from '../../components/CartItem';
 
+import CartItem from '../../components/CartItem';
 import Button from '../../components/base/Button';
 
 const CartList = ({products}) => {
@@ -72,4 +72,4 @@ const CartList = ({products}) => {
   )
 }
 
-export default CartList
+export default CartList;

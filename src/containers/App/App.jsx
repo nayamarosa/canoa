@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Header from '../../components/Header';
 import Routes from '../../routes';
+import { Provider } from 'react-redux';
+import store from '../../store';
+
 import './App.scss';
 
-
-import store from '../../store';
-import { Provider } from 'react-redux';
+import Header from '../../components/Header';
 
 const App = () => (
   <>

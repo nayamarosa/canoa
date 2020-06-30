@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import './NavFilter.scss';
 
-import CardList from '../../containers/CardsList'
+import CardList from '../../containers/CardList'
 
 const NavFilter = ({products}) => {
   const [active, setActive] = useState('');

@@ -8,7 +8,7 @@ import ProductInfo from '../../components/ProductInfo';
 import ProductSize from '../../components/ProductSize';
 import Button from '../../components/base/Button';
 
-export default function ProductItem({productSelected}){
+const ProductGroup = ({productSelected}) => {
   const [productDetail, setProductDetail] = useState({});
   const [chosenSize, setChosenSize] = useState('');
   let history = useHistory();
@@ -80,3 +80,5 @@ export default function ProductItem({productSelected}){
     </>
   )
 }
+
+export default ProductGroup; 
