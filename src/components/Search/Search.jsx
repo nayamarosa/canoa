@@ -6,9 +6,8 @@ import './Search.scss';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
-export default function Search({product, onClick}) {
+const Search = ({product, onClick}) => {
   return (
-    <>
     <li className="container search__item">
       <Link to='/' onClick={onClick}>
         <Image 
@@ -27,8 +26,7 @@ export default function Search({product, onClick}) {
         />
       </Link>
     </li>
-    </>
   )
 }
 
-//export default Search;
+export default Search;

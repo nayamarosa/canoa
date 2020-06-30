@@ -4,7 +4,7 @@ import './ProductSize.scss';
 
 import Input from '../base/Input';
 
-export default function ProductSize(props) {
+const ProductSize = (props) => {
   return (
     <div className="product-size">
       <h5>Escolha o tamanho</h5>
@@ -30,7 +30,9 @@ export default function ProductSize(props) {
           />)
           : false
         }
-        </form>
-      </div>
-      )
-    }
+      </form>
+    </div>
+  )
+}
+
+export default ProductSize;

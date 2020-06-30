@@ -26,4 +26,4 @@ const ProductInfo = (props) => {
     )
   }
 
-  export default ProductInfo
+export default ProductInfo;
