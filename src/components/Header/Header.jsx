@@ -16,8 +16,7 @@ const Header = () => {
   let history = useHistory();
   const productsFiltered = useSelector(store => store.search.filtered);
   const dispatch = useDispatch()
-
-  let quantity = 7;
+  let quantity = Object.keys(useSelector(store => store.shoppingCart.cart)).length;
 
   const handleClickToCart = (e, code) => {
     history.push('/carrinho-de-compras');
@@ -65,7 +64,7 @@ const Header = () => {
           {
             quantity > 0
             ? <div className="header__cart-quantity">
-              <p>7</p>
+              <p>{quantity}</p>
             </div>
             : false
           }
