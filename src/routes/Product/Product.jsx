@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-
 import { fetchCatalog } from '../../actions/catalog';
 
 import ProductGroup from '../../containers/ProductGroup';
 
-export default function Product() {
+const Product = () => {
   const products = useSelector(store => store.catalog.products);
   const [filteredProductSelected, setFilteredProductSelected] = useState([]);
   
@@ -26,5 +25,7 @@ export default function Product() {
   
   return (
     <ProductGroup productSelected={filteredProductSelected} /> 
-    );
-  }  
+  );
+}  
+
+export default Product; 

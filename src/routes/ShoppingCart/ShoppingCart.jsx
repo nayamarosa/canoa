@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 import CartList from '../../containers/CartList';
 
-export default function ShoppingCart() {
+const ShoppingCart = () => {
   const productsInShoppingCart = useSelector(store => store.shoppingCart.cart);
 
   return (
-    <>
     <CartList products={productsInShoppingCart}/>
-    </>
-    );
-  }  
+  );
+}  
+
+export default ShoppingCart 
