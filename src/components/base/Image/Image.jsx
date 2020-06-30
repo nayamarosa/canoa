@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './Banner.scss';
+import './Image.scss';
 
-export default function Banner(props) {
+const Image = (props) => {
   return (
-    <div className={props.classNameBanner}>
+    <div className={props.classNameImage}>
       { props.src !== ''
       ? <img src={props.src} alt={props.alt}/> 
       : <img src='/placeholder_image.jpg' alt="imagem indisponível"/>
@@ -20,3 +20,5 @@ export default function Banner(props) {
     </div>
     ) 
   }
+
+export default Image;

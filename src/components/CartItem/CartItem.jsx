@@ -3,7 +3,7 @@ import './CartItem.scss';
 import { useDispatch } from 'react-redux';
 import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 import Button from '../base/Button';
-import Banner from '../base/Banner';
+import Image from '../base/Image';
 
 import ProductInfo from '../ProductInfo';
 
@@ -29,8 +29,8 @@ const CartItem = ({value, productCode}) => {
   return (
   <>  
     <li className="cart__item">
-        <Banner 
-          classNameBanner="banner__product--cart"
+        <Image 
+          classNameimage="image__product--cart"
           src={product.image}
           alt={product.name}
         />

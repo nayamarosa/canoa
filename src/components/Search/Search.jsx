@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './Search.scss';
 
-import Banner from '../base/Banner';
+import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
 export default function Search({product, onClick}) {
@@ -11,11 +11,11 @@ export default function Search({product, onClick}) {
     <>
     <li className="container search__item">
       <Link to='/' onClick={onClick}>
-        <Banner 
-          classNameBanner="banner__product banner__product--search"
+        <Image 
+          classNameImage="image__product image__product--search"
           src={product.image}
           alt={product.name}
-          classNameDiscount="banner__product--search-discount"
+          classNameDiscount="image__product--search-discount"
           percent={product.discount_percentage}
         />
         <ProductInfo 

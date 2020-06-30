@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Card.scss';
 import Button from '../base/Button';
-import Banner from '../base/Banner';
+import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
 const Card = ({product, onClick}) => {
@@ -10,11 +10,11 @@ const Card = ({product, onClick}) => {
   <>  
     <li className="card__item">
       <Link to="/" onClick={onClick}>
-        <Banner
-          classNameBanner="banner__product banner__product--card"
+        <Image
+          classNameImage="image__product image__product--card"
           src={product.image}
           alt={product.name}
-          classNameDiscount="banner__product--discount"
+          classNameDiscount="image__product--discount"
           percent={product.discount_percentage}
         />
         <ProductInfo

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addProductToCart } from '../../actions/shoppingCart';
 
-import Banner from '../../components/base/Banner';
+import Image from '../../components/base/Image';
 import ProductInfo from '../../components/ProductInfo';
 import ProductSize from '../../components/ProductSize';
 import Button from '../../components/base/Button';
@@ -38,11 +38,11 @@ export default function ProductItem({productSelected}){
     {
       productDetail !== undefined
       ? <section className="container product">
-        <Banner
-          classNameBanner="banner__product"
+        <Image
+          classNameImage="image__product"
           src={productDetail.image}
           alt={productDetail.name}
-          classNameDiscount="banner__product--discount banner__product--discount-bigger"
+          classNameDiscount="image__product--discount image__product--discount-bigger"
           percent={productDetail.discount_percentage}
         />
         <div className="product-info">
