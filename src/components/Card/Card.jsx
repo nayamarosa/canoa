@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './Card.scss';
-
 import Button from '../base/Button';
 import Banner from '../base/Banner';
-
 import ProductInfo from '../ProductInfo';
 
 const Card = ({product, onClick}) => {

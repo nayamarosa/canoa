@@ -13,12 +13,9 @@ const CardList = ({products}) => {
 
   return (
     <ul className="container card__list">
-      {products.map(product => 
-        product.id !== "NaN" 
-        ? <Card product={product} 
+      {products.map(product => <Card product={product} 
         key={product.code_color} 
         onClick={(e) => handleProductCode(e, product.code_color)}/>
-      : false 
       )} 
     </ul>
   )

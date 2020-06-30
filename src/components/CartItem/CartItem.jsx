@@ -1,16 +1,34 @@
 import React from 'react';
 import './CartItem.scss';
-
+import { useDispatch } from 'react-redux';
+import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 import Button from '../base/Button';
 import Banner from '../base/Banner';
 
 import ProductInfo from '../ProductInfo';
 
-const CartItem = ({product, onClick}) => {
+const CartItem = ({value, productCode}) => {
+  const dispatch = useDispatch()
+  const product = value.product;
+
+  const handleRemoveProductInCart = (e, code) => {
+    e.preventDefault()
+    dispatch(removeProductFromCart(product, code));
+  }
+
+  const handleAddItem = (e, code) => {
+    e.preventDefault()
+    dispatch(addItem(code));
+  }
+
+  const handleSubtractItem = (e, code) => {
+    e.preventDefault()
+    return (value.quantity !== 0) ? dispatch(subtractItem(code)) : false;
+  }
+
   return (
   <>  
     <li className="cart__item">
-      <a href="/">
         <Banner 
           classNameBanner="banner__product--cart"
           src={product.image}
@@ -26,19 +44,21 @@ const CartItem = ({product, onClick}) => {
               oldPriceValue={product.regular_price}
               priceValue={product.actual_price}
             />
-            <p className="cart__item-size">Tamanho: <span>G</span></p>
+            <p className="cart__item-size">Tamanho: <span>{value.size}</span></p>
             <div className="cart__item-quantity">
               <p>Quantidade:</p>
               <Button 
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-minus"
+              onClick={(e) => handleSubtractItem(e, productCode)}
               />
-              <span>1</span>
+              <span>{value.quantity}</span>
               <Button 
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-plus"
+              onClick={(e) => handleAddItem(e, productCode)}
               />
             </div>
           </section>
@@ -46,9 +66,9 @@ const CartItem = ({product, onClick}) => {
             type="button"
             classNameBtn="btn__icon btn__icon--remove"
             icon="fas fa-trash-alt"
+            onClick={(e) => handleRemoveProductInCart(e, product.code_color)}
           />
         </div>
-      </a>
     </li>
   </>
   )

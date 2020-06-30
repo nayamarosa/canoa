@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 import './NavFilter.scss';
 
@@ -30,14 +31,14 @@ const NavFilter = ({products}) => {
     <nav className="nav-filter">
       <ul className="nav-filter__list">
         <li className="nav-filter__item">
-          <a href="/" onClick={(e) => handleActiveFilter(e)}>
+          <Link to="/" onClick={(e) => handleActiveFilter(e)}>
             <h2 className={'nav-filter__item--active' && active === 'Promoções' ? '' : 'nav-filter__item--active'}>Coleção nova</h2>
-          </a>
+          </Link>
         </li>
         <li className="nav-filter__item">
-          <a href="/" onClick={(e) => handleActiveFilter(e)}>
+          <Link to="/" onClick={(e) => handleActiveFilter(e)}>
             <h2 className={active === 'Promoções' ? 'nav-filter__item--active' : ''}>Promoções</h2>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
