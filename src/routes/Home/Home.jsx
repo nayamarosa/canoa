@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector, connect } from 'react-redux';
 
 import { fetchCatalog } from '../../actions/catalog';
@@ -8,14 +8,24 @@ import NavFilter from '../../components/NavFilter';
 import Loading from '../../components/base/Loading/Loading';
 
 const Home = () => {
-  
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchCatalog())
+    setTimeout(() => {
+      dispatch(fetchCatalog())
+    }, 1000);
   }, [dispatch])
 
   const products = useSelector(store => store.catalog.products);
-  
+  const loadingFormat = <section className="loading__format-home">
+    <div className="loading__format-home-nav">
+      <ul className="container loading__format-home-list">
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+      </ul>
+    </div>
+  </section>
 
   return (
     <>
@@ -34,7 +44,7 @@ const Home = () => {
     }
     {
       products.length === 0
-      ? <Loading />
+      ? <Loading format={loadingFormat}/>
       : <NavFilter products={products} />
     }
     </>

@@ -8,7 +8,7 @@
   &__product {
     position: relative;
     border-bottom: 2px solid #D88A95;
-    @media (min-width: 1280px){
+    @media (min-width: 1024px){
       width: 300px;
     }
     &--discount {
@@ -45,11 +45,15 @@
     }
     &--card {
       width: 100%;
+      min-height: 196px;
+      @media (min-width: 1024px){
+        min-height: 363px;
+      }
     }
     &--search {
       width: 25%;
       border-bottom: 0;
-      @media (min-width: 1280px){
+      @media (min-width: 1024px){
         width: 80px;
       }
       &-discount {
@@ -76,7 +80,7 @@
     &--cart {
       position: relative;
       width: 35%;
-      @media (min-width: 1280px){
+      @media (min-width: 1024px){
         width: 100px;
       }
       & span {
