@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import '../../components/CartItem/CartItem.scss';
 import CartItem from '../../components/CartItem';
@@ -55,7 +55,14 @@ const CartList = ({products}) => {
               text="Finalizar compra"
             />
           </div></>
-        : false
+        : <div className="cart-btn cart-btn--empty">
+            <Button 
+              type="submit"
+              classNameBtn="btn__primary btn__primary--bigger"
+              text="Continuar comprando"
+              onClick={(e) => handleClickToCart(e)}
+            />
+          </div>
       }
     </section>
   )

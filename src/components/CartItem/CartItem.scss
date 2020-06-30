@@ -21,10 +21,6 @@
     border-bottom: 1px dashed #D88A95;
     display: flex;
     align-items: flex-start;
-    // & a {
-    //   display: flex;
-    //   align-items: flex-start;
-    // }
     &-text-group {
       width: 85%;
       padding-top: 5px;
@@ -91,6 +87,12 @@
       justify-content: space-between;
       width: 600px;
       margin: 0 auto 30px;
+    }
+    &--empty {
+      @media (min-width: 1024px){
+        width: 600px;
+        margin: 30px auto 0;
+      }
     }
   }
 }
