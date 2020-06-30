@@ -19,3 +19,10 @@
   font-weight: $font-weight;
   line-height: $line-height;
 }
+
+@mixin loading () {
+  color: transparent;
+  background: linear-gradient(100deg, #ECE6E7 30%, #F6F4F5 50%, #ECE6E7 70%);
+  background-size: 400%;
+  animation: loading 2s ease-in-out infinite;
+}
