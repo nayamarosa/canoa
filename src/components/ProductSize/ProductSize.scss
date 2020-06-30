@@ -3,14 +3,12 @@
   margin: 10px 0 50px;
   & h5 {
     margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 400;
+    @include font (14px, 400, 14px);
   }
   &-needed {
     display: none;
     margin-bottom: 5px;
-    font-size: 12px;
-    font-weight: 600;
+    @include font (12px, 600, 12px);
     color: $red;
     &--active {
       display: block;

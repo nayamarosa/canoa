@@ -8,12 +8,12 @@
       align-items: center;
     }
     padding: 5px 10px;
-    color: #3C3C3C;
+    color: $base-black;
     border: none;
     background-color: transparent;
     width: 85%;
     font-size: 16px;
-    border-bottom: 1px solid #3C3C3C;
+    border-bottom: 1px solid $base-black;
   }
   &__size {
     &:checked ~ .input__size-label {
@@ -33,26 +33,23 @@
       position: absolute;
       top: 0;
       left: 0;
-      letter-spacing: 1px;
-      font-weight: 300;
+      @include font (18px, 300, 18px);
       color: $pink;
-      background-color: #F7F2F3;
+      background-color: $background-rose;
       border: 1px solid $pink;
       border-radius: 8px;
-      font-size: 18px;
-      line-height: 18px;
       &:hover {
         background-color: lighten($color: $pink, $amount: 25)
       }
       &--not-available {
-        color: #A0A0A0;
-        border: 1px solid #C1BEBE;
+        color: gray;
+        border: 1px solid $ligth-gray;
         &:after {
           content: '';
           width: 65px;
           position:absolute;
           transform: rotate(-45deg);
-          border-top: 1px solid #C1BEBE;
+          border-top: 1px solid $ligth-gray;
         }
       }
     }

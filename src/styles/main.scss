@@ -1,6 +1,7 @@
-@import '../containers/App/App.scss';
-
 @import '../styles/variables';
+@import '../styles/mixins';
+
+@import '../containers/App/App.scss';
 
 @import '../components/base/Button/Button.scss';
 @import '../components/base/Image/Image.scss';

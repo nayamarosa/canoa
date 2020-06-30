@@ -8,9 +8,8 @@
       margin: 0 auto;
     }
     &-title {
+      @include font (12px, 500, 12px);
       padding-bottom: 5px;
-      font-size: 12px;
-      font-weight: 500;
     }
     &-empty {
       font-weight: 700;
@@ -28,8 +27,7 @@
     &-size {
       margin-top: 10px;
       padding: 0 10px;
-      font-size: 12px;
-      font-weight: 400;
+      @include font (12px, 400, 12px);
       & span {
         font-weight: 600;
       }
@@ -39,16 +37,14 @@
       padding: 0 10px;
       display: flex;
       align-items: center;
-      font-size: 12px;
-      font-weight: 400;
+      @include font (12px, 400, 12px);
       & span {
         width: 30px;
         margin: 0 8px;
         padding: 5px 10px;
         text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        border: 1px solid #3C3C3C;
+        @include font (14px, 400, 14px);
+        border: 1px solid $base-black;
         border-radius: 5px;
       }
     }
@@ -69,18 +65,15 @@
       margin: 0 auto;
     }
     & p {
-      font-size: 16px;
-      font-weight: 500;
+      @include font (16px, 500, 16px);
     }
     & h5 {
       margin: 5px 0 10px;
-      font-size: 22px;
-      font-weight: 600;
+      @include font (22px, 600, 22px);
     }
     & span {
       color: $pink;
-      font-size: 14px;
-      font-weight: 600;
+      @include font (14px, 600, 14px);
     }
   }
   &-btn {

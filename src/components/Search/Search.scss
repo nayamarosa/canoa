@@ -5,7 +5,7 @@
     position: absolute;
     overflow: hidden;
     right: 0;
-    background-color: #F7F2F3;
+    background-color: $background-rose;
     transition: 0.5s all;
     &--open {
       width: 100%;
@@ -37,8 +37,7 @@
     }
     &-title {
       padding-bottom: 5px;
-      font-size: 12px;
-      font-weight: 500;
+      @include font (12px, 500, 12px);
     }
     &-not-found {
       font-weight: 700;
