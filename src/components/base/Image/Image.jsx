@@ -9,7 +9,7 @@ const Image = (props) => {
       }
 
       { props.percent === ""
-      ? ''
+      ? false
       : <div className={props.classNameDiscount}>
         <span>{props.percent}</span>
         <span>OFF</span>
