@@ -33,4 +33,28 @@
       }
     }
   }
+  &__cart {
+    display: flex;
+    position: relative;
+    &-quantity {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-family: 'Open Sans Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #FCFCFC;
+      background-color: #D88A95;
+      border-radius: 50%;
+      @media (min-width: 1280px){
+        top: 8px;
+      }
+    }
+  }
 }

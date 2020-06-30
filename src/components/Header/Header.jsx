@@ -17,6 +17,8 @@ const Header = () => {
   const productsFiltered = useSelector(store => store.search.filtered);
   const dispatch = useDispatch()
 
+  let quantity = 7;
+
   const handleClickToCart = (e, code) => {
     history.push('/carrinho-de-compras');
   }
@@ -53,12 +55,22 @@ const Header = () => {
             />
           </div>
         </div>
-        <Button 
-          type="submit"
-          classNameBtn="btn__icon"
-          icon="fas fa-shopping-cart"
-          onClick={(e, code)=> handleClickToCart(e, code)}
-        />       
+        <div className="header__cart">
+          <Button 
+            type="submit"
+            classNameBtn="btn__icon"
+            icon="fas fa-shopping-cart"
+            onClick={(e, code)=> handleClickToCart(e, code)}
+          />
+          {
+            quantity > 0
+            ? <div className="header__cart-quantity">
+              <p>7</p>
+            </div>
+            : false
+          }
+          
+        </div>
         <SearchList listSearch={productsFiltered} />
       </nav>
     </header>
