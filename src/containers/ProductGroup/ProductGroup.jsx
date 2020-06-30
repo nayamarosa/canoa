@@ -25,7 +25,6 @@ export default function ProductItem({productSelected}){
   }
 
   const handleProductSize = (e) => {
-    e.preventDefault()
     setChosenSize(e.target.value)
   }
 
