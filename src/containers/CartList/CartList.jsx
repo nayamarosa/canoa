@@ -9,13 +9,17 @@ import Button from '../../components/base/Button';
 const CartList = ({products}) => {
   const history = useHistory();
   const productsCart = Object.entries(products);
-
-  let price = productsCart.map(product => parseFloat(product[1].product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.')))
-  let sum = price.reduce((accumulator, currentValue) => {
+  
+  const price = productsCart.map(product => 
+    parseFloat(product[1].product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.')) 
+    * (product[1].quantity))
+  
+  const sum = price.reduce((accumulator, currentValue) => {
     return currentValue + accumulator;
   }, 0).toFixed(2);
-  let installmentsQuantity = 3
-  let installments = (sum / installmentsQuantity).toFixed(2);
+
+  const installmentsQuantity = 3
+  const installments = (sum / installmentsQuantity).toFixed(2);
 
   const handleClickToCart = (e) => {
     e.preventDefault()

@@ -20,7 +20,7 @@ export default function ProductItem({productSelected}){
       history.push('/carrinho-de-compras')
       dispatch(addProductToCart(productDetail, chosenSize));
     } else {
-      alert("escolha um tamanho")
+      document.querySelector('.product-size-needed').classList.add('product-size-needed--active')
     }
   }
 
