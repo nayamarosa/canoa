@@ -5,6 +5,7 @@ import { fetchCatalog } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
+import Loading from '../../components/base/Loading/Loading';
 
 const Home = () => {
   
@@ -14,6 +15,7 @@ const Home = () => {
   }, [dispatch])
 
   const products = useSelector(store => store.catalog.products);
+  
 
   return (
     <>
@@ -30,7 +32,11 @@ const Home = () => {
       alt="Hero Banner"
       />
     }
-      <NavFilter products={products} />
+    {
+      products.length === 0
+      ? <Loading />
+      : <NavFilter products={products} />
+    }
     </>
   );
 }
@@ -40,7 +46,5 @@ const mapStateToProps = (state)=>{
       products: state.products
         }
   }
-
-
 
 export default connect(mapStateToProps)(Home)
