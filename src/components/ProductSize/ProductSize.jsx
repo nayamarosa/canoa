@@ -1,14 +1,12 @@
 import React from 'react';
 
-import './ProductSize.scss';
-
 import Input from '../base/Input';
 
 const ProductSize = (props) => {
   return (
     <div className="product-size">
       <h5>Escolha o tamanho</h5>
-      <p className="product-size-needed">* Por favor selecione um tamanho</p>
+      {/* <p className="product-size-needed">* Por favor selecione um tamanho</p> */}
       <form className="product-size__group">
       {
         props.productSizes !== undefined 

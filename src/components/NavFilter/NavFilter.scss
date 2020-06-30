@@ -28,7 +28,7 @@
     }
     &--active {
       position: relative;
-      color: #D88A95;
+      color: $pink;
       pointer-events: none;
       &:after {
         content: '';
@@ -37,7 +37,7 @@
         left: 50%;
         bottom: -11px;
         transform: translate(-50%, -50%);
-        border-bottom: 2px solid #D88A95;
+        border-bottom: 2px solid $pink;
         @media (min-width: 1280px){
           bottom: -15px;
         }

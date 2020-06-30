@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-import './NavFilter.scss';
-
 import CardList from '../../containers/CardList'
 
 const NavFilter = ({products}) => {

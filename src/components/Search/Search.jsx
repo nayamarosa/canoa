@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './Search.scss';
-
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 

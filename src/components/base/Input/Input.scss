@@ -17,8 +17,8 @@
   }
   &__size {
     &:checked ~ .input__size-label {
-      color: #FCFCFC;
-      background-color: #D88A95;
+      color: $white;
+      background-color: $pink;
     } 
     &-position {
       position: relative;
@@ -35,14 +35,14 @@
       left: 0;
       letter-spacing: 1px;
       font-weight: 300;
-      color: #D88A95;
+      color: $pink;
       background-color: #F7F2F3;
-      border: 1px solid #D88A95;
+      border: 1px solid $pink;
       border-radius: 8px;
       font-size: 18px;
       line-height: 18px;
       &:hover {
-        background-color: lighten($color: #D88A95, $amount: 25)
+        background-color: lighten($color: $pink, $amount: 25)
       }
       &--not-available {
         color: #A0A0A0;

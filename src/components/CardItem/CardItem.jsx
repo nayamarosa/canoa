@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import './CardItem.scss';
-
 import Button from '../base/Button';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';

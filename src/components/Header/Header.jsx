@@ -3,9 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { openSearch, closeSearch, inputSearch } from '../../actions/search';
 
-import './Header.scss';
-import '../Search/Search.scss';
-
 import Button from '../base/Button';
 import Input from '../base/Input'
 import SearchList from '../../containers/SearchList';

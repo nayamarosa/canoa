@@ -2,8 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 
-import './CartItem.scss';
-
 import Button from '../base/Button';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';

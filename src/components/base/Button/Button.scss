@@ -9,8 +9,8 @@
     padding: 8px 20px;
     letter-spacing: 0.5px;
     font-weight: 400;
-    color: #D88A95;
-    border: 1px solid #D88A95;
+    color: $pink;
+    border: 1px solid $pink;
     border-radius: 8px;
     &-buy {
       font-size: 16px;
@@ -21,7 +21,7 @@
       line-height: 18px;
     }
     &:hover {
-      background-color: lighten($color: #D88A95, $amount: 25)
+      background-color: lighten($color: $pink, $amount: 25)
     }
     &--bigger {
       padding: 15px 20px;
@@ -42,8 +42,8 @@
     padding: 10px;
     font-size: 24px;
     font-weight: 400;
-    color: #FCFCFC;
-    background-color: darken($color: #D88A95, $amount: 15);
+    color: $white;
+    background-color: darken($color: $pink, $amount: 15);
     border-radius: 8px;
     @media (min-width: 1280px){
       width: 250px;
@@ -51,7 +51,7 @@
       font-size: 18px;
     }
     &:hover {
-      background-color: #D88A95
+      background-color: $pink
     }
     & i {
       margin-left: 10px;
@@ -59,13 +59,13 @@
     }
     &--green {
       margin-top: 30px;
-      background-color: darken($color: #54957A, $amount: 15);
+      background-color: darken($color: $green, $amount: 15);
       @media (min-width: 1024px){
         margin-top: 0;
         line-height: 18px;
       }
       &:hover {
-        background-color: #54957A;
+        background-color: $green;
       }
     }
   }
@@ -79,9 +79,9 @@
       color: lighten($color: #3C3C3C, $amount: 25)
     }
     &--pink {
-      color: #D88A95;
+      color: $pink;
       &:hover {
-        color: lighten($color: #D88A95, $amount: 10)
+        color: lighten($color: $pink, $amount: 10)
       }
     }
     &--quantity {
@@ -93,9 +93,9 @@
     &--remove {
       display: flex;
       padding-top: 5px;
-      color: #D96060;
+      color: $red;
       &:hover {
-        color: lighten($color: #D96060, $amount: 25)
+        color: lighten($color: $red, $amount: 25)
       }
       & i {
         font-size: 16px;
