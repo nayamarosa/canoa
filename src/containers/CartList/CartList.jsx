@@ -35,24 +35,28 @@ const CartList = ({products}) => {
           : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
           }
       </ul>
-      <div className="cart-total">
-        <p>Valor total</p>
-        <h5>R$ {sum.replace('.', ',')}</h5>
-        <span>Em até 3x de R$ {installments.replace('.', ',')}</span>
-      </div>
-      <div className="cart-btn">
-        <Button 
-          type="submit"
-          classNameBtn="btn__primary btn__primary--bigger"
-          text="Continuar comprando"
-          onClick={(e) => handleClickToCart(e)}
-        />
-        <Button 
-          type="submit"
-          classNameBtn="btn__secondary btn__secondary--green"
-          text="Finalizar compra"
-        />
-      </div>
+      {
+        productsCart.length > 0
+        ? <><div className="cart-total">
+            <p>Valor total</p>
+            <h5>R$ {sum.replace('.', ',')}</h5>
+            <span>Em até 3x de R$ {installments.replace('.', ',')}</span>
+          </div>
+          <div className="cart-btn">
+            <Button 
+              type="submit"
+              classNameBtn="btn__primary btn__primary--bigger"
+              text="Continuar comprando"
+              onClick={(e) => handleClickToCart(e)}
+            />
+            <Button 
+              type="submit"
+              classNameBtn="btn__secondary btn__secondary--green"
+              text="Finalizar compra"
+            />
+          </div></>
+        : false
+      }
     </section>
   )
 }
