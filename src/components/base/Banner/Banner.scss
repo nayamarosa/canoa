@@ -6,10 +6,12 @@
     }
   }
   &__product {
+    min-height: 409px;
     position: relative;
     border-bottom: 2px solid #D88A95;
     @media (min-width: 1024px){
       width: 300px;
+      min-height: 379px;
     }
     &--discount {
       display: flex;
