@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
-import '../../components/Card/Card.scss';
-import Card from '../../components/Card';
+import '../../components/CardItem/CardItem.scss';
+import CardItem from '../../components/CardItem';
 
 const CardList = ({products}) => {
   let history = useHistory();
@@ -13,7 +13,7 @@ const CardList = ({products}) => {
 
   return (
     <ul className="container card__list">
-      {products.map(product => <Card product={product} 
+      {products.map(product => <CardItem product={product} 
         key={product.code_color} 
         onClick={(e) => handleProductCode(e, product.code_color)}/>
       )} 

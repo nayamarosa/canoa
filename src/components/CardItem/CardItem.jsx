@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import './Card.scss';
+
+import './CardItem.scss';
+
 import Button from '../base/Button';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
-const Card = ({product, onClick}) => {
+const CardItem = ({product, onClick}) => {
   return (
   <>  
     <li className="card__item">
@@ -36,4 +38,4 @@ const Card = ({product, onClick}) => {
   )
 }
 
-export default Card;
+export default CardItem;
