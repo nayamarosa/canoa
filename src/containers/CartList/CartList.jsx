@@ -23,35 +23,37 @@ const CartList = ({products}) => {
   }
 
   return (
-    <>
-    <ul className="container cart__list">
-      <p className="cart__list-title">Seu carrinho</p>
-      {
-        productsCart.length > 0
-        ? productsCart.map(([code, value]) => <CartItem 
-        productCode={[code]} 
-        value={value} 
-        key={[code]}/>)
-        : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
-        }
-    </ul>
-    <div className="container cart__list-total">
-      <p>Valor total</p>
-      <h5>R$ {sum.replace('.', ',')}</h5>
-      <span>Em até 3x de R$ {installments.replace('.', ',')}</span>
-    </div>
-    <Button 
-      type="submit"
-      classNameBtn="container btn__primary btn__primary--bigger"
-      text="Continuar comprando"
-      onClick={(e) => handleClickToCart(e)}
-    />
-      <Button 
-        type="submit"
-        classNameBtn="btn__secondary btn__secondary--green"
-        text="Finalizar compra"
-      />
-    </>
+    <section className="container cart">
+      <ul className="cart__list">
+        <p className="cart__list-title">Seu carrinho</p>
+        {
+          productsCart.length > 0
+          ? productsCart.map(([code, value]) => <CartItem 
+          productCode={[code]} 
+          value={value} 
+          key={[code]}/>)
+          : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
+          }
+      </ul>
+      <div className="cart-total">
+        <p>Valor total</p>
+        <h5>R$ {sum.replace('.', ',')}</h5>
+        <span>Em até 3x de R$ {installments.replace('.', ',')}</span>
+      </div>
+      <div className="cart-btn">
+        <Button 
+          type="submit"
+          classNameBtn="btn__primary btn__primary--bigger"
+          text="Continuar comprando"
+          onClick={(e) => handleClickToCart(e)}
+        />
+        <Button 
+          type="submit"
+          classNameBtn="btn__secondary btn__secondary--green"
+          text="Finalizar compra"
+        />
+      </div>
+    </section>
   )
 }
 
