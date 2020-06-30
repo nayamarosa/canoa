@@ -19,7 +19,8 @@ export default function Input(props) {
         />
       <label 
         htmlFor={props.id} 
-        className={props.classNameLabel}>{props.label}
+        className={props.classNameLabel}>
+        {props.label}
       </label>
     </div>
   ) 

@@ -5,19 +5,32 @@ import { fetchCatalog } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
+import Loading from '../../components/base/Loading/Loading';
 
 const Home = () => {
-  
   const dispatch = useDispatch()
-  // useEffect(() => async () => {
-  //   await dispatch(fetchCatalog())
-  // }, [dispatch])
 
   useEffect(() => () => {
-    setTimeout(() => dispatch(fetchCatalog()), 1000)    
+    dispatch(fetchCatalog())
   }, [dispatch])
 
+  // useEffect(() => () => {
+  //   setTimeout(() => dispatch(fetchCatalog()), 1000)    
+  // }, [dispatch])
+
   const products = useSelector(store => store.catalog.products);
+  console.log(products)
+
+  const loadingFormat = <section className="loading__format-home">
+    <div className="loading__format-home-nav">
+      <ul className="container loading__format-home-list">
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+        <li className="loading__format-home-item"></li>
+      </ul>
+    </div>
+  </section>
 
   return (
     <>
@@ -34,7 +47,11 @@ const Home = () => {
       alt="Hero Banner"
       />
     }
-      <NavFilter products={products} />
+    {
+      products.length === 0
+      ? <Loading format={loadingFormat}/>
+      : <NavFilter products={products} />
+    }
     </>
   );
 }

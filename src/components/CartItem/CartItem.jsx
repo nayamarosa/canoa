@@ -23,7 +23,7 @@ const CartItem = ({value, productCode}) => {
 
   const handleSubtractItem = (e, code) => {
     e.preventDefault()
-    return (value.quantity !== 0) ? dispatch(subtractItem(code)) : false;
+    return (value.quantity !== 1) ? dispatch(subtractItem(code)) : false;
   }
 
   return (

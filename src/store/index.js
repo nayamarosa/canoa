@@ -4,9 +4,9 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import rootReducer from '../reducers';
-
 const initialState = {};
 
+// export default compose(applyMiddleware(thunk))(createStore)(duedates);
 const middleware = [thunk];
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -14,7 +14,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: ['navigation'],
+    whitelist: ['catalog', 'search', 'shoppingCart'],
 };
 
 // const persitedReducer = persistReducer(persistConfig, 
@@ -23,7 +23,7 @@ const persistConfig = {
 //     composeEnhancers(applyMiddleware(...middleware))
 // );
 
-const composedEnhacers = composeEnhancers(applyMiddleware(thunk));
+const composedEnhacers = composeEnhancers(applyMiddleware(...middleware));
 
 const persitedReducer = persistReducer(
     persistConfig, 
