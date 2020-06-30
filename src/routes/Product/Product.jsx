@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation} from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchProducts } from '../../actions/catalog';
+import { fetchCatalog } from '../../actions/catalog';
 
 import ProductGroup from '../../containers/ProductGroup';
 
@@ -21,7 +21,7 @@ export default function Product() {
   
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchProducts())
+    dispatch(fetchCatalog())
   }, [dispatch])
   
   return (

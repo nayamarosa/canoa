@@ -4,7 +4,7 @@ export const INPUT_SEARCH = 'INPUT_SEARCH';
 export const LIST_SEARCH = 'LIST_SEARCH';
 export const REDIRECT_SEARCH = 'REDIRECT_SEARCH';
 
-export const openSearch = (opened) => dispatch => {
+export const openSearch = (opened) => (dispatch) => {
   const open = () => {
     const showInput = document.querySelector('.search__input')
     const showList = document.querySelector('.search__list')

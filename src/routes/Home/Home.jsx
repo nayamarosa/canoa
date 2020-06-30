@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchProducts } from '../../actions/catalog';
+import { fetchCatalog } from '../../actions/catalog';
 
 import Banner from '../../components/base/Banner';
 import NavFilter from '../../components/NavFilter';
 
-export default function Home() {
+const Home = () => {
   
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchProducts())
+  // useEffect(() => async () => {
+  //   await dispatch(fetchCatalog())
+  // }, [dispatch])
+
+  useEffect(() => () => {
+    setTimeout(() => dispatch(fetchCatalog()), 1000)    
   }, [dispatch])
 
   const products = useSelector(store => store.catalog.products);
@@ -34,3 +38,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;
