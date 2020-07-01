@@ -26,6 +26,7 @@ const Header = () => {
           </Link>
           <div className="header__search">
             <Button 
+              text="Abrir busca"
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
               icon="fas fa-search"
@@ -41,6 +42,7 @@ const Header = () => {
               handleChange={(e) => dispatch(inputSearch(e, e.target.value))}
             />
             <Button 
+              text="Fechar busca"
               id="search-btn"
               type="submit"
               classNameBtn="btn__icon btn__icon--pink"
@@ -51,6 +53,7 @@ const Header = () => {
         </div>
         <div className="header__cart">
           <Button 
+            text="Carrinho"
             type="submit"
             classNameBtn="btn__icon"
             icon="fas fa-shopping-cart"
