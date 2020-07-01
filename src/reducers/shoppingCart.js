@@ -14,7 +14,7 @@ import {
       case ADD_PRODUCT_TO_CART: {
         return {
           ...state,
-          cart: {...state.cart, [action.payload.product.code_color]: action.payload }
+          cart: {...state.cart, [action.payload.product.code_color + action.payload.size]: action.payload }
         }
       }
       case ADD_ITEMS: {

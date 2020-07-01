@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProductToCart } from '../../actions/shoppingCart';
 
 import Banner from '../../components/base/Banner';
@@ -9,15 +9,28 @@ import ProductSize from '../../components/ProductSize';
 import Button from '../../components/base/Button';
 
 export default function ProductItem({productSelected}){
+  const productsInShoppingCart = useSelector(store => store.shoppingCart.cart); 
+  const [sameProductWithSizeDiferent, setSameProductWithSizeDiferent] = useState({});
   const [productDetail, setProductDetail] = useState({});
   const [chosenSize, setChosenSize] = useState('');
   let history = useHistory();
   const dispatch = useDispatch();
+
+  
+  // useEffect(() => {
+  //   const filter = products.filter((product) => product.code_color.includes(productCode));
+    
+  //   setSameProductWithSizeDiferent(filter)     
+  // }, [products])
+console.log(productsInShoppingCart)
+  
+  // console.log(Object.keys(productsInShoppingCart).map(key => key))
   
   const handleProductCode = (e, code) => {
     e.preventDefault()
     if (chosenSize !== '') {
       history.push('/carrinho-de-compras')
+      console.log(productDetail, chosenSize)
       dispatch(addProductToCart(productDetail, chosenSize));
     } else {
       document.querySelector('.product-size-needed').classList.add('product-size-needed--active')
