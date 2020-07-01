@@ -3,7 +3,7 @@ import { useDispatch, useSelector, connect } from 'react-redux';
 import { fetchCatalog } from '../../actions/catalog';
 
 import Image from '../../components/base/Image';
-import NavFilter from '../../components/NavFilter';
+import NavFilter from '../../containers/NavFilter';
 import Loading from '../../components/base/Loading/Loading';
 
 const Home = () => {
