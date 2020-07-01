@@ -29,7 +29,7 @@ const CartItem = ({value, productCode}) => {
   <>  
     <li className="cart__item">
         <Image 
-          classNameimage="image__product--cart"
+          classNameImage="image__product--cart"
           src={product.image}
           alt={product.name}
         />

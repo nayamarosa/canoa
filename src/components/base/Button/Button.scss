@@ -1,24 +1,11 @@
 .btn {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  @include btn('Barlow Semi Condensed', 300);
   &__primary {
-    width: 100%;
-    padding: 8px 20px;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    color: $pink;
+    @include btn-type(100%, 8px 20px, $pink);
     border: 1px solid $pink;
-    border-radius: 8px;
     &-buy {
       font-size: 16px;
       line-height: 16px;
-    }
-    &-size {
-      font-size: 18px;
-      line-height: 18px;
     }
     &:hover {
       background-color: lighten($color: $pink, $amount: 25)
@@ -37,14 +24,10 @@
     }
   }
   &__secondary {
-    width: 100%;
+    @include btn-type(100%, 10px, $white);
     height: 55px;
-    padding: 10px;
     font-size: 24px;
-    font-weight: 400;
-    color: $white;
     background-color: darken($color: $pink, $amount: 15);
-    border-radius: 8px;
     @media (min-width: 1280px){
       width: 250px;
       padding: 5px;
@@ -71,12 +54,12 @@
   }
   &__icon {
     font-size: 20px;
-    color: #3C3C3C;
+    color: $base-black;
     @media (min-width: 1024px){
       font-size: 22px;
     }
     &:hover {
-      color: lighten($color: #3C3C3C, $amount: 25)
+      color: lighten($color: $base-black, $amount: 25)
     }
     &--pink {
       color: $pink;

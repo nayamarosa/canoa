@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Routes from '../../routes';
 import { Provider } from 'react-redux';
 import { store, persistor } from '../../store';
 import { PersistGate } from 'redux-persist/integration/react';
+import Routes from '../../routes';
+
+import '../../styles/main.scss';
 
 import Header from '../../components/Header';
-
 
 const App = () => (
   <Provider store={store}>

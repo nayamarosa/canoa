@@ -24,10 +24,9 @@
   &__logo {
     & h1 {
       font-family: 'Open Sans Condensed', sans-serif;
-      font-size: 30px;
-      font-weight: 300;
+      @include font (30px, 300, 30px);
       letter-spacing: 5px;
-      color: #3C3C3C;
+      color: $base-black;
       @media (min-width: 1280px){
         font-size: 40px;
       }
@@ -46,8 +45,7 @@
       top: 0;
       right: 0;
       font-family: 'Open Sans Condensed', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
+      @include font (10px, 700, 10px);
       letter-spacing: 0.5px;
       color: #FCFCFC;
       background-color: $pink;

@@ -1,0 +1,28 @@
+@mixin btn ($font-family, $font-weight) {
+  font-family: #{$font-family}, sans-serif;
+  font-weight: $font-weight;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+@mixin btn-type ($width, $padding, $color) {
+  width: $width;
+  padding: $padding;
+  color: $color;
+  border-radius: 8px;
+}
+
+@mixin font ($font-size, $font-weight, $line-height) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+@mixin loading () {
+  color: transparent;
+  background: linear-gradient(100deg, #ECE6E7 30%, #F6F4F5 50%, #ECE6E7 70%);
+  background-size: 400%;
+  animation: loading 2s ease-in-out infinite;
+}
