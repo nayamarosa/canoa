@@ -9,7 +9,7 @@ const initialState = {};
 const middleware = [thunk];
 
 const persistConfig = {
-  key: 'FASHIONISTA_PROJECT',
+  key: 'CANOA',
   storage,
 };
 

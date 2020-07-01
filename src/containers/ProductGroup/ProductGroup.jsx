@@ -14,7 +14,7 @@ export default function ProductItem({productSelected}){
   let history = useHistory();
   const dispatch = useDispatch();
   
-  const handleProductCode = (e, code) => {
+  const handleProductCode = (e) => {
     e.preventDefault()
     if (chosenSize !== '') {
       history.push('/carrinho-de-compras')

@@ -11,9 +11,9 @@ const CartItem = ({value, productCode}) => {
   const dispatch = useDispatch()
   const product = value.product;
 
-  const handleRemoveProductInCart = (e, code) => {
+  const handleRemoveProductInCart = (e, code, size) => {
     e.preventDefault()
-    dispatch(removeProductFromCart(product, code));
+    dispatch(removeProductFromCart(product, size));
   }
 
   const handleAddItem = (e, code) => {
@@ -66,7 +66,7 @@ const CartItem = ({value, productCode}) => {
             type="button"
             classNameBtn="btn__icon btn__icon--remove"
             icon="fas fa-trash-alt"
-            onClick={(e) => handleRemoveProductInCart(e, product.code_color)}
+            onClick={(e) => handleRemoveProductInCart(e, product.code_color, value.size)}
           />
         </div>
     </li>
