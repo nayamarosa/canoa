@@ -58,6 +58,9 @@
     @media (min-width: 1024px){
       font-size: 22px;
     }
+    & span {
+      display: none;
+    }
     &:hover {
       color: lighten($color: $base-black, $amount: 25)
     }
