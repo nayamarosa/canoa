@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history'
 import { render, fireEvent } from '@testing-library/react';
 import { store } from '../store';
 import { Provider } from 'react-redux';
