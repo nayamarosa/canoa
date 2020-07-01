@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Product from './Product';
 import ShoppingCart from './ShoppingCart';
+import Checkout from './Checkout';
 
 const Routes = () => (
   <Switch>
@@ -17,6 +18,10 @@ const Routes = () => (
 
     <Route path="/carrinho-de-compras">
       <ShoppingCart />
+    </Route>
+
+    <Route path="/checkout">
+      <Checkout />
     </Route>
   </Switch>
 );

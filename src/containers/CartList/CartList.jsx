@@ -21,9 +21,14 @@ const CartList = ({products}) => {
   const installmentsQuantity = 3
   const installments = (sum / installmentsQuantity).toFixed(2);
 
-  const handleClickToCart = (e) => {
+  const handleClickToHome = (e) => {
     e.preventDefault()
     history.push('/');
+  }
+
+  const handleClickToCheckout = (e) => {
+    e.preventDefault()
+    history.push('/checkout');
   }
 
   return (
@@ -51,12 +56,13 @@ const CartList = ({products}) => {
               type="submit"
               classNameBtn="btn__primary btn__primary--bigger"
               text="Continuar comprando"
-              onClick={(e) => handleClickToCart(e)}
+              onClick={(e) => handleClickToHome(e)}
             />
             <Button 
               type="submit"
               classNameBtn="btn__secondary btn__secondary--green"
               text="Finalizar compra"
+              onClick={(e) => handleClickToCheckout(e)}
             />
           </div></>
         : <div className="cart-btn cart-btn--empty">
@@ -64,7 +70,7 @@ const CartList = ({products}) => {
               type="submit"
               classNameBtn="btn__primary btn__primary--bigger"
               text="Continuar comprando"
-              onClick={(e) => handleClickToCart(e)}
+              onClick={(e) => handleClickToHome(e)}
             />
           </div>
       }
