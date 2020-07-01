@@ -30,7 +30,7 @@ import {
         }
       }
       case REMOVE_PRODUCT_FROM_CART: {
-        const {[action.payload.product.code_color]: deleted, ...cart} = state.cart;
+        const {[action.payload.product.code_color + action.payload.size]: deleted, ...cart} = state.cart;
         return {
           ...state,
           cart: cart

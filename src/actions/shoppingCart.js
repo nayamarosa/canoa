@@ -14,11 +14,12 @@ export const addProductToCart = (product, size) => (dispatch) => {
   })
 };
 
-export const removeProductFromCart = (product) => (dispatch) => {
+export const removeProductFromCart = (product, size) => (dispatch) => {
   return dispatch({
     type: REMOVE_PRODUCT_FROM_CART,
     payload: {
-      product: product
+      product: product,
+      size: size,
     }
   })
 };
