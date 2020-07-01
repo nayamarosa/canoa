@@ -7,7 +7,7 @@ import Routes from '../../routes';
 
 import '../../styles/main.scss';
 
-import Header from '../../components/Header';
+import Header from '../../containers/Header';
 
 const App = () => (
   <Provider store={store}>

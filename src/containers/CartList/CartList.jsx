@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 
 // import '../../components/CartItem/CartItem.scss';
 
@@ -8,6 +10,7 @@ import Button from '../../components/base/Button';
 
 const CartList = ({products}) => {
   const history = useHistory();
+  const dispatch = useDispatch()
   const productsCart = Object.entries(products);
   
   const price = productsCart.map(product => 
@@ -31,16 +34,39 @@ const CartList = ({products}) => {
     history.push('/checkout');
   }
 
+  const handleRemoveProductInCart = (e, code, size, product) => {
+    e.preventDefault()
+    dispatch(removeProductFromCart(product, size));
+  }
+
+  const handleAddItem = (e, code) => {
+    e.preventDefault()
+    dispatch(addItem(code));
+  }
+
+  const handleSubtractItem = (e, code, value) => {
+    e.preventDefault()
+    return (value.quantity !== 1) ? dispatch(subtractItem(code)) : false;
+  }
+
   return (
     <section className="container cart">
       <ul className="cart__list">
         <p className="cart__list-title">Seu carrinho</p>
         {
           productsCart.length > 0
-          ? productsCart.map(([code, value]) => <CartItem 
-          productCode={[code]} 
-          value={value} 
-          key={[code]}/>)
+          ? productsCart.map(([code, value]) => {
+              const product = value.product;
+              return <CartItem 
+              product={product}
+              productCode={[code]} 
+              value={value} 
+              key={[code]}
+              onClickSubtract={(e) => handleSubtractItem(e, [code], value)}
+              onClickAdd={(e) => handleAddItem(e, [code])}
+              onClickRemove={(e) => handleRemoveProductInCart(e, product.code_color, value.size, product)}
+              />
+            })
           : <p className="cart__list-empty">Seu carrinho ainda está vazio</p>
           }
       </ul>

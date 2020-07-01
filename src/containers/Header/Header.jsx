@@ -3,9 +3,9 @@ import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { openSearch, closeSearch, inputSearch } from '../../actions/search';
 
-import Button from '../base/Button';
-import Input from '../base/Input'
-import SearchList from '../../containers/SearchList';
+import Button from '../../components/base/Button';
+import Input from '../../components/base/Input'
+import SearchList from '../SearchList';
 
 const Header = () => {  
   let history = useHistory();

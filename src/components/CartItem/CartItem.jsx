@@ -1,30 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 
 import Button from '../base/Button';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
-const CartItem = ({value, productCode}) => {
-  const dispatch = useDispatch()
-  const product = value.product;
-
-  const handleRemoveProductInCart = (e, code, size) => {
-    e.preventDefault()
-    dispatch(removeProductFromCart(product, size));
-  }
-
-  const handleAddItem = (e, code) => {
-    e.preventDefault()
-    dispatch(addItem(code));
-  }
-
-  const handleSubtractItem = (e, code) => {
-    e.preventDefault()
-    return (value.quantity !== 1) ? dispatch(subtractItem(code)) : false;
-  }
-
+const CartItem = ({product, value, onClickSubtract, onClickAdd, onClickRemove}) => {
   return (
   <>  
     <li className="cart__item">
@@ -50,14 +30,14 @@ const CartItem = ({value, productCode}) => {
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-minus"
-              onClick={(e) => handleSubtractItem(e, productCode)}
+              onClick={onClickSubtract}
               />
               <span>{value.quantity}</span>
               <Button 
               type="button"
               classNameBtn="btn__icon btn__icon--quantity"
               icon="fas fa-plus"
-              onClick={(e) => handleAddItem(e, productCode)}
+              onClick={onClickAdd}
               />
             </div>
           </section>
@@ -65,7 +45,7 @@ const CartItem = ({value, productCode}) => {
             type="button"
             classNameBtn="btn__icon btn__icon--remove"
             icon="fas fa-trash-alt"
-            onClick={(e) => handleRemoveProductInCart(e, product.code_color, value.size)}
+            onClick={onClickRemove}
           />
         </div>
     </li>

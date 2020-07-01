@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-import CardList from '../../containers/CardList'
+import CardList from '../CardList'
 
 const NavFilter = ({products}) => {
   const [active, setActive] = useState('');
