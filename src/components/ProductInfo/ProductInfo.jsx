@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './ProductInfo.scss';
-
 const ProductInfo = (props) => {
   return (
     <>
@@ -26,4 +24,4 @@ const ProductInfo = (props) => {
     )
   }
 
-  export default ProductInfo
+export default ProductInfo;

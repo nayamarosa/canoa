@@ -1,8 +1,6 @@
 import React from 'react';
 
-import './Input.scss';
-
-export default function Input(props) {
+const Input = (props) => {
   return (
     <div className={props.classNameInputGroup}>
       <input 
@@ -25,3 +23,5 @@ export default function Input(props) {
     </div>
   ) 
 }
+
+export default Input;

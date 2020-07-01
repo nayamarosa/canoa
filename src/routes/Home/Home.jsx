@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector, connect } from 'react-redux';
-
 import { fetchCatalog } from '../../actions/catalog';
 
-import Banner from '../../components/base/Banner';
+import Image from '../../components/base/Image';
 import NavFilter from '../../components/NavFilter';
 import Loading from '../../components/base/Loading/Loading';
 
@@ -31,13 +30,13 @@ const Home = () => {
     <>
     {
       window.screen.width < 800 
-      ? <Banner 
-      classNameBanner="banner__hero"
+      ? <Image 
+      classNameImage="image__hero"
       src="/main_banner-mobile.jpg"
       alt="Hero Banner"
       />
-      : <Banner 
-      classNameBanner="banner__hero"
+      : <Image 
+      classNameImage="image__hero"
       src="/main_banner-desktop.jpg"
       alt="Hero Banner"
       />

@@ -23,8 +23,7 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
-          font-size: 14px;
-          font-weight: 500;
+          @include font (14px, 500, 14px);
         }
         &-align {
           display: flex;
@@ -34,8 +33,7 @@
         &--bigger {
           padding: 10px 0 15px;
           & h4 {
-            font-size: 22px;
-            font-weight: 400;
+            @include font (22px, 400, 22px);
           }
         }
         &--search {
@@ -56,13 +54,11 @@
         text-decoration: line-through;
       }
       &--new {
-        font-size: 18px;
-        font-weight: 500;
+        @include font (18px, 500, 18px);
       }
       &--bigger {
         & p {
-          font-size: 14px;
-          font-weight: 300;
+          @include font (14px, 300, 14px);
         }
         &--old {
           text-decoration: line-through;
@@ -70,24 +66,20 @@
         &--new {
           display: inline-block;
           margin: 5px 0;
-          font-size: 24px;
-          line-height: 22px;
-          font-weight: 400;
+          @include font (24px, 400, 22px);
         }
         &--installments{
-          color: #D88A95;
+          color: $pink;
           font-weight: 600;
         }
       }
       &--cart {
         margin-top: 5px;
         & p {
-          font-size: 12px;
-          font-weight: 400;
+          @include font (12px, 400, 12px);
         }
         & .product-info__price--new {
-          font-size: 13px;
-          font-weight: 600;
+          @include font (13px, 600, 13px);
         }
       }
     }

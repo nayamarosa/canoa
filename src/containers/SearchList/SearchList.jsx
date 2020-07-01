@@ -1,13 +1,11 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
+import { closeSearch } from '../../actions/search';
 
 import Search from '../../components/Search';
 
-import { closeSearch } from '../../actions/search';
-
-
-export default function SearchList({inputValue, listSearch}) {
+const SearchList = ({inputValue, listSearch}) => {
   let history = useHistory();
   const dispatch = useDispatch()
 
@@ -18,15 +16,15 @@ export default function SearchList({inputValue, listSearch}) {
   }
 
   return (
-    <>
-      <ul className="search__list">
-        <p className="container search__list-title">Resultados da busca</p>
-        {
-        inputValue === '' || (inputValue !== '' && listSearch.length === 0)
-        ? <p className="container search__list-not-found">Digite o que você procura</p>
-        : listSearch.map(product => <Search product={product} key={product.code_color} onClick={(e) => handleProductCode(e, product.code_color)}/>)
-        }
-      </ul>
-    </>
+    <ul className="search__list">
+      <p className="container search__list-title">Resultados da busca</p>
+      {
+      inputValue === '' || (inputValue !== '' && listSearch.length === 0)
+      ? <p className="container search__list-not-found">Digite o que você procura</p>
+      : listSearch.map(product => <Search product={product} key={product.code_color} onClick={(e) => handleProductCode(e, product.code_color)}/>)
+      }
+    </ul>
   )
 }
+
+export default SearchList; 

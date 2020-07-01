@@ -20,24 +20,23 @@
   }
   &__item {
     & h2 {
-      font-size: 16px;
-      font-weight: 500;
+      @include font (16px, 500, 16px);
       @media (min-width: 1280px){
         font-size: 18px;
       }
     }
     &--active {
       position: relative;
-      color: #D88A95;
+      color: $pink;
       pointer-events: none;
       &:after {
         content: '';
         width: 110px;
         position: absolute;
         left: 50%;
-        bottom: -11px;
+        bottom: -12px;
         transform: translate(-50%, -50%);
-        border-bottom: 2px solid #D88A95;
+        border-bottom: 2px solid $pink;
         @media (min-width: 1280px){
           bottom: -15px;
         }
