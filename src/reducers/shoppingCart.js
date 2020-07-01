@@ -14,7 +14,7 @@ import {
       case ADD_PRODUCT_TO_CART: {
         return {
           ...state,
-          cart: {...state.cart, [action.payload.product.code_color]: action.payload }
+          cart: {...state.cart, [action.payload.product.code_color + action.payload.size]: action.payload }
         }
       }
       case ADD_ITEMS: {
@@ -30,7 +30,7 @@ import {
         }
       }
       case REMOVE_PRODUCT_FROM_CART: {
-        const {[action.payload.product.code_color]: deleted, ...cart} = state.cart;
+        const {[action.payload.product.code_color + action.payload.size]: deleted, ...cart} = state.cart;
         return {
           ...state,
           cart: cart

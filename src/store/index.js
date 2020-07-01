@@ -1,4 +1,6 @@
 import { applyMiddleware, createStore, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; 
 import thunk from 'redux-thunk';
 
 import rootReducer from '../reducers';
@@ -6,8 +8,17 @@ const initialState = {};
 
 const middleware = [thunk];
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const persistConfig = {
+  key: 'CANOA',
+  storage,
+};
 
-const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middleware)));
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export default store;
+const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
+
+const store = createStore(persistedReducer, initialState, composeEnhancers(applyMiddleware(...middleware)));
+
+const persistor = persistStore(store);
+
+export { store, persistor };
