@@ -16,7 +16,7 @@ const SearchList = ({inputValue, listSearch}) => {
   }
 
   return (
-    <ul className="search__list">
+    <ul className="search__list" data-testid="search-list">
       <p className="container search__list-title">Resultados da busca</p>
       {
       inputValue === '' || (inputValue !== '' && listSearch.length === 0)

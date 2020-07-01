@@ -18,7 +18,7 @@ const Header = () => {
   }
   
   return (
-    <header className="container header">
+    <header className="container header" data-testid="header">
       <nav className="header__nav">
         <div className="header__nav-align">
           <Link to="/" className="header__logo">
