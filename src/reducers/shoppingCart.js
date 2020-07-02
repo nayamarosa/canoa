@@ -2,7 +2,7 @@ import {
     ADD_PRODUCT_TO_CART,
     ADD_ITEMS,
     SUBTRACT_ITEMS,
-    REMOVE_PRODUCT_FROM_CART
+    REMOVE_PRODUCT_FROM_CART,
   } from '../actions/shoppingCart';
   
   const initialState = {
