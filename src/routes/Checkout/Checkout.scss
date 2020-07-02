@@ -1,5 +1,4 @@
 .checkout {
-  padding-top: 12px;
   & h2 {
     color: darken($color: #54957A, $amount: 15);
   }
@@ -21,6 +20,7 @@
     @media (min-width: 1024px){
       width: 600px;
       margin: 0 auto;
+      padding-top: 12px;
     }
   }
 }
