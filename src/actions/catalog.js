@@ -1,4 +1,4 @@
-import {API_URL} from '../utils'
+import { API_URL } from '../utils'
 export const GET_CATALOG = 'GET_CATALOG';
 export const GET_CATALOG_ERROR = 'GET_CATALOG_ERROR';
 
