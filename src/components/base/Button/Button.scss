@@ -31,6 +31,7 @@
     background-color: darken($color: $pink, $amount: 15);
     @media (min-width: 1280px){
       width: 250px;
+      margin: 0;
       padding: 5px;
       font-size: 18px;
     }
@@ -45,7 +46,7 @@
       background-color: darken($color: $green, $amount: 15);
       @media (min-width: 1024px){
         margin: 0;
-        line-height: 18px;
+        line-height: 20px;
       }
       &:hover {
         background-color: $green;

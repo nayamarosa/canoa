@@ -16,4 +16,11 @@
       }
     }
   }
+  &-container {
+    @media (min-width: 1024px){
+      width: 600px;
+      margin: 0 auto;
+      padding-top: 12px;
+    }
+  }
 }
