@@ -1,20 +1,27 @@
 # Canoá
 Projeto final e-commerce, realizado em dulpa, no curso React Woman - Loft, da Codenation.
 
+### Link da Aplicação:
+
+## [Canoá](https://canoa.netlify.app/)
+
 ## Índice
 
-* [Como utilizar](#como-utilizar)
+* [Como utilizar](#como-utilizar-em-desenvolvimento)
 * [Principais Tecnologias](#principais-tecnologias)
 * [Organização/Planejamento](#organização/planejamento)
 * [Definição do produto](#definição-do-produto)
 * [Personas](#personas)
-* [Histórias de usuárias](#Histórias-de-usuárias)
-  * [Definição de pronto](#Definição-de-pronto)
+* [Histórias de usuárias](#histórias-de-usuárias)
+  * [Requisitos Obrigatórios](#requisitos-obrigatórios)
+  * [Requisitos Opcionais](#requisitos-opcionais)
+  * [Definição de pronto](#definição-de-pronto)
 * [Protótipo](#protótipo)
 * [Pesquisa com usuários](#Pesquisa-com-usuários)
   * [Testes de usabilidade](#testes-de-usabilidade)
+* [Roadmap](#roadmap)
 
-[Link da aplicação]("http...")
+
 
 ## Como Utilizar em Desenvolvimento
 
@@ -36,8 +43,8 @@ Projeto final e-commerce, realizado em dulpa, no curso React Woman - Loft, da Co
     npm start
   ````
 
-
 ### Principais Tecnologias
+
 * React
 * Redux
 
@@ -53,10 +60,11 @@ A Canoá é um e-commerce de Moda e Acessórios.
 As usuárias podem interagir na escolha e compra de produtos.
 
 ## Personas
+![Personas](/public/Personas-CANOÁ-E-commerce-de-moda.pdf)
 
-![Personas](/public/src/assets/personas/Personas CANOÁ - E-commerce de moda.pdf)
+## Histórias de usuárias 
 
-## Histórias de usuárias - Requisitos Obrigatórios
+  **Requisitos Obrigatórios**
 
 1. Eu como usuária gostaria de ter acesso rápido ao catálogo dos produtos.
 2. Eu como usuária gostaria de saber quais os produtos de promoção.
@@ -71,7 +79,7 @@ As usuárias podem interagir na escolha e compra de produtos.
 11. Eu como usuária gostaria de ter a informação do valor total do(s) produto(s) no carrinho.
 12. Eu como usuária gostaria de finalizar a compra de forma rápida.
 
--- **Requisitos Opcionais** -- 
+  **Requisitos Opcionais** 
 
 13. Eu como usuária, mesmo não finalizando a compra, gostaria de voltar a loja e ter os produtos escolhidos no carrinho de compra.
 14. Eu como usuária gostaria, que memso ao recarregar a página, as informações do produtos estejam no carrinho.
@@ -113,3 +121,8 @@ O protótipo da Canoá, pode ser visualizado no link abaixo:
   O protótipo utilizado foi de alta fidelidade em mobile-first.
   Durante os testes com protótipo, constatou-se a necessidade de mais destaque no botão de comprar.
   De acordo com essa sugestão, foram feitas as modificações na aplicação. Ressaltou-se que uma rolagem vertical dos produtos é mais interessante que uma horizontal.
+
+### Roadmap
+  * Implementação de testes.
+  * Opção de cores.
+  * Produtos favoritos.
