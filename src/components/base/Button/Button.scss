@@ -26,6 +26,7 @@
   &__secondary {
     @include btn-type(100%, 10px, $white);
     height: 55px;
+    margin-bottom: 30px;
     font-size: 24px;
     background-color: darken($color: $pink, $amount: 15);
     @media (min-width: 1280px){
