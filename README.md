@@ -16,9 +16,25 @@ Projeto final e-commerce, realizado em dulpa, no curso React Woman - Loft, da Co
 
 [Link da aplicação]("http...")
 
-## Como Utilizar
+## Como Utilizar em Desenvolvimento
+
+  ### install no terminal
+
+  ```` 
+    yarn install
+  ````
+  ou
+  ````
     npm install
+  ````
+  ### build
+  ```` 
+    yarn start
+  ````
+  ou
+  ````
     npm start
+  ````
 
 
 ### Principais Tecnologias
@@ -38,7 +54,7 @@ As usuárias podem interagir na escolha e compra de produtos.
 
 ## Personas
 
-
+![Personas](/public/src/assets/personas/Personas CANOÁ - E-commerce de moda.pdf)
 
 ## Histórias de usuárias - Requisitos Obrigatórios
 
@@ -79,7 +95,7 @@ Eu como usuária gostaria de buscar de maneira rápida em tempo real o tipo de p
 
 O protótipo da Canoá, pode ser visualizado no link abaixo:
 
-[Protótipo da aplicação]()
+[Protótipo da aplicação](https://bit.ly/prototipo-canoa)
 
 ## Pesquisa com usuários
   A pesquisa foi feita com 11 usuários e os dados foram coletados através de Formulário do google seguido do protótipo.
