@@ -15,15 +15,17 @@ export default function Checkout() {
 
   return (
     <section className="container checkout">
-      <h2>Compra realizada com sucesso!</h2>
-      <p>Esperamos que goste do seu produto.</p>
-      <div className="checkout-btn checkout-btn--new-buy">
-        <Button 
-          type="submit"
-          classNameBtn="btn__primary btn__primary--bigger"
-          text="Comprar novamente"
-          onClick={(e) => handleClickToHome(e)}
-        />
+      <div className="checkout-container">
+        <h2>Compra realizada com sucesso!</h2>
+        <p>Esperamos que goste do seu produto.</p>
+        <div className="checkout-btn checkout-btn--new-buy">
+          <Button 
+            type="submit"
+            classNameBtn="btn__primary btn__primary--bigger"
+            text="Comprar novamente"
+            onClick={(e) => handleClickToHome(e)}
+          />
+        </div>
       </div>
     </section>
     );
