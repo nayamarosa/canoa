@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
 
 // import '../../components/CartItem/CartItem.scss';
@@ -12,7 +12,7 @@ const CartList = ({products}) => {
   const history = useHistory();
   const dispatch = useDispatch()
   const productsCart = Object.entries(products);
-  
+
   const price = productsCart.map(product => 
     parseFloat(product[1].product.actual_price.replace(/[^0-9,-]+/g,"").replace(',','.')) 
     * (product[1].quantity))
@@ -32,6 +32,8 @@ const CartList = ({products}) => {
   const handleClickToCheckout = (e) => {
     e.preventDefault()
     history.push('/checkout');
+    localStorage.clear()
+    document.location.reload(true);
   }
 
   const handleRemoveProductInCart = (e, code, size, product) => {
