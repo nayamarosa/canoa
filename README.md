@@ -60,7 +60,7 @@ A Canoá é um e-commerce de Moda e Acessórios.
 As usuárias podem interagir na escolha e compra de produtos.
 
 ## Personas
-![Personas](/public/Personas-CANOÁ-E-commerce-de-moda.pdf)
+[Personas](https://github.com/nayamarosa/projeto-loja/blob/readme/public/Personas-CANO%C3%81-E-commerce-de-moda.pdf)
 
 ## Histórias de usuárias 
 
