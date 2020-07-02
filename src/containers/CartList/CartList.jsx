@@ -33,10 +33,11 @@ const CartList = ({products}) => {
     const parseObj = JSON.parse(catalogLocalStorage);
     const deleteObj = delete parseObj.shoppingCart;
     const newObjStore = Object.assign({...parseObj}, deleteObj)
+    console.log(newObjStore)
     localStorage.removeItem(catalogLocalStorage)
     localStorage.setItem('persist:CANOA', JSON.stringify(newObjStore));
     history.push('/checkout');
-    document.location.reload(true);
+    document.location.reload();
   }
 
   const handleRemoveProductInCart = (e, code, size, product) => {
