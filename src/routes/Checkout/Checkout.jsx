@@ -17,7 +17,7 @@ export default function Checkout() {
     <section className="container checkout">
       <h2>Compra realizada com sucesso!</h2>
       <p>Esperamos que goste do seu produto.</p>
-      <div className="cart-btn cart-btn--empty">
+      <div className="checkout-btn checkout-btn--new-buy">
         <Button 
           type="submit"
           classNameBtn="btn__primary btn__primary--bigger"

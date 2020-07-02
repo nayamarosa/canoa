@@ -34,11 +34,11 @@
         width: 110px;
         position: absolute;
         left: 50%;
-        bottom: -12px;
+        bottom: -13px;
         transform: translate(-50%, -50%);
         border-bottom: 2px solid $pink;
         @media (min-width: 1280px){
-          bottom: -15px;
+          bottom: -18px;
         }
       }
     }

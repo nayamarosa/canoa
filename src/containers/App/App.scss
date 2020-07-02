@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
   font-family: 'Barlow Semi Condensed', sans-serif;
   color: $base-black;
@@ -30,6 +31,11 @@ ul, li {
 img {
   display: block;
   width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
 }
 
 .container {

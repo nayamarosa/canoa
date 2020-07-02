@@ -1,0 +1,38 @@
+.footer {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  @include font (12px, 300, 12px);
+  color: $white;
+  background-color: $pink;
+  &__align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 1024px){
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &-codenation {
+      margin: 0 0 5px;
+      @include font (14px, 400, 14px);
+      @media (min-width: 1024px){
+        margin: 0;
+        @include font (14px, 400, 14px);
+      }
+    }
+    &-squad {
+      margin: 0 0 5px;
+      @include font (12px, 400, 12px);
+      @media (min-width: 1024px){
+        margin: 0;
+        @include font (14px, 400, 14px);
+      }
+    }
+  }
+}
