@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import Button from '../base/Button';
 import Image from '../base/Image';
 import ProductInfo from '../ProductInfo';
 
@@ -23,13 +22,6 @@ const CardItem = ({product, onClick}) => {
           oldPriceValue={product.regular_price}
           priceValue={product.actual_price}
         />
-        <div className="btn--center btn--card">
-          <Button 
-            type="button"
-            classNameBtn="btn__primary btn__primary-buy"
-            text="Comprar"
-          />
-        </div>
       </Link>
     </li>
   </>
