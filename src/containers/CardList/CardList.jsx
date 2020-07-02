@@ -9,7 +9,7 @@ const CardList = ({products}) => {
     e.preventDefault()
     history.push('/produto/' + code);
   }
-
+  
   return (
     <ul className="container card__list">
       {products.map(product => <CardItem product={product} 

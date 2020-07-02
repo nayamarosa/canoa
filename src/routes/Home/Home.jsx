@@ -15,16 +15,32 @@ const Home = () => {
   }, [dispatch])
 
   const products = useSelector(store => store.catalog.products);
-  const loadingFormat = <section className="loading__format-home">
-    <div className="loading__format-home-nav">
-      <ul className="container loading__format-home-list">
-        <li className="loading__format-home-item"></li>
-        <li className="loading__format-home-item"></li>
-        <li className="loading__format-home-item"></li>
-        <li className="loading__format-home-item"></li>
-      </ul>
-    </div>
-  </section>
+
+  const loadingFormat = () => {
+    if(window.screen.width < 800) {
+      return (
+        <section className="loading__format-home">
+          <div className="loading__format-home-nav"></div>
+          <ul className="container loading__format-home-list">
+            <li className="loading__format-home-item"></li>
+            <li className="loading__format-home-item"></li>
+          </ul>
+        </section>
+      )
+    } else {
+      return (
+        <section className="loading__format-home">
+          <div className="loading__format-home-nav"></div>
+          <ul className="container loading__format-home-list">
+            <li className="loading__format-home-item"></li>
+            <li className="loading__format-home-item"></li>
+            <li className="loading__format-home-item"></li>
+            <li className="loading__format-home-item"></li>
+          </ul>
+        </section>
+      )
+    }
+  }
 
   return (
     <>
@@ -42,8 +58,8 @@ const Home = () => {
       />
     }
     {
-      products.length === 0
-      ? <Loading format={loadingFormat}/>
+      products === "Not found"
+      ? <Loading format={loadingFormat()}/>
       : <NavFilter products={products} />
     }
     </>
