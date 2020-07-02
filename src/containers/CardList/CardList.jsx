@@ -1,8 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
-// import '../../components/CardItem/CardItem.scss';
-
 import CardItem from '../../components/CardItem';
 
 const CardList = ({products}) => {

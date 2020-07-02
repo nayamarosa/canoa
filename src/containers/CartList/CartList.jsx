@@ -1,9 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
-
-// import '../../components/CartItem/CartItem.scss';
 
 import CartItem from '../../components/CartItem';
 import Button from '../../components/base/Button';
