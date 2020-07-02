@@ -1,9 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeProductFromCart, addItem, subtractItem } from '../../actions/shoppingCart';
-
-// import '../../components/CartItem/CartItem.scss';
 
 import CartItem from '../../components/CartItem';
 import Button from '../../components/base/Button';
@@ -30,9 +28,14 @@ const CartList = ({products}) => {
   }
 
   const handleClickToCheckout = (e) => {
-    e.preventDefault()
+    e.preventDefault() 
+    const catalogLocalStorage = localStorage.getItem('persist:CANOA');
+    const parseObj = JSON.parse(catalogLocalStorage);
+    const deleteObj = delete parseObj.shoppingCart;
+    const newObjStore = Object.assign({...parseObj}, deleteObj)
+    localStorage.removeItem(catalogLocalStorage)
+    localStorage.setItem('persist:CANOA', JSON.stringify(newObjStore));
     history.push('/checkout');
-    localStorage.clear()
     document.location.reload(true);
   }
 
