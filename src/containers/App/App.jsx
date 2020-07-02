@@ -8,6 +8,7 @@ import Routes from '../../routes';
 import '../../styles/main.scss';
 
 import Header from '../../containers/Header';
+import Footer from '../../containers/Footer';
 
 const App = () => (
   <Provider store={store}>
@@ -15,6 +16,7 @@ const App = () => (
       <BrowserRouter>
         <Header />
         <Routes />
+        <Footer />
       </BrowserRouter>
     </PersistGate>
   </Provider>

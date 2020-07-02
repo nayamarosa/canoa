@@ -1,0 +1,19 @@
+.footer {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    @include font (12px, 300, 12px);
+    color: $white;
+    background-color: $pink;
+    &-codenation {
+        margin-bottom: 5px;
+        @include font (14px, 400, 14px);
+    }
+    &-squad {
+        margin-bottom: 5px;
+        @include font (12px, 400, 12px);
+    }
+}
