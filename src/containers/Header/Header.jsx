@@ -58,9 +58,9 @@ const Header = () => {
           />
           {
             quantity > 0
-            ? <div className="header__cart-quantity">
+            ? <a href='/carrinho-de-compras' className="header__cart-quantity">
               <p>{quantity}</p>
-            </div>
+            </a>
             : false
           }
           

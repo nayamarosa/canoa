@@ -1,6 +1,6 @@
 .product-size {
   width: 100%;
-  margin: 10px 0 50px;
+  margin: 10px 0 0;
   & h5 {
     margin-bottom: 5px;
     @include font (14px, 400, 14px);
@@ -20,7 +20,7 @@
   &__group {
     width: 100%;
     height: 50px;
-    margin: 10px 0 25px;
+    margin: 10px 0 0;
     display: flex;
   }
 }
