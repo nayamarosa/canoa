@@ -1,68 +1,99 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Canoá
+Projeto final e-commerce, realizado em dulpa, no curso React Woman - Loft, da Codenation.
 
-## Available Scripts
+## Índice
 
-In the project directory, you can run:
+* [Como utilizar](#como-utilizar)
+* [Principais Tecnologias](#principais-tecnologias)
+* [Organização/Planejamento](#organização/planejamento)
+* [Definição do produto](#definição-do-produto)
+* [Personas](#personas)
+* [Histórias de usuárias](#Histórias-de-usuárias)
+  * [Definição de pronto](#Definição-de-pronto)
+* [Protótipo](#protótipo)
+* [Pesquisa com usuários](#Pesquisa-com-usuários)
+  * [Testes de usabilidade](#testes-de-usabilidade)
 
-### `yarn start`
+[Link da aplicação]("http...")
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Como Utilizar
+    npm install
+    npm start
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Principais Tecnologias
+* React
+* Redux
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Organização/Planejamento
 
-### `yarn build`
+ * Trello;
+ * [GitHub Project](https://github.com/nayamarosa/projeto-loja/projects);
+ * Reuniões Semanais/Diárias
+ * Pair Programming
+  
+## Definição do produto
+A Canoá é um e-commerce de Moda e Acessórios.
+As usuárias podem interagir na escolha e compra de produtos.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Personas
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Histórias de usuárias - Requisitos Obrigatórios
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Eu como usuária gostaria de ter acesso rápido ao catálogo dos produtos.
+2. Eu como usuária gostaria de saber quais os produtos de promoção.
+3. Eu como usuária gostaria de poder filtrar todos os produtos em promoção.
+4. Eu como usuária gostaria de ter a informação de preço do produto.
+5. Eu como usuária gostaria de ter a imagem do produto.
+6. Eu como usuária gostaria de ter a informações sobre parcelas de preço nas informações do produto.
+7. Eu como usuária gostaria de ter fácil acesso ao carrinho de compra da loja.
+8. Eu como usuária gostaria de ter as informações dos produtos escolhidos no carrinho da loja.
+9. Eu como usuária gostaria de poder editar a quantidade do produto que quero no carrinho.
+10. Eu como usuária gostaria de poder remover produto do carrinho.
+11. Eu como usuária gostaria de ter a informação do valor total do(s) produto(s) no carrinho.
+12. Eu como usuária gostaria de finalizar a compra de forma rápida.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-- **Requisitos Opcionais** -- 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+13. Eu como usuária, mesmo não finalizando a compra, gostaria de voltar a loja e ter os produtos escolhidos no carrinho de compra.
+14. Eu como usuária gostaria, que memso ao recarregar a página, as informações do produtos estejam no carrinho.
+15. Eu como usuária gostaria de ter a informações sobre tamanho do produto, se disponível.
+Eu como usuária gostaria de buscar de maneira rápida em tempo real o tipo de produto que quero.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Definição de pronto
 
-## Learn More
+* Implementar as funcionalidades apresentadas nos wireframes / layouts.
+* Ser mobile first, possuindo uma experiência satisfatória tanto em mobile quanto em desktop.
+* Consumir a API do catálogo de produtos.
+* O estado global da aplicação deverá ser gerenciado com Redux
+* Ser um SPA (Single Page Application).
+* Todos os produtos da API devem ser exibidos.
+* Utilizar BEM CSS para escrever os estilos.
+* Fazer deploy do projeto, servindo-o no Netlify.
+* Não utilizar frameworks CSS como Bootstrap, Foundation e afins.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Protótipo
 
-### Code Splitting
+O protótipo da Canoá, pode ser visualizado no link abaixo:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+[Protótipo da aplicação]()
 
-### Analyzing the Bundle Size
+## Pesquisa com usuários
+  A pesquisa foi feita com 11 usuários e os dados foram coletados através de Formulário do google seguido do protótipo.
+  
+  Os principais resultados da pesquisa:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  * 63,6% dos usuários compram roupas ou acessórios pela internet;
+  * 90% dos usuários costumam frequentar esse tipo e-commerce;
+  * 36,4% dos usuários compram frequentemente em lojas virtuais seguido de 54,5% de usuários que compram às vezes;
+  * 63,6% dos usuários tem entre 30 e 39 anos;
+  * 72,7% se indetificaram como do gênero feminino;
+  * Dentre as características mais importantes na escolha em comprar em uma loja online relatadas pelos usuários são: a segurança no pagamento, e o preço 81%, seguidas de praticidade, qualidade do site e promoção 54%;
+  
+### Testes de usabilidade
+  O protótipo utilizado foi de alta fidelidade em mobile-first.
+  Durante os testes com protótipo, constatou-se a necessidade de mais destaque no botão de comprar.
+  De acordo com essa sugestão, foram feitas as modificações na aplicação. Ressaltou-se que uma rolagem vertical dos produtos é mais interessante que uma horizontal.
