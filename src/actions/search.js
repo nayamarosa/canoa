@@ -16,6 +16,12 @@ export const openSearch = (opened) => dispatch => {
     showList.classList.add('search__list--open')
     blockBody.classList.add('search__list--body-hidden')
     inputSearch.focus()
+
+    if(window.screen.width > 1020) {
+      let inputLeft = document.querySelector('.search__input.search__input--open').getBoundingClientRect().left - 410;
+      let seachListPosition = document.querySelector('.search__list');
+      seachListPosition.style.left=`${inputLeft}px`
+    }
   }
   
   return dispatch({
@@ -38,6 +44,11 @@ export const closeSearch = (closed) => (dispatch) => {
     showList.classList.remove('search__list--open')
     blockBody.classList.remove('search__list--body-hidden')
     inputSearch.value = '';
+
+    if(window.screen.width > 1020) {
+      let seachListPosition = document.querySelector('.search__list');
+      seachListPosition.style.left='100%'
+    }
   }
   
   return dispatch({

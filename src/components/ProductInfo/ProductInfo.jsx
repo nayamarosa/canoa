@@ -15,7 +15,7 @@ const ProductInfo = (props) => {
           <p>
             Por <span className={`product-info__price--new ${props.classNameNewPrice}`}>{props.priceValue}</span>
           </p>
-          <p className="product-info__price--bigger--installments">
+          <p>
             {props.installmentsText} <span>{props.installments}</span>
           </p>
         </div>
