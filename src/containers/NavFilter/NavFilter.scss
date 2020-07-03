@@ -44,8 +44,11 @@
     }
   }
   &__name {
-    padding-bottom: 5px;
+    padding: 0 0 5px;
     font-size: 14px;
     font-weight: 500;
+    @media (min-width: 1280px){
+      padding: 10px 0;
+    }
   }
 }

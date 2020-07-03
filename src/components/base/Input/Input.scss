@@ -38,6 +38,7 @@
       background-color: $background-rose;
       border: 1px solid $pink;
       border-radius: 8px;
+      cursor: pointer;
       &:hover {
         background-color: lighten($color: $pink, $amount: 25)
       }
