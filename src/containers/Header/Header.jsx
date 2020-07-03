@@ -18,8 +18,8 @@ const Header = () => {
   }
   
   return (
-    <header className="container header">
-      <nav className="header__nav">
+    <header className="header">
+      <nav className="container header__nav">
         <div className="header__nav-align">
           <Link to="/" className="header__logo">
               <h1>CANOÁ</h1>
