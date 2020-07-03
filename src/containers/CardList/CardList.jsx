@@ -1,8 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 
-// import '../../components/CardItem/CardItem.scss';
-
 import CardItem from '../../components/CardItem';
 
 const CardList = ({products}) => {
@@ -11,7 +9,7 @@ const CardList = ({products}) => {
     e.preventDefault()
     history.push('/produto/' + code);
   }
-
+  
   return (
     <ul className="container card__list">
       {products.map(product => <CardItem product={product} 

@@ -36,7 +36,7 @@ const ProductGroup = ({productSelected}) => {
   return (    
     <>
     {
-      productDetail !== undefined
+      productDetail !== undefined 
       ? <section className="container product">
         <Image
           classNameImage="image__product"

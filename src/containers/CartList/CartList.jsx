@@ -28,10 +28,15 @@ const CartList = ({products}) => {
   }
 
   const handleClickToCheckout = (e) => {
-    e.preventDefault()
-    history.push('/checkout');
-    localStorage.clear()
-    document.location.reload(true);
+    e.preventDefault() 
+    const catalogLocalStorage = localStorage.getItem('persist:CANOA');
+    const parseObj = JSON.parse(catalogLocalStorage);
+    const deleteObj = delete parseObj.shoppingCart;
+    const newObjStore = Object.assign({...parseObj}, deleteObj)
+    localStorage.removeItem(catalogLocalStorage)
+    localStorage.setItem('persist:CANOA', JSON.stringify(newObjStore));    
+    history.push('/finalizacao-do-pedido');
+    document.location.reload(false);
   }
 
   const handleRemoveProductInCart = (e, code, size, product) => {

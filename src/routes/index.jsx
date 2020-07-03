@@ -20,7 +20,7 @@ const Routes = () => (
       <ShoppingCart />
     </Route>
 
-    <Route path="/checkout">
+    <Route path="/finalizacao-do-pedido">
       <Checkout />
     </Route>
   </Switch>

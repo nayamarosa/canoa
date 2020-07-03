@@ -9,7 +9,7 @@
       }
     }
     &-list {
-      padding-top: 75px;
+      padding-top: 15px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -20,13 +20,13 @@
       }
     }
     &-item {
-      margin: 5px 0;
+      margin: 5px 0 100px;
       width: 48%;
       height: 332px;
       border-radius: 8px;
       @include loading();
       @media (min-width: 1024px){
-        margin: 0 0 8px;
+        margin: 0 0 100px;
         width: 100%;
       }
     }
